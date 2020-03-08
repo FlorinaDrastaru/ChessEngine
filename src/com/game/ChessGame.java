@@ -13,39 +13,4 @@ public class ChessGame {
         this.board = board;
     }
 
-    public static void resign() {
-
-    }
-
-    public static void quit() {
-
-    }
-
-    public static void newGame() {
-
-    }
-
-    public static void force() {
-
-    }
-
-    public static void white() {
-
-    }
-
-    public static void black() {
-
-    }
-
-    public static void move() {
-
-    }
-
-    public static void xboard() {
-
-    }
-
-    public static void go() {
-
-    }
 }
