@@ -13,4 +13,5 @@ public class ChessGame {
         this.board = board;
     }
 
+
 }

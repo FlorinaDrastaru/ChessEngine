@@ -14,4 +14,5 @@ public final class Constants {
     public static final String xboard = "xboard";
     public static final String white = "white";
     public static final String black = "black";
+    public static final String protover = "protover";
 }

@@ -8,7 +8,7 @@ public class Rook extends ChessPiece {
     }
 
     @Override
-    public void move(Position pos) {
+    public void move() {
 
     }
 }

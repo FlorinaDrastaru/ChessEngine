@@ -5,7 +5,7 @@ import com.board.ChessBoard;
 public class NewGame implements Command {
     @Override
     public void executeCommand() {
-        ChessBoard chessBoard = new ChessBoard();
+        ChessBoard chessBoard = ChessBoard.getInstance();
         chessBoard.initiateBoard();
     }
 }

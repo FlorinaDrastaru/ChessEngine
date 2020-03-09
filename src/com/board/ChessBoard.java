@@ -5,9 +5,16 @@ import com.pieces.*;
 
 public class ChessBoard {
     private ChessPiece[][] board;
-
-    public ChessBoard() {
+    private static ChessBoard instance = null;
+    private ChessBoard() {
         board = new ChessPiece[8][8];
+    }
+
+    public static ChessBoard getInstance() {
+        if (instance == null) {
+            instance = new ChessBoard();
+        }
+        return instance;
     }
 
     public boolean verifyPosition(Position pos) {
@@ -16,6 +23,9 @@ public class ChessBoard {
         return false;
     }
 
+    public ChessPiece[][] getBoard() {
+        return board;
+    }
 
     public ChessPiece getChessPiece(Position pos) {
         return board[pos.getRow()][pos.getColumn()];
