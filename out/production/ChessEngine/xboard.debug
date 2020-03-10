@@ -1,0 +1,95 @@
+locale = en_US.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + fairymax ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") fairymax
+112 >first : xboard
+protover 2
+179 <first : tellics say     Fairy-Max 5.0b
+179 <first : tellics say     by H.G. Muller
+179 <first : feature myname="Fairy-Max 5.0b"
+179 >first : accepted myname
+179 <first : feature memory=1 exclude=1
+179 >first : accepted memory
+179 >first : accepted exclude
+179 <first : feature setboard=0 xedit=1 ping=1 done=0
+179 >first : accepted setboard
+179 >first : accepted xedit
+179 >first : accepted ping
+179 >first : accepted done
+179 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+179 >first : accepted variants
+180 <first : feature option="Resign -check 0"
+180 >first : accepted option
+180 <first : feature option="Resign Threshold -spin 800 200 1200"
+180 >first : accepted option
+180 <first : feature option="Claim draw after -spin 50 0 200"
+180 >first : accepted option
+180 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+180 >first : accepted option
+180 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+180 >first : accepted option
+180 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+180 >first : accepted option
+180 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+180 >first : accepted option
+180 <first : feature option="Dummy Slider Example -slider 20 0 100"
+180 >first : accepted option
+180 <first : feature option="Dummy String Example -string happy birthday!"
+180 >first : accepted option
+180 <first : feature option="Dummy Path Example -path ."
+180 >first : accepted option
+180 <first : feature option="Automatic persistent-hash dialog -check 0"
+180 >first : accepted option
+180 <first : feature option="Info -button"
+180 >first : accepted option
+180 <first : feature option="Save in hash file -button"
+180 >first : accepted option
+180 <first : feature option="Clear Hash -button"
+180 >first : accepted option
+180 <first : feature done=1
+180 >first : accepted done
+181 >first : memory 68
+181 >first : new
+random
+181 >first : level 40 5 0
+181 >first : post
+181 >first : hard
+181 >first : ping 1
+207 <first : pong 1
+2471 >first : quit
+Unload first
+StartChildProcess (dir=".") java -cp . com/main/Main
+2478 >first : xboard
+protover 2
+2537 <first : 
+2537 <first : 
+2537 <first : feature sigint=0
+2537 >first : accepted sigint
+2537 <first : feature sigterm=0
+2537 >first : accepted sigterm
+2537 <first : feature usermove=1
+2537 >first : accepted usermove
+recognized 'normal' (-1) as variant normal
+12478 >first : new
+random
+12479 >first : level 40 5 0
+12479 >first : post
+12479 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+16612 >first : time 30000
+16613 >first : otim 30000
+book hit = (NULL)
+16613 >first : usermove 16613 >first : a2a4
+GameEnds(29, xboard exit, 2)
+27207 >first : result * {xboard exit}
+27207 >first : force
+27207 >first : quit

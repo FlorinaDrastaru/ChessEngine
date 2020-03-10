@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="295147c6-6383-42bc-9acf-4e61345a2fba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/game/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/ChessGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/commands/Go.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/commands/Go.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/commands/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/commands/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/commands/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/commands/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/ChessPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/ChessPiece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/ChessPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Pawn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xboard.debug" beforeDir="false" afterPath="$PROJECT_DIR$/src/xboard.debug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +55,26 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.main.Main" />
+      <module name="ChessEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -83,13 +118,33 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583672881064" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583659928829">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583870413607">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583659928829" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583870413607" />
+    <state width="1539" height="193" key="GridCell.Tab.0.bottom" timestamp="1583873179364">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1539" height="193" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583873179364" />
+    <state width="1539" height="193" key="GridCell.Tab.0.center" timestamp="1583873179364">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1539" height="193" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583873179364" />
+    <state width="1539" height="193" key="GridCell.Tab.0.left" timestamp="1583873179364">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1539" height="193" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583873179364" />
+    <state width="1539" height="193" key="GridCell.Tab.0.right" timestamp="1583873179364">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1539" height="193" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583873179364" />
     <state x="476" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1583665373913">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="476" y="130" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1583665373913" />
+    <state x="948" y="373" key="com.intellij.ide.util.TipDialog" timestamp="1583871286114">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="948" y="373" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583871286114" />
   </component>
 </project>

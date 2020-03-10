@@ -8,7 +8,7 @@ public class Queen extends ChessPiece {
     }
 
     @Override
-    public void move() {
+    public void move(Position position) {
 
     }
 }
