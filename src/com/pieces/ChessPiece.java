@@ -45,5 +45,7 @@ public abstract class ChessPiece {
         this.colour = colour;
     }
 
-    public abstract void move(Position position);
+    public void move(Position position) {
+        this.position = position;
+    }
 }

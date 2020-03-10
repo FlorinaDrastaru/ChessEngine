@@ -1,13 +1,10 @@
 package com.main;
 
-import com.board.ChessBoard;
 import com.commands.*;
 import com.constants.Constants;
+import com.game.ChessGame;
 
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 
@@ -36,37 +33,23 @@ public class Main {
                 break;
                 case Constants.force: new Force().executeCommand();
                 break;
-                case Constants.quit: System.exit(1);
+                case Constants.quit: System.exit(0);
                 case Constants.resign: new Resign().executeCommand();
                 break;
                 case Constants.xboard: new Xboard().executeCommand();
                 break;
                 default:
-                    if (command.startsWith("usermove"))
-                        new Move().executeCommand();
+                    if (command.startsWith("usermove")) {
+                        String opponentMove = command.substring(9);
+                        new ChessGame().oppMove(opponentMove);
+                        new ChessGame().move();
+                    }
                     break;
 
             }
 
         }
 
-//        while (true) {
-//            String command = sc.nextLine();
-//            if("quit".equals(command)) {
-//                System.exit(0);
-//            } else if("xboard".equals(command)) {
-//                ChessBoard.getInstance().initiateBoard();
-//                infoBox("xboard hit", "still works");
-//            } else if("new".equals(command)) {
-//                ChessBoard.getInstance().initiateBoard();
-//            } else if (command.equals("usermove")) {
-//                new Move().executeCommand();
-//            } else if(command.equals("protover 2")) {
-//                System.out.println("feature sigint=0");
-//            } else {
-//                new Move().executeCommand();
-//            }
-//        }
 
     }
 
