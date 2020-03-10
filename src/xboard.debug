@@ -1,0 +1,104 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + fairymax ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") fairymax
+131 >first : xboard
+protover 2
+206 <first : tellics say     Fairy-Max 5.0b
+206 <first : tellics say     by H.G. Muller
+206 <first : feature myname="Fairy-Max 5.0b"
+206 >first : accepted myname
+206 <first : feature memory=1 exclude=1
+206 >first : accepted memory
+206 >first : accepted exclude
+206 <first : feature setboard=0 xedit=1 ping=1 done=0
+206 >first : accepted setboard
+206 >first : accepted xedit
+206 >first : accepted ping
+206 >first : accepted done
+206 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+206 >first : accepted variants
+206 <first : feature option="Resign -check 0"
+206 >first : accepted option
+206 <first : feature option="Resign Threshold -spin 800 200 1200"
+206 >first : accepted option
+206 <first : feature option="Claim draw after -spin 50 0 200"
+206 >first : accepted option
+206 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+206 >first : accepted option
+206 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+206 >first : accepted option
+206 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+206 >first : accepted option
+206 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+206 >first : accepted option
+206 <first : feature option="Dummy Slider Example -slider 20 0 100"
+206 >first : accepted option
+206 <first : feature option="Dummy String Example -string happy birthday!"
+206 >first : accepted option
+206 <first : feature option="Dummy Path Example -path ."
+206 >first : accepted option
+206 <first : feature option="Automatic persistent-hash dialog -check 0"
+206 >first : accepted option
+206 <first : feature option="Info -button"
+206 >first : accepted option
+206 <first : feature option="Save in hash file -button"
+207 >first : accepted option
+207 <first : feature option="Clear Hash -button"
+207 >first : accepted option
+207 <first : feature done=1
+207 >first : accepted done
+208 >first : memory 68
+208 >first : new
+random
+208 >first : level 40 5 0
+208 >first : post
+208 >first : hard
+208 >first : ping 1
+244 <first : pong 1
+5192 >first : quit
+Unload first
+StartChildProcess (dir="/home/florina/Documents/proiectPA/src") java -cp . com/main/Main
+5198 >first : xboard
+protover 2
+12172 <first : feature sigint=0
+12172 >first : accepted sigint
+12179 <first : move a7a6
+Ignoring extra move from first
+recognized 'normal' (-1) as variant normal
+15199 >first : new
+random
+15200 >first : level 40 5 0
+15200 >first : post
+15200 >first : hard
+15200 <first : move a7a6
+Ignoring extra move from first
+15200 <first : move a7a6
+Ignoring extra move from first
+15201 <first : move a7a6
+Ignoring extra move from first
+15201 <first : move a7a6
+Ignoring extra move from first
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+16568 >first : time 30000
+16569 >first : otim 30000
+book hit = (NULL)
+16569 >first : a2a4
+16646 <first : move a7a6
+16726 <first : move a7a6
+Ignoring move out of turn by first, gameMode 2, forwardMost 2
+16726 <first : move a7a6
+Ignoring move out of turn by first, gameMode 2, forwardMost 2
+GameEnds(29, xboard exit, 2)
+319355 >first : result * {xboard exit}
+319355 >first : force
+319355 >first : quit
