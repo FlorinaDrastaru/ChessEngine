@@ -6,6 +6,7 @@ public abstract class ChessPiece {
     private Position position;
     private boolean eliminated = false;
     private TeamColour colour;
+    public int idx;
 
 
     public ChessPiece(TeamColour colour, boolean eliminated) {
@@ -46,6 +47,6 @@ public abstract class ChessPiece {
     }
 
     public void move(Position position) {
-        this.position = position;
     }
+    public void eatOpponent(){}
 }

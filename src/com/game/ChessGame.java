@@ -24,22 +24,35 @@ public class ChessGame {
         pos.put(7, "h");
     }
     public void move() {  // mutarea noastra, in if verifica si daca nu cumva a fost mancat si e
-                         // piesa alba acolo ca incerca sa o faca indiferent.
-                        // am mutat move la joc ca avea mai mult sens aici ca e cum jucam noi nu i comanda primita gen
+        // piesa alba acolo ca incerca sa o faca indiferent.
+        // am mutat move la joc ca avea mai mult sens aici ca e cum jucam noi nu i comanda primita gen
         //cum crezi si tu acuma
         ChessBoard board = ChessBoard.getInstance();
         boolean moved = false;
-        for (int j = 0; j < 8; ++j) {
-            if (board.verifyPosition(new Position(6, j))  && !board.verifyPosition(new Position(5, j))
-                    &&  board.getChessPiece(new Position(6, j)).getColour().equals(TeamColour.Black)) {
-                Pawn pawn = (Pawn) board.getChessPiece(new Position(6, j));
-                board.takeOutChessPiece(new Position(6, j));
-                board.putChessPiece(pawn, new Position(5, j));
-                pawn.move(new Position(5, j));
-                System.out.print("move " + pos.get(j) + "7" + pos.get(j) + "6\n");
-                moved = true;
-                break;
+        for (int i = 6; i > 0; --i) {
+            for (int j = 0; j < 8; ++j) {
+                if (board.verifyPosition(new Position(i, j)) && board.getChessPiece(new Position(i, j)).idx == 0
+                        && board.getChessPiece(new Position(i, j)).getColour().equals(TeamColour.Black)) {
+                    Pawn pawn = (Pawn) board.getChessPiece(new Position(i, j));
+                    if (!board.verifyPosition(new Position(i-1, j))) {
+                        pawn.move(new Position(i-1, j));
+                        int ln = i + 1;
+                        System.out.print("move " + pos.get(j) + ln + pos.get(j) + i + "\n");
+                        moved = true;
+                        break;
+                    } else { // daca n are loc sa mearga in fata verifica daca poate sa manance
+                        pawn.eatOpponent();
+                        if (pawn.getPosition().getRow() != i) {
+                            int ln = i + 1;
+                            int col = pawn.getPosition().getColumn();
+                            System.out.print("move " + pos.get(j) + ln + pos.get(col) + i + "\n");
+                            moved = true;
+                            break;
+                        }
+                    }
+                }
             }
+            if (moved) break;
         }
         if (!moved) new Resign().executeCommand();
     }

@@ -5,6 +5,7 @@ import com.board.Position;
 public class King extends ChessPiece {
     public King(TeamColour colour, boolean eliminated) {
         super(colour, eliminated);
+        idx = 5;
     }
 
     @Override
