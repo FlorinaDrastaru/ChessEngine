@@ -12,8 +12,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ChessGame {
-    public Map<Integer, String> pos = new HashMap<>();
-    public ChessGame() {
+    private Map<Integer, String> pos = new HashMap<>();
+    private boolean force;
+    private boolean white;
+    private int sign;
+    private TeamColour colour;
+
+    private static ChessGame instance = null;
+    private ChessGame() {
+
         pos.put(0, "a");
         pos.put(1, "b");
         pos.put(2, "c");
@@ -23,7 +30,51 @@ public class ChessGame {
         pos.put(6, "g");
         pos.put(7, "h");
     }
-    public void move() {  // mutarea noastra, in if verifica si daca nu cumva a fost mancat si e
+
+    public static ChessGame getInstance() {
+        if (instance == null) {
+            instance = new ChessGame();
+        }
+        return instance;
+    }
+
+    public TeamColour getColour() {
+        return colour;
+    }
+
+    public void setColour(TeamColour colour) {
+        this.colour = colour;
+    }
+
+    public int getSign() {
+        return sign;
+    }
+
+    public void setSign(int sign) {
+        this.sign = sign;
+    }
+
+    public boolean isForce() {
+        return force;
+    }
+
+    public void setForce(boolean force) {
+        this.force = force;
+    }
+
+    public boolean isWhite() {
+        return white;
+    }
+
+    public void setWhite(boolean white) {
+        this.white = white;
+    }
+
+    public Map<Integer, String> getPos() {
+        return pos;
+    }
+
+    /*public void move2() {  // mutarea noastra, in if verifica si daca nu cumva a fost mancat si e
         // piesa alba acolo ca incerca sa o faca indiferent.
         // am mutat move la joc ca avea mai mult sens aici ca e cum jucam noi nu i comanda primita gen
         //cum crezi si tu acuma
@@ -55,9 +106,44 @@ public class ChessGame {
             if (moved) break;
         }
         if (!moved) new Resign().executeCommand();
+    }*/
+
+    public void move() {
+        ChessBoard board = ChessBoard.getInstance();
+        boolean moved = false;
+        for (int i = 6; i > 0; --i) {
+            for (int j = 0; j < 8; ++j) {
+                if (board.verifyPosition(new Position(i, j)) && board.getChessPiece(new Position(i, j)).idx == 0
+                        && board.getChessPiece(new Position(i, j)).getColour()
+                        .equals(ChessGame.getInstance().getColour())) {
+                    Pawn pawn = (Pawn) board.getChessPiece(new Position(i, j));
+                    if (!board.verifyPosition(new Position(i + ChessGame.getInstance().getSign(), j))) {
+                        pawn.move(new Position(i + ChessGame.getInstance().getSign(), j));
+                        int ln = i + 1;
+                        System.out.print("move " + pos.get(j) + ln + pos.get(j)
+                                + (ln + ChessGame.getInstance().getSign()) + "\n");
+                        moved = true;
+                        break;
+                    } else { // daca n are loc sa mearga in fata verifica daca poate sa manance
+                        pawn.eatOpponent();
+                        if (pawn.getPosition().getRow() != i) {
+                            int ln = i + 1;
+                            int col = pawn.getPosition().getColumn();
+                            System.out.print("move " + pos.get(j) + ln + pos.get(col)
+                                    + (ln + ChessGame.getInstance().getSign()) + "\n");
+                            moved = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (moved) break;
+        }
+        if (!moved) new Resign().executeCommand();
     }
 
-    public void oppMove(String opponentMove) {  // converteste alea in locatie si il pune acolo si il sterge de unde era easy
+    public void oppMove(String opponentMove) {
+        // converteste alea in locatie si il pune acolo si il sterge de unde era easy
         ChessBoard board = ChessBoard.getInstance();
 
         String sourceCol = opponentMove.substring(0,1);
@@ -75,6 +161,7 @@ public class ChessGame {
         Position source = new Position(--sourceRow, sourceColumn);
         Position dest = new Position(--destRow, destColumn);
 
+
         if (source.isValidPosition() && dest.isValidPosition() &&
                 board.verifyPosition(source)) {
             ChessPiece chessPiece = board.getChessPiece(source);
@@ -82,9 +169,5 @@ public class ChessGame {
             board.putChessPiece(chessPiece, dest);
             chessPiece.move(dest);
         }
-
     }
-
-
-
 }

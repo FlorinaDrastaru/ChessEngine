@@ -1,4 +1,4 @@
-locale = en_US.UTF-8
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
 recognized 'normal' (-1) as variant normal
 recognized 'normal' (-1) as variant normal
 recognized 'normal' (-1) as variant normal
@@ -10,268 +10,112 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") fairymax
-112 >first : xboard
+118 >first : xboard
 protover 2
-174 <first : tellics say     Fairy-Max 5.0b
-174 <first : tellics say     by H.G. Muller
-174 <first : feature myname="Fairy-Max 5.0b"
-174 >first : accepted myname
-174 <first : feature memory=1 exclude=1
-174 >first : accepted memory
-174 >first : accepted exclude
-174 <first : feature setboard=0 xedit=1 ping=1 done=0
-174 >first : accepted setboard
-174 >first : accepted xedit
-174 >first : accepted ping
-174 >first : accepted done
-174 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
-174 >first : accepted variants
-174 <first : feature option="Resign -check 0"
-174 >first : accepted option
-174 <first : feature option="Resign Threshold -spin 800 200 1200"
-174 >first : accepted option
-174 <first : feature option="Claim draw after -spin 50 0 200"
-174 >first : accepted option
-174 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
-174 >first : accepted option
-174 <first : feature option="Multi-PV Margin -spin 0 0 1000"
-174 >first : accepted option
-174 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
-174 >first : accepted option
-174 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
-174 >first : accepted option
-174 <first : feature option="Dummy Slider Example -slider 20 0 100"
-174 >first : accepted option
-174 <first : feature option="Dummy String Example -string happy birthday!"
-174 >first : accepted option
-174 <first : feature option="Dummy Path Example -path ."
-174 >first : accepted option
-174 <first : feature option="Automatic persistent-hash dialog -check 0"
-174 >first : accepted option
-174 <first : feature option="Info -button"
-174 >first : accepted option
-174 <first : feature option="Save in hash file -button"
-174 >first : accepted option
-174 <first : feature option="Clear Hash -button"
-174 >first : accepted option
-174 <first : feature done=1
-174 >first : accepted done
-175 >first : memory 68
-175 >first : new
+185 <first : tellics say     Fairy-Max 5.0b
+185 <first : tellics say     by H.G. Muller
+186 <first : feature myname="Fairy-Max 5.0b"
+186 >first : accepted myname
+186 <first : feature memory=1 exclude=1
+186 >first : accepted memory
+186 >first : accepted exclude
+186 <first : feature setboard=0 xedit=1 ping=1 done=0
+186 >first : accepted setboard
+186 >first : accepted xedit
+186 >first : accepted ping
+186 >first : accepted done
+186 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+186 >first : accepted variants
+186 <first : feature option="Resign -check 0"
+186 >first : accepted option
+186 <first : feature option="Resign Threshold -spin 800 200 1200"
+186 >first : accepted option
+186 <first : feature option="Claim draw after -spin 50 0 200"
+186 >first : accepted option
+186 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+186 >first : accepted option
+186 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+186 >first : accepted option
+186 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+186 >first : accepted option
+186 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+186 >first : accepted option
+186 <first : feature option="Dummy Slider Example -slider 20 0 100"
+186 >first : accepted option
+186 <first : feature option="Dummy String Example -string happy birthday!"
+186 >first : accepted option
+186 <first : feature option="Dummy Path Example -path ."
+186 >first : accepted option
+186 <first : feature option="Automatic persistent-hash dialog -check 0"
+186 >first : accepted option
+186 <first : feature option="Info -button"
+186 >first : accepted option
+186 <first : feature option="Save in hash file -button"
+186 >first : accepted option
+186 <first : feature option="Clear Hash -button"
+186 >first : accepted option
+186 <first : feature done=1
+186 >first : accepted done
+187 >first : memory 68
+187 >first : new
 random
-175 >first : level 40 5 0
-176 >first : post
-176 >first : hard
-176 >first : ping 1
-203 <first : pong 1
-3247 >first : quit
+187 >first : level 40 5 0
+187 >first : post
+187 >first : hard
+187 >first : ping 1
+216 <first : pong 1
+5596 >first : quit
 Unload first
-StartChildProcess (dir=".") java -cp . com/main/Main
-3254 >first : xboard
+StartChildProcess (dir="/home/florina/Documents/proiectPA/src") java -cp . com/main/Main
+5601 >first : xboard
 protover 2
-3321 <first : 
-3321 <first : 
-3321 <first : feature sigint=0
-3321 >first : accepted sigint
-3321 <first : feature sigterm=0
-3321 >first : accepted sigterm
-3321 <first : feature usermove=1
-3321 >first : accepted usermove
+5653 <first : 
+5653 <first : 
+5653 <first : feature sigint=0
+5653 >first : accepted sigint
+5653 <first : feature sigterm=0
+5653 >first : accepted sigterm
+5653 <first : feature usermove=1
+5653 >first : accepted usermove
 recognized 'normal' (-1) as variant normal
-13255 >first : new
+15602 >first : new
 random
-13255 >first : level 40 5 0
-13255 >first : post
-13255 >first : hard
+15602 >first : level 40 5 0
+15602 >first : post
+15602 >first : hard
 nps: w=-1, b=-1
 nps: w=-1, b=-1
-23289 >first : time 30000
-23289 >first : otim 30000
+17437 >first : time 30000
+17437 >first : otim 30000
 book hit = (NULL)
-23289 >first : usermove 23289 >first : b1c3
-23386 <first : move a7a6
-27774 >first : time 29990
-27774 >first : otim 29561
+17437 >first : usermove 17437 >first : b1c3
+17533 <first : move a7a6
+22083 >first : time 29990
+22083 >first : otim 29545
 book hit = (NULL)
-27774 >first : usermove 27774 >first : c3a4
-27883 <first : move b7b6
-30650 >first : time 29979
-30650 >first : otim 29284
+22083 >first : usermove 22083 >first : c3b5
+22183 <first : move b7b6
+28427 >first : time 29980
+28427 >first : otim 28920
 book hit = (NULL)
-30650 >first : usermove 30650 >first : b2b4
-30727 <first : move c7c6
-36862 >first : time 29971
-36862 >first : otim 28671
+28427 >first : usermove 28427 >first : c2c4
+28501 <first : move c7c6
+32972 >first : time 29972
+32972 >first : otim 28473
 book hit = (NULL)
-36862 >first : usermove 36862 >first : e2e3
-36940 <first : move d7d6
-38770 >first : time 29963
-38770 >first : otim 28488
+32972 >first : usermove 32972 >first : d2d4
+33049 <first : move d7d6
+37507 >first : time 29965
+37508 >first : otim 28028
 book hit = (NULL)
-38770 >first : usermove 38770 >first : g2g3
-38848 <first : move e7e6
-40545 >first : time 29955
-40545 >first : otim 28318
+37508 >first : usermove 37508 >first : f2f4
+37586 <first : move e7e6
+40715 >first : time 29957
+40715 >first : otim 27715
 book hit = (NULL)
-40546 >first : usermove 40546 >first : f2f4
-40623 <first : move f7f6
-42182 >first : time 29947
-42182 >first : otim 28162
-book hit = (NULL)
-42182 >first : usermove 42182 >first : h2h3
-42266 <first : move g7g6
-43765 >first : time 29939
-43765 >first : otim 28013
-book hit = (NULL)
-43765 >first : usermove 43765 >first : d2d3
-43843 <first : move h7h6
-45082 >first : time 29931
-45082 >first : otim 27889
-book hit = (NULL)
-45082 >first : usermove 45082 >first : f1g2
-45167 <first : move a6a5
-64022 >first : time 29923
-64022 >first : otim 26003
-book hit = (NULL)
-64022 >first : usermove 64022 >first : d3d4
-64099 <first : move b6b5
-67178 >first : time 29915
-67178 >first : otim 25696
-book hit = (NULL)
-67178 >first : usermove 67178 >first : g2f3
-67255 <first : move c6c5
-69494 >first : time 29907
-69494 >first : otim 25472
-book hit = (NULL)
-69494 >first : usermove 69494 >first : c2c3
-69572 <first : move d6d5
-73010 >first : time 29899
-73010 >first : otim 25128
-book hit = (NULL)
-73010 >first : usermove 73010 >first : c1d2
-73087 <first : move e6e5
-75492 >first : time 29891
-75516 >first : otim 24888
-book hit = (NULL)
-75516 >first : usermove 75516 >first : g3g4
-75596 <first : move f6f5
-76998 >first : time 29881
-76998 >first : otim 24747
-book hit = (NULL)
-76998 >first : usermove 76998 >first : h3h4
-77075 <first : move g6g5
-78954 >first : time 29873
-78954 >first : otim 24560
-book hit = (NULL)
-78954 >first : usermove 78954 >first : h4h5
-79031 <first : move a5b4
-85994 >first : time 29865
-85994 >first : otim 23864
-book hit = (NULL)
-85994 >first : usermove 85994 >first : d2c1
-86072 <first : move b5a4
-157082 >first : time 29857
-157082 >first : otim 16763
-book hit = (NULL)
-157083 >first : usermove 157083 >first : c3c4
-157160 <first : move c5d4
-158302 >first : time 29849
-158302 >first : otim 16648
-book hit = (NULL)
-158302 >first : usermove 158302 >first : e3e4
-158380 <first : move d5c4
-160366 >first : time 29842
-160366 >first : otim 16450
-book hit = (NULL)
-160366 >first : usermove 160366 >first : f3g2
-160451 <first : move e5f4
-162562 >first : time 29833
-162562 >first : otim 16239
-book hit = (NULL)
-162562 >first : usermove 162562 >first : g2h3
-162639 <first : move f5e4
-166198 >first : time 29825
-166199 >first : otim 15883
-book hit = (NULL)
-166199 >first : usermove 166199 >first : d1d4
-166296 <first : move a4a3
-169223 >first : time 29816
-169223 >first : otim 15590
-book hit = (NULL)
-169224 >first : usermove 169224 >first : d4b2
-169332 <first : move b4b3
-171958 >first : time 29805
-171959 >first : otim 15328
-book hit = (NULL)
-171959 >first : usermove 171959 >first : c1d2
-172036 <first : move c4c3
-174282 >first : time 29797
-174282 >first : otim 15103
-book hit = (NULL)
-174282 >first : usermove 174282 >first : g1f3
-174380 <first : move e4e3
-179167 >first : time 29787
-179167 >first : otim 14624
-book hit = (NULL)
-179167 >first : usermove 179167 >first : f3h4
-179275 <first : move g5h4
-180750 >first : time 29776
-180750 >first : otim 14477
-book hit = (NULL)
-180750 >first : usermove 180750 >first : h1g1
-180838 <first : move f4f3
-181827 >first : time 29767
-181827 >first : otim 14378
-book hit = (NULL)
-181827 >first : usermove 181827 >first : g1g2
-181904 <first : move a3b2
-183107 >first : time 29759
-183107 >first : otim 14258
-book hit = (NULL)
-183107 >first : usermove 183107 >first : g2g3
-183185 <first : move h4g3
-185238 >first : time 29752
-185238 >first : otim 14053
-book hit = (NULL)
-185238 >first : usermove 185238 >first : h3g2
-185323 <first : move b3a2
-188266 >first : time 29743
-188266 >first : otim 13758
-book hit = (NULL)
-188266 >first : usermove 188266 >first : e1d1
-188350 <first : move c3c2
-191886 >first : time 29735
-191886 >first : otim 13405
-book hit = (NULL)
-191886 >first : usermove 191886 >first : d1e1
-191971 <first : move e3e2
-195310 >first : time 29726
-195310 >first : otim 13071
-book hit = (NULL)
-195310 >first : usermove 195310 >first : g2f3
-195388 <first : move g3g2
-197662 >first : time 29718
-197662 >first : otim 12843
-book hit = (NULL)
-197662 >first : usermove 197662 >first : g4g5
-197746 <first : move h6g5
-205719 >first : time 29710
-205720 >first : otim 12046
-book hit = (NULL)
-205720 >first : usermove 205720 >first : f3g4
-205797 <first : move b2b1
-218435 >first : time 29702
-218435 >first : otim 10782
-book hit = (NULL)
-218435 >first : usermove 218435 >first : d2c1
-218512 <first : move g2g1
-228811 >first : time 29694
-228811 >first : otim 9753
-book hit = (NULL)
-228811 >first : usermove 228811 >first : e1e2
-228888 <first : resign
-GameEnds(26, Black resigns, 1)
-228888 >first : result 1-0 {Black resigns}
-228888 >first : force
-GameEnds(26, Black resigns, 2)
-286797 >first : quit
+40715 >first : usermove 40715 >first : d4d5
+40789 <first : move f7f6
+GameEnds(29, xboard exit, 2)
+167042 >first : result * {xboard exit}
+167042 >first : force
+167042 >first : quit

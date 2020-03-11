@@ -41,8 +41,12 @@ public class Main {
                 default:
                     if (command.startsWith("usermove")) {
                         String opponentMove = command.substring(9);
-                        new ChessGame().oppMove(opponentMove);
-                        new ChessGame().move();
+                        if (ChessGame.getInstance().isForce() == true) {
+                            ChessGame.getInstance().oppMove(opponentMove);
+                        } else {
+                            ChessGame.getInstance().oppMove(opponentMove);
+                            ChessGame.getInstance().move();
+                        }
                     }
                     break;
 
