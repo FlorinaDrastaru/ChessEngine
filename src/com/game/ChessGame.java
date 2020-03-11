@@ -111,13 +111,13 @@ public class ChessGame {
     public void move() {
         ChessBoard board = ChessBoard.getInstance();
         boolean moved = false;
-        for (int i = 6; i > 0; --i) {
+        for (int i = 7; i > 0; --i) {
             for (int j = 0; j < 8; ++j) {
                 if (board.verifyPosition(new Position(i, j)) && board.getChessPiece(new Position(i, j)).idx == 0
-                        && board.getChessPiece(new Position(i, j)).getColour()
-                        .equals(ChessGame.getInstance().getColour())) {
+                        && board.getChessPiece(new Position(i, j)).getColour().equals(ChessGame.getInstance().getColour())) {
                     Pawn pawn = (Pawn) board.getChessPiece(new Position(i, j));
-                    if (!board.verifyPosition(new Position(i + ChessGame.getInstance().getSign(), j))) {
+                    if (new Position(i + ChessGame.getInstance().getSign(), j).isValidPosition()
+                        && !board.verifyPosition(new Position(i + ChessGame.getInstance().getSign(), j))) {
                         pawn.move(new Position(i + ChessGame.getInstance().getSign(), j));
                         int ln = i + 1;
                         System.out.print("move " + pos.get(j) + ln + pos.get(j)
@@ -167,7 +167,7 @@ public class ChessGame {
             ChessPiece chessPiece = board.getChessPiece(source);
             board.takeOutChessPiece(source);
             board.putChessPiece(chessPiece, dest);
-            chessPiece.move(dest);
+            chessPiece.setPosition(dest);
         }
     }
 }

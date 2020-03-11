@@ -9,6 +9,6 @@ public class Black implements Command {
         ChessGame.getInstance().setWhite(false);
         ChessGame.getInstance().setSign(-1);
         ChessGame.getInstance().setColour(TeamColour.Black);
-        ChessGame.getInstance().move();
+        //ChessGame.getInstance().move();
     }
 }

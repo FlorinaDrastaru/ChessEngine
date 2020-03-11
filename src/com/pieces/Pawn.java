@@ -2,6 +2,7 @@ package com.pieces;
 
 import com.board.ChessBoard;
 import com.board.Position;
+import com.game.ChessGame;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,14 +24,14 @@ public class Pawn extends ChessPiece {
     @Override
     public void eatOpponent() {
         ChessBoard board = ChessBoard.getInstance();
-        Position pos = new Position(this.getPosition().getRow()-1, this.getPosition().getColumn()-1);
+        Position pos = new Position(this.getPosition().getRow()+ChessGame.getInstance().getSign(), this.getPosition().getColumn()-1);
         if (pos.isValidPosition() && board.verifyPosition(pos)
-                && board.getChessPiece(pos).getColour().equals(TeamColour.White)) {
+                && !board.getChessPiece(pos).getColour().equals(this.getColour())) {
             this.move(pos);
         } else {
-            pos = new Position(this.getPosition().getRow()-1, this.getPosition().getColumn()+1);
+            pos = new Position(this.getPosition().getRow() + ChessGame.getInstance().getSign(), this.getPosition().getColumn()+1);
             if (pos.isValidPosition() && board.verifyPosition(pos) &&
-                    board.getChessPiece(pos).getColour().equals(TeamColour.White)) {
+                    !board.getChessPiece(pos).getColour().equals(this.getColour())) {
                 this.move(pos);
             }
         }

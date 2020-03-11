@@ -9,6 +9,6 @@ public class White implements Command {
         ChessGame.getInstance().setWhite(true);
         ChessGame.getInstance().setSign(1);
         ChessGame.getInstance().setColour(TeamColour.White);
-        ChessGame.getInstance().move();
+        //ChessGame.getInstance().move();
     }
 }
