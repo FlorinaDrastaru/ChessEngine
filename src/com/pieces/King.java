@@ -3,9 +3,8 @@ package com.pieces;
 import com.board.Position;
 
 public class King extends ChessPiece {
-    public King(TeamColour colour, boolean eliminated) {
-        super(colour, eliminated);
-        idx = 5;
+    public King(TeamColour colour, boolean eliminated, int idx) {
+        super(colour, eliminated, idx);
     }
 
     @Override

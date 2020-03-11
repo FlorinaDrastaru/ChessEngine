@@ -9,9 +9,10 @@ public abstract class ChessPiece {
     public int idx;
 
 
-    public ChessPiece(TeamColour colour, boolean eliminated) {
+    public ChessPiece(TeamColour colour, boolean eliminated, int idx) {
         this.eliminated = eliminated;
         this.colour = colour;
+        this.idx = idx;
     }
 
     public Position getPosition() {

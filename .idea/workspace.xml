@@ -3,29 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="295147c6-6383-42bc-9acf-4e61345a2fba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Move.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Resign.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Resign.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Black.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Black.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Force.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Force.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Go.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Go.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/NewGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/NewGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/White.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/White.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/game/ChessGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/game/ChessGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Bishop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/ChessPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/ChessPiece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/King.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/King.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Knight.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Pawn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Queen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Rook.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/xboard.debug" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/xboard.debug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/commands/Move.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/commands/Move.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/commands/Resign.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/commands/Resign.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/commands/Resign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/commands/Resign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/ChessGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/board/ChessBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/board/ChessBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/board/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Bishop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Bishop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/ChessPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/ChessPiece.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/ChessPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/King.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/King.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/King.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Knight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Knight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Pawn.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Pawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Queen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Queen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Rook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Rook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xboard.debug" beforeDir="false" afterPath="$PROJECT_DIR$/src/xboard.debug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Documents/pa-var-mea/ChessEngine" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -127,34 +135,34 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583877891005" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583870413607">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583954467594">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583870413607" />
-    <state width="1539" height="186" key="GridCell.Tab.0.bottom" timestamp="1583881821190">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583954467594" />
+    <state width="1516" height="186" key="GridCell.Tab.0.bottom" timestamp="1583956898855">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1539" height="186" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583881821190" />
-    <state width="1539" height="186" key="GridCell.Tab.0.center" timestamp="1583881821190">
+    <state width="1516" height="186" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583956898855" />
+    <state width="1516" height="186" key="GridCell.Tab.0.center" timestamp="1583956898855">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1539" height="186" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583881821190" />
-    <state width="1539" height="186" key="GridCell.Tab.0.left" timestamp="1583881821189">
+    <state width="1516" height="186" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583956898855" />
+    <state width="1516" height="186" key="GridCell.Tab.0.left" timestamp="1583956898855">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1539" height="186" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583881821189" />
-    <state width="1539" height="186" key="GridCell.Tab.0.right" timestamp="1583881821190">
+    <state width="1516" height="186" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583956898855" />
+    <state width="1516" height="186" key="GridCell.Tab.0.right" timestamp="1583956898855">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1539" height="186" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583881821190" />
+    <state width="1516" height="186" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583956898855" />
     <state x="476" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1583665373913">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="476" y="130" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1583665373913" />
-    <state x="948" y="373" key="com.intellij.ide.util.TipDialog" timestamp="1583871286114">
+    <state x="948" y="373" key="com.intellij.ide.util.TipDialog" timestamp="1583954269907">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="948" y="373" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583871286114" />
+    <state x="948" y="373" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583954269906" />
     <state x="689" y="144" width="683" height="806" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583878486044">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

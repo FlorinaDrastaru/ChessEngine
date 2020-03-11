@@ -8,9 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Pawn extends ChessPiece {
-    public Pawn(TeamColour colour, boolean eliminated) {
-        super(colour, eliminated);
-        idx = 0;
+    public Pawn(TeamColour colour, boolean eliminated, int idx) {
+        super(colour, eliminated, idx);
     }
 
     @Override
