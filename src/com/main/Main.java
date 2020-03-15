@@ -33,7 +33,7 @@ public class Main {
                 break;
                 case Constants.force: new Force().executeCommand();
                 break;
-                case Constants.quit: System.exit(0);
+                case Constants.quit:new Quit().executeCommand(); 
                 case Constants.resign: new Resign().executeCommand();
                 break;
                 case Constants.xboard: new Xboard().executeCommand();
