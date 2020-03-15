@@ -13,6 +13,8 @@ public class Pawn extends ChessPiece {
     }
 
     @Override
+    // eliminate the pawn from the initial position and
+    // add it to the new position
     public void move(Position position) {
         ChessBoard board = ChessBoard.getInstance();
         board.takeOutChessPiece(this.getPosition());
@@ -21,6 +23,7 @@ public class Pawn extends ChessPiece {
         }
 
     @Override
+    // eliminate other chess piece if it has pe opposite colour
     public void eatOpponent() {
         ChessBoard board = ChessBoard.getInstance();
         Position pos = new Position(this.getPosition().getRow()+ChessGame.getInstance().getSign(), this.getPosition().getColumn()-1);
