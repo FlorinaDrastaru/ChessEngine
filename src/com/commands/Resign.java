@@ -1,5 +1,6 @@
 package com.commands;
 
+// leave the game
 public class Resign implements Command {
     @Override
     public void executeCommand() {
