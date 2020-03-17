@@ -12,10 +12,9 @@ VRABIE ANDREEA IRINA 325CA
 **COMPILING INSTRUCTIONS**
 
  - The Makefile contains 3 rules: build, run, clean. 
- - To give a command, you have to go in 'src' folder. 
- - Then, you have to give the command
-   'make build' and 'make run'.
-
+ - To give a command, you have to go in *src* folder. 
+ - Then, you have to give the commands
+   **make build** and **make run**.
 
 **PROJECT STRUCTURE**
 
@@ -42,8 +41,7 @@ set by a command(*Black/White*) and it swaps the teams of the xboard and engine.
 The commands *force* and *go* are complementary, 
 so we marked them through the same boolean variable.
 
-***Obs**-implementation is just for the Pawn piece at this stage of the project.*
-
+***Obs**-implementation is just for the **Pawn** piece at this stage of the project.*
 
 **DIVISION OF RESPONSABILITIES**
 
@@ -54,5 +52,4 @@ we came up with solutions when it was necessary.
  - Irina - Contribution to the implementation of the game, the pieces, the commands
 
 **SOURCES OF INSPIRATION**\
-
 -GNU XBoard manual
