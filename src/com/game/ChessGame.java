@@ -42,8 +42,10 @@ public class ChessGame {
     public void move() {
         ChessBoard board = ChessBoard.getInstance();
         boolean moved = false;
-        for (int i = 7; i > 0; --i) {
-            for (int j = 0; j < 8; ++j) {
+        //for (int i = 7; i > 0; --i) {
+            //for (int j = 0; j < 8; ++j) {
+        for (int j = 0; j < 8; j++) {
+            for (int i = 1; i < 8; ++i) {
                 // search for a valid move and send it to the xboard
                 if (board.verifyPosition(new Position(i, j)) && board.getChessPiece(new Position(i, j)).idx == 0
                         && board.getChessPiece(new Position(i, j)).getColour().equals(ChessGame.getInstance().getColour())) {

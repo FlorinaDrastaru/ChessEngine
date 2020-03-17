@@ -23,15 +23,17 @@ public class Pawn extends ChessPiece {
         }
 
     @Override
-    // eliminate other chess piece if it has pe opposite colour
+    // eliminate other chess piece if it has the opposite colour
     public void eatOpponent() {
         ChessBoard board = ChessBoard.getInstance();
-        Position pos = new Position(this.getPosition().getRow()+ChessGame.getInstance().getSign(), this.getPosition().getColumn()-1);
+        Position pos = new Position(this.getPosition().getRow()
+                + ChessGame.getInstance().getSign(), this.getPosition().getColumn() - 1);
         if (pos.isValidPosition() && board.verifyPosition(pos)
                 && !board.getChessPiece(pos).getColour().equals(this.getColour())) {
             this.move(pos);
         } else {
-            pos = new Position(this.getPosition().getRow() + ChessGame.getInstance().getSign(), this.getPosition().getColumn()+1);
+            pos = new Position(this.getPosition().getRow()
+                    + ChessGame.getInstance().getSign(), this.getPosition().getColumn() + 1);
             if (pos.isValidPosition() && board.verifyPosition(pos) &&
                     !board.getChessPiece(pos).getColour().equals(this.getColour())) {
                 this.move(pos);
