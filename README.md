@@ -16,6 +16,7 @@ VRABIE ANDREEA IRINA 325CA
  - Then, you have to give the command
    'make build' and 'make run'.
 
+
 **PROJECT STRUCTURE**
 
 The types of Chess Pieces are stored in *pieces* package. 
@@ -43,6 +44,7 @@ so we marked them through the same boolean variable.
 
 ***Obs**-implementation is just for the Pawn piece at this stage of the project.*
 
+
 **DIVISION OF RESPONSABILITIES**
 
 We worked together mostly, we improved each others code and 
@@ -52,4 +54,5 @@ we came up with solutions when it was necessary.
  - Irina - Contribution to the implementation of the game, the pieces, the commands
 
 **SOURCES OF INSPIRATION**\
+
 -GNU XBoard manual
