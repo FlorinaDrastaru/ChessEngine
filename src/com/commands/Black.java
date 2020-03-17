@@ -1,6 +1,7 @@
 package com.commands;
 
 import com.game.ChessGame;
+import com.main.Solver;
 import com.pieces.TeamColour;
 
 // reset the colour of the engine to black 
@@ -8,8 +9,9 @@ import com.pieces.TeamColour;
 public class Black implements Command {
     @Override
     public void executeCommand() {
-        ChessGame.getInstance().setWhite(false);
         ChessGame.getInstance().setSign(-1);
         ChessGame.getInstance().setColour(TeamColour.Black);
     }
 }
+
+

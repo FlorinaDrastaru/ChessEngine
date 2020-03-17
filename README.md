@@ -27,12 +27,14 @@ using Singleton pattern and we initiated it according to Chess rules.
 
 Every command received from xboard is implemented in a separate class, that implements the *Command interface*.
 
+The commands from Xboard are received in Main and are sent to Solver to be responded.
+
 The flow of the game is described in *class Chess Game*, where we implemented:
 
  -  *move* function - the move that the engine makes after it receives the move of the xboard;
  - *oppMove* function - analyze if the move from the xboard is correct and make changes on the board.
 
-In order to give a command to xboard or interpret one from it, 
+In order to give a move to xboard or interpret one from it, 
 we store the values of the columns in a HashMap. 
 
 The game is also defined by a colour(black is default), that can be 

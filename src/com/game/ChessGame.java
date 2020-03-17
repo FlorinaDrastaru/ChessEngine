@@ -13,7 +13,7 @@ import java.util.Map;
 public class ChessGame {
     private Map<Integer, String> pos = new HashMap<>();
     private boolean force;
-    private boolean white;
+    private TeamColour teamToMove;
     private int sign;
     private TeamColour colour;
 
@@ -42,16 +42,14 @@ public class ChessGame {
     public void move() {
         ChessBoard board = ChessBoard.getInstance();
         boolean moved = false;
-        //for (int i = 7; i > 0; --i) {
-            //for (int j = 0; j < 8; ++j) {
         for (int j = 0; j < 8; j++) {
             for (int i = 1; i < 8; ++i) {
                 // search for a valid move and send it to the xboard
                 if (board.verifyPosition(new Position(i, j)) && board.getChessPiece(new Position(i, j)).idx == 0
                         && board.getChessPiece(new Position(i, j)).getColour().equals(ChessGame.getInstance().getColour())) {
                     Pawn pawn = (Pawn) board.getChessPiece(new Position(i, j));
-                    pawn.eatOpponent();
-                    if (pawn.getPosition().getRow() != i) {
+                    pawn.eatOpponent();  //  checks if the pawn can eat a piece
+                    if (pawn.getPosition().getRow() != i) {  //  and if it could, moves the pawn on board
                         int ln = i + 1;
                         int col = pawn.getPosition().getColumn();
                         System.out.print("move " + pos.get(j) + ln + pos.get(col)
@@ -121,20 +119,20 @@ public class ChessGame {
         this.sign = sign;
     }
 
+    public TeamColour getTeamToMove() {
+        return teamToMove;
+    }
+
+    public void setTeamToMove(TeamColour teamToMove) {
+        this.teamToMove = teamToMove;
+    }
+
     public boolean isForce() {
         return force;
     }
 
     public void setForce(boolean force) {
         this.force = force;
-    }
-
-    public boolean isWhite() {
-        return white;
-    }
-
-    public void setWhite(boolean white) {
-        this.white = white;
     }
 
     public Map<Integer, String> getPos() {

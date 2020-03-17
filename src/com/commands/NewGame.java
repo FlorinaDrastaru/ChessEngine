@@ -15,5 +15,7 @@ public class NewGame implements Command {
         ChessGame.getInstance().setColour(TeamColour.Black);
         // set the default way of moving on the table
         ChessGame.getInstance().setSign(-1);
+        // set the default team to move first after force
+        ChessGame.getInstance().setTeamToMove(TeamColour.White);
     }
 }
