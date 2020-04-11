@@ -50,7 +50,7 @@ public class Bishop extends ChessPiece {
 
         // ma duc dreapta jos
         i = 0;
-        //while(c.x-i>=0 && c.y+i<=7) {
+        
         while (pos.getRow() - i >= 0 && pos.getColumn() + i < 8) {
             Position newPos = new Position(pos.getRow() - i, pos.getColumn() + i);
             moves.add(newPos);
