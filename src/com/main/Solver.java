@@ -3,6 +3,7 @@ package com.main;
 import com.commands.*;
 import com.constants.Constants;
 import com.game.ChessGame;
+import com.pieces.ChessPiece;
 import com.pieces.TeamColour;
 
 public class Solver {

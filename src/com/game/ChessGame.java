@@ -8,6 +8,7 @@ import com.pieces.Pawn;
 import com.pieces.TeamColour;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class ChessGame {
@@ -42,27 +43,37 @@ public class ChessGame {
     public void move() {
         ChessBoard board = ChessBoard.getInstance();
         boolean moved = false;
+//        ChessPiece c = board.getChessPiece(new Position(6, 0));
+//        LinkedList<Position> mo = c.getMoves(new Position(6, 0));
+//        c.move(mo.get(0));
+//        int ln_dest = mo.get(0).getRow() + 1;
+//                        int ln_src = 6 + 1;
+//                        System.out.print("move " + pos.get(0) + ln_src
+//                                + pos.get(mo.get(0).getColumn())
+//                                + ln_dest + "\n");
+//        ChessPiece c1 = board.getChessPiece(new Position(7, 0));
+//        LinkedList<Position> mo1 = c.getMoves(new Position(7, 0));
+//        c1.move(mo.get(0));
+//        int ln_dest1 = mo.get(0).getRow() + 1;
+//        int ln_src1 = 7 + 1;
+//        System.out.print("move " + pos.get(0) + ln_src1
+//                + pos.get(mo1.get(0).getColumn())
+//                + ln_dest1 + "\n");
+//        System.out.println(mo.size());
         for (int j = 0; j < 8; j++) {
-            for (int i = 1; i < 8; ++i) {
-                // search for a valid move and send it to the xboard
-                if (board.verifyPosition(new Position(i, j)) && board.getChessPiece(new Position(i, j)).idx == 0
-                        && board.getChessPiece(new Position(i, j)).getColour().equals(ChessGame.getInstance().getColour())) {
-                    Pawn pawn = (Pawn) board.getChessPiece(new Position(i, j));
-                    pawn.eatOpponent();  //  checks if the pawn can eat a piece
-                    if (pawn.getPosition().getRow() != i) {  //  and if it could, moves the pawn on board
-                        int ln = i + 1;
-                        int col = pawn.getPosition().getColumn();
-                        System.out.print("move " + pos.get(j) + ln + pos.get(col)
-                                + (ln + ChessGame.getInstance().getSign()) + "\n");
-                        moved = true;
-                        break;
-                    }
-                    if (new Position(i + ChessGame.getInstance().getSign(), j).isValidPosition()
-                            && !board.verifyPosition(new Position(i + ChessGame.getInstance().getSign(), j))) {
-                        pawn.move(new Position(i + ChessGame.getInstance().getSign(), j));
-                        int ln = i + 1;
-                        System.out.print("move " + pos.get(j) + ln + pos.get(j)
-                                + (ln + ChessGame.getInstance().getSign()) + "\n");
+            for (int i = 0; i < 8; ++i) {
+                if (board.getBoard()[i][j] != null &&
+                        board.getBoard()[i][j].getColour().equals(colour)) {
+                    LinkedList<Position> moves;
+                    ChessPiece chessPiece = board.getChessPiece(new Position(i,j));
+                    moves = chessPiece.getMoves(chessPiece.getPosition());
+                    if (moves != null) {
+                        chessPiece.move(moves.get(0));
+                        int ln_dest = moves.get(0).getRow() + 1;
+                        int ln_src = i + 1;
+                        System.out.print("move " + pos.get(j) + ln_src
+                                + pos.get(moves.get(0).getColumn())
+                                + ln_dest + "\n");
                         moved = true;
                         break;
                     }
@@ -95,7 +106,7 @@ public class ChessGame {
         
         // verify if the move of the opponent is valid
         if (source.isValidPosition() && dest.isValidPosition() &&
-                board.verifyPosition(source)) {
+                !board.verifyPosition(source)) {
             ChessPiece chessPiece = board.getChessPiece(source);
             board.takeOutChessPiece(source);
             board.putChessPiece(chessPiece, dest);

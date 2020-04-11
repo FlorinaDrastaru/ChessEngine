@@ -1,6 +1,8 @@
 package com.pieces;
-
+import com.board.ChessBoard;
 import com.board.Position;
+import java.util.LinkedList;
+
 
 public abstract class ChessPiece {
     private Position position;
@@ -48,6 +50,16 @@ public abstract class ChessPiece {
     }
 
     public void move(Position position) {
+        ChessBoard board = ChessBoard.getInstance();
+        board.takeOutChessPiece(this.getPosition());
+        board.putChessPiece(this, new Position(position.getRow(), position.getColumn()));
+        this.setPosition(new Position(position.getRow(), position.getColumn()));
     }
-    public void eatOpponent(){}
+
+    public void eatOpponent() {
+    }
+
+
+    public abstract LinkedList<Position> getMoves(Position pos);
+
 }

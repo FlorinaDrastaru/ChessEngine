@@ -1,6 +1,7 @@
 package com.board;
 
 import com.constants.Constants;
+import com.game.ChessGame;
 import com.pieces.*;
 
 public class ChessBoard {
@@ -17,10 +18,16 @@ public class ChessBoard {
         return instance;
     }
 
+    // verify if the pos is occupied
+
     public boolean verifyPosition(Position pos) {
-        if (board[pos.getRow()][pos.getColumn()] != null)
-            return true;
-        return false;
+        if (pos.getRow() >= 0 && pos.getRow() < 8 && pos.getColumn() >= 0 && pos.getColumn() < 8) {
+            if (board[pos.getRow()][pos.getColumn()] == null
+             || !board[pos.getRow()][pos.getColumn()].getColour().equals(ChessGame.getInstance().getColour())) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public ChessPiece[][] getBoard() {
