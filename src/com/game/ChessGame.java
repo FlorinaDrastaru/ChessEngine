@@ -4,7 +4,6 @@ import com.board.ChessBoard;
 import com.board.Position;
 import com.commands.Resign;
 import com.pieces.ChessPiece;
-import com.pieces.Pawn;
 import com.pieces.TeamColour;
 
 import javax.swing.*;
@@ -51,7 +50,7 @@ public class ChessGame {
         boolean moved = false;
 
         if (Check.attackedPos(board.getKing()) == true) {
-            if (!Check.canDefendPos(board.getBlackKing())) {
+            if (!Check.canDefendPos(board.getKing())) {
                 new Resign().executeCommand();
             }
         } else {

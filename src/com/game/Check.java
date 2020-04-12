@@ -60,7 +60,7 @@ public class Check {
                         // fac mutarea de proba
                             probeMove(pos1, pos2);
                         // daca mutarea aia face ca pozitia pe care vreau sa o apar sa nu mai fie atacata e true
-                            if (attackedPos(pos) == false) {
+                            if (attackedPos(ChessBoard.getInstance().getKing()) == false) {
                                 int ln_dest = pos2.getRow() + 1;
                                 int ln_src = pos1.getRow() + 1;
                                 System.out.print("move " 
@@ -85,6 +85,9 @@ public class Check {
         ChessBoard.getInstance().putChessPiece
                     (ChessBoard.getInstance().getChessPiece(pos1), pos2);
         ChessBoard.getInstance().takeOutChessPiece(pos1);
+        if (ChessBoard.getInstance().getChessPiece(pos2).idx == 5) {
+            ChessBoard.getInstance().setKing(pos2);
+        }
     }
 
 
