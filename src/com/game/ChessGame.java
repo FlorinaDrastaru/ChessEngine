@@ -45,49 +45,16 @@ public class ChessGame {
         return instance;
     }
 
-    public void checkMateBlack() {
-        ChessBoard board = ChessBoard.getInstance();
-        if (board.attackedPos(board.getBlackKing()) && !board.canDefendPos(board.getBlackKing())) {
-            infoBox("sah mat", "yay a mers");
-            new Resign().executeCommand();
-        }
-    }
-
-    public void checkMateWhite() {
-        ChessBoard board = ChessBoard.getInstance();
-        if (board.attackedPos(board.getWhiteKing()) && !board.canDefendPos(board.getWhiteKing())) {
-            new Resign().executeCommand();
-        }
-    }
-
     // execute a move on the table
     public void move() {
         ChessBoard board = ChessBoard.getInstance();
         boolean moved = false;
-//        ChessPiece c = board.getChessPiece(new Position(6, 0));
-//        LinkedList<Position> mo = c.getMoves(new Position(6, 0));
-//        c.move(mo.get(0));
-//        int ln_dest = mo.get(0).getRow() + 1;
-//                        int ln_src = 6 + 1;
-//                        System.out.print("move " + pos.get(0) + ln_src
-//                                + pos.get(mo.get(0).getColumn())
-//                                + ln_dest + "\n");
-//        ChessPiece c1 = board.getChessPiece(new Position(7, 0));
-//        LinkedList<Position> mo1 = c.getMoves(new Position(7, 0));
-//        c1.move(mo.get(0));
-//        int ln_dest1 = mo.get(0).getRow() + 1;
-//        int ln_src1 = 7 + 1;
-//        System.out.print("move " + pos.get(0) + ln_src1
-//                + pos.get(mo1.get(0).getColumn())
-//                + ln_dest1 + "\n");
-//        System.out.println(mo.size());
-        System.out.println(board.attackedPos(board.getBlackKing()));
 
-        if (board.attackedPos(board.getBlackKing()) == true) {
-            infoBox("sah", "rege atacat");
-            System.out.println("rege atacat");
-        }
-
+        if (Check.attackedPos(board.getKing()) == true) {
+            if (!Check.canDefendPos(board.getBlackKing())) {
+                new Resign().executeCommand();
+            }
+        } else {
             for (int j = 0; j < 8; j++) {
                 for (int i = 0; i < 8; ++i) {
                     if (board.getBoard()[i][j] != null &&
@@ -96,6 +63,9 @@ public class ChessGame {
                         ChessPiece chessPiece = board.getChessPiece(new Position(i, j));
                         moves = chessPiece.getMoves(chessPiece.getPosition());
                         if (moves != null) {
+                            if (chessPiece.getIdx() == 5) {
+                                board.setKing(moves.get(0));
+                            }
                             chessPiece.move(moves.get(0));
                             int ln_dest = moves.get(0).getRow() + 1;
                             int ln_src = i + 1;
@@ -111,7 +81,7 @@ public class ChessGame {
             }
             if (!moved) new Resign().executeCommand();
         }
-    //}
+    }
 
     // converts the move received from xboard in a Position type object
     // modify the position of the opponent on the board
@@ -140,6 +110,12 @@ public class ChessGame {
             board.takeOutChessPiece(source);
             board.putChessPiece(chessPiece, dest);
             chessPiece.setPosition(dest);
+            if (chessPiece.getIdx() == 5) {
+                if (!ChessGame.getInstance().getColour().equals(TeamColour.Black)) 
+                    board.setBlackKing(dest);
+                else 
+                    board.setWhiteKing(dest);
+            }
         }
     }
 

@@ -17,7 +17,7 @@ public class Rook extends ChessPiece {
     // am facut la toate aceeasi chestie, ma duc pana la capetele tablei,
     // adaug pozitia in lista, si cand dau de o pozitie ocupata,
     // aia o sa fie ultima pozitie adaugata in lista pt ca nu poate sa mearga mai departa
-    public LinkedList getMoves(Position pos) {
+    public LinkedList<Position> getMoves(Position pos) {
         LinkedList<Position> moves = new LinkedList<Position>();
         int i = 1;
         // se duce in fata
