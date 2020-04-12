@@ -1,0 +1,165 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + fairymax ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") fairymax
+354 >first : xboard
+protover 2
+528 <first : tellics say     Fairy-Max 5.0b
+528 <first : tellics say     by H.G. Muller
+530 <first : feature myname="Fairy-Max 5.0b"
+530 >first : accepted myname
+530 <first : feature memory=1 exclude=1
+530 >first : accepted memory
+530 >first : accepted exclude
+530 <first : feature setboard=0 xedit=1 ping=1 done=0
+530 >first : accepted setboard
+530 >first : accepted xedit
+530 >first : accepted ping
+530 >first : accepted done
+530 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+530 >first : accepted variants
+530 <first : feature option="Resign -check 0"
+530 >first : accepted option
+530 <first : feature option="Resign Threshold -spin 800 200 1200"
+530 >first : accepted option
+530 <first : feature option="Claim draw after -spin 50 0 200"
+530 >first : accepted option
+530 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+530 >first : accepted option
+530 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+530 >first : accepted option
+530 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+530 >first : accepted option
+530 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+530 >first : accepted option
+530 <first : feature option="Dummy Slider Example -slider 20 0 100"
+530 >first : accepted option
+530 <first : feature option="Dummy String Example -string happy birthday!"
+530 >first : accepted option
+530 <first : feature option="Dummy Path Example -path ."
+530 >first : accepted option
+530 <first : feature option="Automatic persistent-hash dialog -check 0"
+530 >first : accepted option
+530 <first : feature option="Info -button"
+530 >first : accepted option
+530 <first : feature option="Save in hash file -button"
+530 >first : accepted option
+530 <first : feature option="Clear Hash -button"
+530 >first : accepted option
+530 <first : feature done=1
+530 >first : accepted done
+532 >first : memory 68
+532 >first : new
+random
+532 >first : level 40 5 0
+532 >first : post
+532 >first : hard
+532 >first : ping 1
+Impossible move , type = 0
+609 <first : pong 1
+5572 >first : quit
+Unload first
+StartChildProcess (dir="/home/florina/Documents/proiectPA/ChessEngine-master/src") java -cp . com/main/Main
+5581 >first : xboard
+protover 2
+5845 <first : 
+5845 <first : 
+5845 <first : feature sigint=0
+5845 >first : accepted sigint
+5845 <first : feature sigterm=0
+5845 >first : accepted sigterm
+5845 <first : feature usermove=1
+5845 >first : accepted usermove
+recognized 'normal' (-1) as variant normal
+15588 >first : new
+random
+15588 >first : level 40 5 0
+15588 >first : post
+15588 >first : hard
+Impossible move , type = 0
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+27395 >first : time 30000
+27396 >first : otim 30000
+book hit = (NULL)
+27397 >first : usermove 27399 >first : g1f3
+27504 <first : lala
+27504 <first : lala
+27504 <first : lala
+27703 <first : move a7a6
+32275 >first : time 29969
+32280 >first : otim 29542
+book hit = (NULL)
+32281 >first : usermove 32288 >first : c2c4
+32369 <first : lala
+32369 <first : lala
+32369 <first : lala
+32369 <first : lala
+32369 <first : lala
+32369 <first : move a6a5
+34638 >first : time 29959
+34640 >first : otim 29316
+book hit = (NULL)
+34646 >first : usermove 34649 >first : b2b3
+34731 <first : lala
+34731 <first : lala
+34731 <first : lala
+34731 <first : lala
+34731 <first : lala
+34731 <first : lala
+34731 <first : lala
+34731 <first : move a5a4
+35567 >first : time 29950
+35569 >first : otim 29232
+book hit = (NULL)
+35573 >first : usermove 35574 >first : b3a4
+35663 <first : lala
+35663 <first : lala
+35663 <first : lala
+35663 <first : lala
+35663 <first : lala
+35663 <first : lala
+35663 <first : move a8a7
+44473 >first : time 29940
+44478 >first : otim 28351
+book hit = (NULL)
+44482 >first : usermove 44483 >first : b1c3
+44601 <first : lala
+44602 <first : lala
+44602 <first : lala
+44602 <first : lala
+44602 <first : move a7a8
+45956 >first : time 29927
+45958 >first : otim 28216
+book hit = (NULL)
+45962 >first : usermove 45962 >first : c3d5
+46068 <first : lala
+46068 <first : lala
+46068 <first : lala
+46068 <first : lala
+46068 <first : lala
+46068 <first : lala
+46068 <first : move a8a7
+48766 >first : time 29916
+48767 >first : otim 27946
+book hit = (NULL)
+48775 >first : usermove 48776 >first : d5f6
+48888 <first : lala
+48888 <first : lala
+48888 <first : lala
+48888 <first : lala
+48888 <first : lala
+48888 <first : lala
+48888 <first : move a7a8
+GameEnds(29, xboard exit, 2)
+5974043 >first : result * {xboard exit}
+5974044 >first : force
+5974045 >first : quit

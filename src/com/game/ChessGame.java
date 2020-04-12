@@ -7,9 +7,11 @@ import com.pieces.ChessPiece;
 import com.pieces.Pawn;
 import com.pieces.TeamColour;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+
 
 public class ChessGame {
     private Map<Integer, String> pos = new HashMap<>();
@@ -30,6 +32,10 @@ public class ChessGame {
         pos.put(6, "g");
         pos.put(7, "h");
     }
+
+    public static void infoBox(String infoMessage, String titleBar) {
+        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
+    }
     
     // create a Singleton in order to have a single instance of the game
     public static ChessGame getInstance() {
@@ -37,6 +43,21 @@ public class ChessGame {
             instance = new ChessGame();
         }
         return instance;
+    }
+
+    public void checkMateBlack() {
+        ChessBoard board = ChessBoard.getInstance();
+        if (board.attackedPos(board.getBlackKing()) && !board.canDefendPos(board.getBlackKing())) {
+            infoBox("sah mat", "yay a mers");
+            new Resign().executeCommand();
+        }
+    }
+
+    public void checkMateWhite() {
+        ChessBoard board = ChessBoard.getInstance();
+        if (board.attackedPos(board.getWhiteKing()) && !board.canDefendPos(board.getWhiteKing())) {
+            new Resign().executeCommand();
+        }
     }
 
     // execute a move on the table
@@ -60,29 +81,37 @@ public class ChessGame {
 //                + pos.get(mo1.get(0).getColumn())
 //                + ln_dest1 + "\n");
 //        System.out.println(mo.size());
-        for (int j = 0; j < 8; j++) {
-            for (int i = 0; i < 8; ++i) {
-                if (board.getBoard()[i][j] != null &&
-                        board.getBoard()[i][j].getColour().equals(colour)) {
-                    LinkedList<Position> moves;
-                    ChessPiece chessPiece = board.getChessPiece(new Position(i,j));
-                    moves = chessPiece.getMoves(chessPiece.getPosition());
-                    if (moves != null) {
-                        chessPiece.move(moves.get(0));
-                        int ln_dest = moves.get(0).getRow() + 1;
-                        int ln_src = i + 1;
-                        System.out.print("move " + pos.get(j) + ln_src
-                                + pos.get(moves.get(0).getColumn())
-                                + ln_dest + "\n");
-                        moved = true;
-                        break;
+        System.out.println(board.attackedPos(board.getBlackKing()));
+
+        if (board.attackedPos(board.getBlackKing()) == true) {
+            infoBox("sah", "rege atacat");
+            System.out.println("rege atacat");
+        }
+
+            for (int j = 0; j < 8; j++) {
+                for (int i = 0; i < 8; ++i) {
+                    if (board.getBoard()[i][j] != null &&
+                            board.getBoard()[i][j].getColour().equals(colour)) {
+                        LinkedList<Position> moves;
+                        ChessPiece chessPiece = board.getChessPiece(new Position(i, j));
+                        moves = chessPiece.getMoves(chessPiece.getPosition());
+                        if (moves != null) {
+                            chessPiece.move(moves.get(0));
+                            int ln_dest = moves.get(0).getRow() + 1;
+                            int ln_src = i + 1;
+                            System.out.print("move " + pos.get(j) + ln_src
+                                    + pos.get(moves.get(0).getColumn())
+                                    + ln_dest + "\n");
+                            moved = true;
+                            break;
+                        }
                     }
                 }
+                if (moved) break;
             }
-            if (moved) break;
+            if (!moved) new Resign().executeCommand();
         }
-        if (!moved) new Resign().executeCommand();
-    }
+    //}
 
     // converts the move received from xboard in a Position type object
     // modify the position of the opponent on the board
@@ -149,4 +178,9 @@ public class ChessGame {
     public Map<Integer, String> getPos() {
         return pos;
     }
+
+
+
+
+
 }

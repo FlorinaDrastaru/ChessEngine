@@ -65,13 +65,16 @@ public class Pawn extends ChessPiece {
                         ChessGame.getInstance().getColour())) {
                     moves.add(new Position(pos.getRow() + 1, pos.getColumn() - 1));
                 }
+
                 if (pos.getColumn() + 1 < 8)
                     if (!ChessBoard.getInstance().getBoard()[pos.getRow() + 1][pos.getColumn() + 1].getColour().equals(
                         ChessGame.getInstance().getColour())) {
+
                     moves.add(new Position(pos.getRow() + 1, pos.getColumn() + 1));
                 }
             }
         }
+
         if (moves.size() == 0) {
             return null;
         } else {

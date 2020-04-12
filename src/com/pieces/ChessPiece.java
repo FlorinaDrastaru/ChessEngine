@@ -25,6 +25,10 @@ public abstract class ChessPiece {
         this.position = position;
     }
 
+    public int getIdx() {
+        return idx;
+    }
+
     public boolean isEliminated() {
         if (eliminated == true) {
             return true;
@@ -61,5 +65,9 @@ public abstract class ChessPiece {
 
 
     public abstract LinkedList<Position> getMoves(Position pos);
+
+
+
+
 
 }
