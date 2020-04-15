@@ -2,38 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="295147c6-6383-42bc-9acf-4e61345a2fba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Black.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Black.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Go.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Go.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Quit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Quit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Resign.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/commands/Resign.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/constants/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/game/ChessGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/game/ChessGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/main/Solver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/main/Solver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Pawn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/xboard.debug" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/board/ChessBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/board/ChessBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/board/ChessBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/board/ChessBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessEngine/com/board/ChessBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/game/ChessGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/King.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Pawn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessEngine/com/pieces/Rook.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/ChessGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/ChessGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/ChessGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/Solver.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Solver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/main/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Bishop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/ChessPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/ChessPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/ChessPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/King.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/King.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/King.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Knight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Knight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Pawn.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Queen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Rook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pieces/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xboard.debug" beforeDir="false" afterPath="$PROJECT_DIR$/src/xboard.debug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +35,6 @@
   <component name="ProjectId" id="1Yq6kYqVyV9U6ViiypNGhmWgUDg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -103,11 +82,13 @@
       <option name="presentableId" value="Default" />
       <updated>1583657920107</updated>
       <workItem from="1583657924307" duration="14511000" />
+      <workItem from="1586968809908" duration="621000" />
+      <workItem from="1586969507012" duration="650000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="848" height="677" key="#Project_Structure" timestamp="1583657928623">

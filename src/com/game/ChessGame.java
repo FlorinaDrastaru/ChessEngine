@@ -2,8 +2,10 @@ package com.game;
 
 import com.board.ChessBoard;
 import com.board.Position;
+import com.commands.Black;
 import com.commands.Resign;
 import com.pieces.ChessPiece;
+import com.pieces.Queen;
 import com.pieces.TeamColour;
 
 import javax.swing.*;
@@ -65,7 +67,19 @@ public class ChessGame {
                             if (chessPiece.getIdx() == 5) {
                                 board.setKing(moves.get(0));
                             }
+                            Position occupiedPod = moves.get(0);
                             chessPiece.move(moves.get(0));
+
+                            if (chessPiece.getIdx() == 0) {
+                                if (ChessGame.getInstance().getColour().equals(TeamColour.Black) && moves.get(0).getRow() == 0) { 
+                                ChessBoard.getInstance().takeOutChessPiece(moves.get(0));
+                                ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.Black, false, 4), occupiedPod);
+                            } else if (ChessGame.getInstance().getColour().equals(TeamColour.White) && moves.get(0).getRow() == 7) {
+                                ChessBoard.getInstance().takeOutChessPiece(moves.get(0));
+                                ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.White, false, 4), occupiedPod);
+                            }
+                        }
+
                             int ln_dest = moves.get(0).getRow() + 1;
                             int ln_src = i + 1;
                             System.out.print("move " + pos.get(j) + ln_src
@@ -88,9 +102,10 @@ public class ChessGame {
         ChessBoard board = ChessBoard.getInstance();
 
         String sourceCol = opponentMove.substring(0,1);
+        
         int sourceRow = Integer.parseInt(opponentMove.substring(1,2));
         String destCol = opponentMove.substring(2,3);
-        int destRow = Integer.parseInt(opponentMove.substring(3));
+        int destRow = Integer.parseInt(opponentMove.substring(3,4));
 
         int sourceColumn = -1;
         int destColumn = -1;
@@ -115,7 +130,18 @@ public class ChessGame {
                 else 
                     board.setWhiteKing(dest);
             }
-        }
+            if (chessPiece.getIdx() == 0) {
+                if (ChessGame.getInstance().getColour().equals(TeamColour.Black) && dest.getRow() == 7) {
+                    board.takeOutChessPiece(dest);
+                    board.putChessPiece(new Queen(TeamColour.White, false, 4), dest);
+                } else if (ChessGame.getInstance().getColour().equals(TeamColour.White) && dest.getRow() == 0) {
+                    board.takeOutChessPiece(dest);
+                    board.putChessPiece(new Queen(TeamColour.Black, false, 4), dest);
+                }
+            } 
+
+        }   
+        
     }
 
     public TeamColour getColour() {

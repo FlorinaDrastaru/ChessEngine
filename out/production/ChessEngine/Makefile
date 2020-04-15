@@ -15,4 +15,4 @@ build:
 	javac -cp . com/main/Main.java
 
 run:
-	xboard -fcp "java -cp . com/main/Main"
+	xboard -fcp "java -cp . com/main/Main" -debug
