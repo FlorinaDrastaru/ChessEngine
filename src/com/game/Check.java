@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import com.board.ChessBoard;
 import com.board.Position;
+import com.pieces.ChessPiece;
 import com.pieces.TeamColour;
 
 public class Check {
@@ -26,9 +27,10 @@ public class Check {
                                 equals(ChessGame.getInstance().getColour()) &&
                                 ChessBoard.getInstance().getBoard()[i][j].idx != 5) {
                     LinkedList<Position> moves = ChessBoard.getInstance().
-                            getChessPiece(new Position(i, j)).getMoves(new Position(i, j));
+                    getChessPiece(new Position(i, j)).getMoves(new Position(i, j));
                     if (moves != null) {
                         for (Position move : moves) {
+                            if (ChessBoard.getInstance().getChessPiece(new Position(i, j)).idx == 0)
                             if (move.getColumn() == pos.getColumn() && move.getRow() == pos.getRow()) {
                                 ChessGame.getInstance().setColour(initialColour);
                                 return true;
@@ -58,7 +60,7 @@ public class Check {
                     if (moves != null) {
                         for (Position pos2 : moves) {
                         // fac mutarea de proba
-                            probeMove(pos1, pos2);
+                            ChessPiece piece = probeMove(pos1, pos2);
                         // daca mutarea aia face ca pozitia pe care vreau sa o apar sa nu mai fie atacata e true
                             if (attackedPos(ChessBoard.getInstance().getKing()) == false) {
                                 int ln_dest = pos2.getRow() + 1;
@@ -71,7 +73,7 @@ public class Check {
                                 return true;
                             }
                             // daca piesa tot e atacata revin la cum era tabla inainte de mutare
-                            undoMove(pos1, pos2);
+                            undoMove(pos1, pos2, piece);
                             }
                         }
                     }
@@ -81,20 +83,27 @@ public class Check {
         return false;
     }
 
-    public static void probeMove(Position pos1, Position pos2) {
+    public static ChessPiece probeMove(Position pos1, Position pos2) {
+        ChessPiece piece = ChessBoard.getInstance().getChessPiece(pos2);
         ChessBoard.getInstance().putChessPiece
                     (ChessBoard.getInstance().getChessPiece(pos1), pos2);
         ChessBoard.getInstance().takeOutChessPiece(pos1);
         if (ChessBoard.getInstance().getChessPiece(pos2).idx == 5) {
             ChessBoard.getInstance().setKing(pos2);
         }
+        return piece;
     }
 
 
-    public static void undoMove(Position pos1, Position pos2) {
+    public static void undoMove(Position pos1, Position pos2, ChessPiece piece) {
+        if (ChessBoard.getInstance().getChessPiece(pos2).idx == 5) {
+            ChessBoard.getInstance().setKing(pos1);
+        }
         ChessBoard.getInstance().putChessPiece
-                    (ChessBoard.getInstance().getChessPiece(pos2), pos1);
+                (ChessBoard.getInstance().getChessPiece(pos2), pos1);
         ChessBoard.getInstance().takeOutChessPiece(pos2);
+        if (piece != null) 
+            ChessBoard.getInstance().putChessPiece(piece, pos2);
     }
 
 }

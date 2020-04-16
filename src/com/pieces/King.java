@@ -11,58 +11,35 @@ public class King extends ChessPiece {
         super(colour, eliminated, idx);
     }
 
+    public void addMove(LinkedList<Position> moves, Position src, Position dest) {
+        if (!ChessBoard.getInstance().verifyPosition(dest)) {
+            ChessPiece piece =  Check.probeMove(src, dest);                                
+            if (!Check.attackedPos(dest))
+                moves.add(dest);
+            Check.undoMove(src, dest, piece);
+        }
+    }
+
     public LinkedList<Position> getMoves(Position pos) {
         LinkedList<Position> moves = new LinkedList<>();
         // in fata
             // drept
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow() + 1,
-                                            pos.getColumn()))) {
-            if (!Check.attackedPos(new Position(pos.getRow() + 1, pos.getColumn())))
-                moves.add(new Position(pos.getRow() + 1, pos.getColumn()));
-        }
+        addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn()));
             //la dreapta
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow() + 1,
-                                             pos.getColumn() + 1))) {
-            if (!Check.attackedPos(new Position(pos.getRow() + 1, pos.getColumn() + 1)))
-                moves.add(new Position(pos.getRow() + 1, pos.getColumn() + 1));
-        }
+        addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn() + 1));
             // in stanga
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow() + 1,
-                                            pos.getColumn() - 1))) {
-            if (!Check.attackedPos(new Position(pos.getRow() + 1, pos.getColumn() - 1)))
-                moves.add(new Position(pos.getRow() + 1, pos.getColumn() - 1));
-        }
+        addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn() - 1));
         // in spate
             // drept
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow() - 1,
-                                                   pos.getColumn()))) {
-            if (!Check.attackedPos(new Position(pos.getRow() - 1, pos.getColumn())))
-                moves.add(new Position(pos.getRow() - 1, pos.getColumn()));
-        }
+        addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn()));
             // stanga
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow() - 1,
-                                             pos.getColumn() - 1))) {
-            if (!Check.attackedPos(new Position(pos.getRow() - 1, pos.getColumn() - 1)))
-                moves.add(new Position(pos.getRow() - 1, pos.getColumn() - 1));
-        }
+        addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() - 1));
             // dreapta
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow() - 1,
-                                            pos.getColumn() + 1))) {
-            if (!Check.attackedPos(new Position(pos.getRow() - 1, pos.getColumn() + 1)))
-                moves.add(new Position(pos.getRow() - 1, pos.getColumn() + 1));
-        }
+        addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() + 1));
         // in dreapta
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow(),
-                                            pos.getColumn() + 1))) {
-            if (!Check.attackedPos(new Position(pos.getRow(), pos.getColumn() + 1)))
-                moves.add(new Position(pos.getRow(), pos.getColumn() + 1));
-        }
+        addMove(moves, pos, new Position(pos.getRow(), pos.getColumn() + 1));
         // in stanga
-        if (!ChessBoard.getInstance().verifyPosition(new Position(pos.getRow(),
-                                             pos.getColumn() - 1))) {
-            if (!Check.attackedPos(new Position(pos.getRow(), pos.getColumn() - 1)))
-                moves.add(new Position(pos.getRow(), pos.getColumn() - 1));
-        }
+        addMove(moves, pos, new Position(pos.getRow(), pos.getColumn() - 1));
         if (moves.size() == 0) {
             return null;
         } else {
