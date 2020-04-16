@@ -2,7 +2,6 @@ package com.game;
 
 import com.board.ChessBoard;
 import com.board.Position;
-import com.commands.Black;
 import com.commands.Resign;
 import com.pieces.ChessPiece;
 import com.pieces.Queen;
@@ -110,7 +109,6 @@ public class ChessGame {
     // modify the position of the opponent on the board
     public void oppMove(String opponentMove) {
         ChessBoard board = ChessBoard.getInstance();
-
         String sourceCol = opponentMove.substring(0,1);
         
         int sourceRow = Integer.parseInt(opponentMove.substring(1,2));
@@ -191,9 +189,4 @@ public class ChessGame {
     public Map<Integer, String> getPos() {
         return pos;
     }
-
-
-
-
-
 }

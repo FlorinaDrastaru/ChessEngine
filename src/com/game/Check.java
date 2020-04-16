@@ -30,7 +30,6 @@ public class Check {
                     getChessPiece(new Position(i, j)).getMoves(new Position(i, j));
                     if (moves != null) {
                         for (Position move : moves) {
-                            if (ChessBoard.getInstance().getChessPiece(new Position(i, j)).idx == 0)
                             if (move.getColumn() == pos.getColumn() && move.getRow() == pos.getRow()) {
                                 ChessGame.getInstance().setColour(initialColour);
                                 return true;
@@ -62,7 +61,7 @@ public class Check {
                         // fac mutarea de proba
                             ChessPiece piece = probeMove(pos1, pos2);
                         // daca mutarea aia face ca pozitia pe care vreau sa o apar sa nu mai fie atacata e true
-                            if (attackedPos(ChessBoard.getInstance().getKing()) == false) {
+                            if (!attackedPos(ChessBoard.getInstance().getKing())) {
                                 int ln_dest = pos2.getRow() + 1;
                                 int ln_src = pos1.getRow() + 1;
                                 System.out.print("move " 
@@ -71,7 +70,7 @@ public class Check {
                                     + ChessGame.getInstance().getPos().get(pos2.getColumn())
                                     + ln_dest + "\n");
                                 return true;
-                            }
+                            } else
                             // daca piesa tot e atacata revin la cum era tabla inainte de mutare
                             undoMove(pos1, pos2, piece);
                             }
