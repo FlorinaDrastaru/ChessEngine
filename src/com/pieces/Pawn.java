@@ -16,6 +16,7 @@ public class Pawn extends ChessPiece {
             if (ChessGame.getInstance().getColour().equals(TeamColour.Black)) {
                 if (ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn()] == null) {
                     moves.add(new Position(pos.getRow() - 1, pos.getColumn()));
+
                 }
                 if (pos.getColumn() - 1 >= 0)
                     if (ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn() - 1] != null)

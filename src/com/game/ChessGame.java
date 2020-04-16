@@ -2,6 +2,7 @@ package com.game;
 
 import com.board.ChessBoard;
 import com.board.Position;
+import com.commands.Black;
 import com.commands.Resign;
 import com.pieces.ChessPiece;
 import com.pieces.Queen;
@@ -111,6 +112,7 @@ public class ChessGame {
         ChessBoard board = ChessBoard.getInstance();
 
         String sourceCol = opponentMove.substring(0,1);
+        
         int sourceRow = Integer.parseInt(opponentMove.substring(1,2));
         String destCol = opponentMove.substring(2,3);
         int destRow;
@@ -118,6 +120,7 @@ public class ChessGame {
             destRow = Integer.parseInt(opponentMove.substring(3));
         else 
             destRow = Integer.parseInt(opponentMove.substring(3, 4));
+
         int sourceColumn = -1;
         int destColumn = -1;
         
