@@ -31,7 +31,7 @@ public class MoveAlgorithm {
         }
 
         for (Move nextMove : moves) {
-            ChessPiece piece = Check.probeMove(nextMove.getSrc(), nextMove.getDest());                          
+            ChessPiece piece = Check.probeMove(nextMove.getSrc(), nextMove.getDest());                     
             if (!Check.attackedPos(ChessBoard.getInstance().getKing())) {
                 int score;
                 if (player.equals(TeamColour.Black)) {
@@ -41,7 +41,7 @@ public class MoveAlgorithm {
                     ChessGame.getInstance().setColour(TeamColour.Black);
                     score = -negaMax(TeamColour.Black, depth - 1).first;
                 }
-                if (score > bestScore) {
+                if (score >= bestScore) {
                     bestScore = score;
                     bestMove = nextMove;
                 }
@@ -56,16 +56,18 @@ public class MoveAlgorithm {
         return new Pair<Integer, Move>(bestScore, bestMove);
     }
 
-    public void apply_move(Move move) {
+    public void applyMove(Move move) {
         ChessBoard board = ChessBoard.getInstance();
-        ChessPiece chessPiece = board.getChessPiece(move.getSrc());
-        chessPiece.move(move.getDest());
-        if (chessPiece.getIdx() == 5) {
-            board.setKing(move.getDest());
-        }
-        boolean pawnToQueen = false;
-        checkPawnPromotion(chessPiece, move.getDest(), pawnToQueen);
-        sendMoveToXboard(move.getSrc(), move.getDest(), pawnToQueen);
+        if (move != null) {
+            ChessPiece chessPiece = board.getChessPiece(move.getSrc());
+            chessPiece.move(move.getDest());
+            if (chessPiece.getIdx() == 5) {
+                board.setKing(move.getDest());
+            }
+            boolean pawnToQueen = false;
+            checkPawnPromotion(chessPiece, move.getDest(), pawnToQueen);
+            sendMoveToXboard(move.getSrc(), move.getDest(), pawnToQueen);
+        } else new Resign().executeCommand();
     }
 
     public void checkPawnPromotion(ChessPiece chessPiece, Position pos, boolean pawnToQueen) {
@@ -105,6 +107,14 @@ public class MoveAlgorithm {
         return false;
     }
 
+    public boolean checkChess() {
+        boolean chess;
+        ChessGame.getInstance().switchTeam();
+        chess = Check.attackedPos(ChessBoard.getInstance().getKing());
+        ChessGame.getInstance().switchTeam();
+        return chess;
+        
+    }
     public int eval(TeamColour team) {
         if (getWinner() != null) {
             if (getWinner().equals(team)) {
@@ -112,6 +122,8 @@ public class MoveAlgorithm {
             } else 
                 return Integer.MIN_VALUE;
         } else {
+            if (checkChess())
+                return Integer.MAX_VALUE;
             int strength = 0;
             int oppStrength = 0;
             for (int i = 0; i < 8; i++) {
@@ -147,29 +159,22 @@ public class MoveAlgorithm {
     }
 
     public TeamColour getWinner() {
-        ChessBoard board = ChessBoard.getInstance();
-
-        if (Check.attackedPos(board.getKing()) &&
-             Check.canDefendPos(board.getKing()) == null) {
+        if (isGameOver()) {
             if (ChessGame.getInstance().getColour().equals(TeamColour.White)) {
                 return TeamColour.Black;
             } else {
                 return TeamColour.White;
             }
         } else {
-            if (ChessGame.getInstance().getColour().equals(TeamColour.White)) {
-                ChessGame.getInstance().setColour(TeamColour.Black);
-            } else {
-                ChessGame.getInstance().setColour(TeamColour.White);
-            }
-            if (Check.attackedPos(board.getKing()) &&
-                Check.canDefendPos(board.getKing()) == null) {
+            ChessGame.getInstance().switchTeam();
+            if (isGameOver()) {
                 if (ChessGame.getInstance().getColour().equals(TeamColour.White)) {
                     return TeamColour.Black;
                 } else {
                     return TeamColour.White;
                 }
             }
+            ChessGame.getInstance().switchTeam();
         }        
         return null;
     }

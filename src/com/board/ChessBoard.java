@@ -12,7 +12,7 @@ public class ChessBoard {
         board = new ChessPiece[8][8];
     }
     public boolean verifyPosition(Position pos) {
-        if (pos.getRow() >= 0 && pos.getRow() < 8 && pos.getColumn() >= 0 && pos.getColumn() < 8) {
+        if (pos.isValidPosition()) {
             if (board[pos.getRow()][pos.getColumn()] == null
              || !board[pos.getRow()][pos.getColumn()].getColour().equals(ChessGame.getInstance().getColour())) {
                 return false;

@@ -3,7 +3,6 @@ package com.main;
 import com.commands.*;
 import com.constants.Constants;
 import com.game.ChessGame;
-import com.pieces.ChessPiece;
 import com.pieces.TeamColour;
 
 public class Solver {
@@ -13,6 +12,7 @@ public class Solver {
                 System.out.print("feature sigint=0\n");
                 System.out.print("feature sigterm=0\n");
                 System.out.print("feature usermove=1\n");
+                System.out.print("feature san=0\n");
                 break;
             case Constants.go: new Go().executeCommand();
                 break;

@@ -64,9 +64,8 @@ public class Check {
                             ChessPiece piece = probeMove(pos1, move.getDest());
                         // daca mutarea aia face ca pozitia pe care vreau sa o apar sa nu mai fie atacata e true
                             if (!attackedPos(ChessBoard.getInstance().getKing())) {
-                                defendingMoves.add(new Move(pos1, move.getDest()));
-                                undoMove(pos1, move.getDest(), piece);
-                            } else
+                                defendingMoves.add(new Move(pos1, move.getDest()));   
+                            }
                             // daca piesa tot e atacata revin la cum era tabla inainte de mutare
                             undoMove(pos1, move.getDest(), piece);
                             }

@@ -3,12 +3,10 @@ package com.game;
 import com.board.ChessBoard;
 import com.board.Move;
 import com.board.Position;
-import com.commands.Resign;
 import com.pieces.ChessPiece;
 import com.pieces.Queen;
 import com.pieces.TeamColour;
 
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,10 +30,6 @@ public class ChessGame {
         pos.put(6, "g");
         pos.put(7, "h");
     }
-
-    public static void infoBox(String infoMessage, String titleBar) {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
-    }
     
     // create a Singleton in order to have a single instance of the game
     public static ChessGame getInstance() {
@@ -48,8 +42,8 @@ public class ChessGame {
     // execute a move on the table
     public void move() {
        Pair<Integer, Move> move = null;
-        move = new MoveAlgorithm().negaMax(colour, 2);
-        new MoveAlgorithm().apply_move(move.second);
+        move = new MoveAlgorithm().negaMax(colour, 3);
+        new MoveAlgorithm().applyMove(move.second);
     }
 
     // converts the move received from xboard in a Position type object
@@ -57,7 +51,7 @@ public class ChessGame {
     public void oppMove(String opponentMove) {
         ChessBoard board = ChessBoard.getInstance();
         String sourceCol = opponentMove.substring(0,1);
-        
+        System.out.println(opponentMove);
         int sourceRow = Integer.parseInt(opponentMove.substring(1,2));
         String destCol = opponentMove.substring(2,3);
         int destRow;
@@ -80,6 +74,7 @@ public class ChessGame {
         if (source.isValidPosition() && dest.isValidPosition() &&
                 !board.verifyPosition(source)) {
             ChessPiece chessPiece = board.getChessPiece(source);
+ if (chessPiece != null) {  /// ASTA NU TRB AICI CA ADVERSARUL NU DA NICIODATA MISCARI CU PIESE NULE DAR FARA EL MAI DA RATEURI DC PLMM NJ
             board.takeOutChessPiece(source);
             board.putChessPiece(chessPiece, dest);
             chessPiece.setPosition(dest);
@@ -98,6 +93,7 @@ public class ChessGame {
                     board.putChessPiece(new Queen(TeamColour.Black, false, 4, Rating.wQueenBoard), dest);
                 }
             }
+} else System.out.println("nu i " + source.getRow() + " " + source.getColumn());
         }
     }
 
@@ -135,5 +131,13 @@ public class ChessGame {
 
     public Map<Integer, String> getPos() {
         return pos;
+    }
+
+    public void switchTeam() {
+        if (colour.equals(TeamColour.White)) {
+            colour = TeamColour.Black;
+        } else {
+            colour = TeamColour.White;
+        }
     }
 }
