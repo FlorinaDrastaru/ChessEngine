@@ -13,16 +13,25 @@ public abstract class ChessPiece {
     private int worth;
     public int idx;
     private int ratingsBoard[][];
+    private boolean initialPos;
 
 
     public ChessPiece(TeamColour colour, boolean eliminated, int worth,
-                      int rating[][]) {
+                      int rating[][], boolean initialPos) {
         this.eliminated = eliminated;
         this.colour = colour;
         this.worth = worth;
         ratingsBoard = rating;
+        this.initialPos = initialPos;              
     }
 
+    public boolean getInitialPos() {
+        return initialPos;
+    }
+
+    public void changeInitialPos() {
+        initialPos = false;
+    }
     public Position getPosition() {
         return position;
     }

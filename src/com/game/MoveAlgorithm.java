@@ -61,6 +61,7 @@ public class MoveAlgorithm {
         if (move != null) {
             ChessPiece chessPiece = board.getChessPiece(move.getSrc());
             chessPiece.move(move.getDest());
+            chessPiece.changeInitialPos();
             if (chessPiece.getIdx() == 5) {
                 board.setKing(move.getDest());
             }
@@ -74,12 +75,12 @@ public class MoveAlgorithm {
         if (chessPiece.getIdx() == 0) {
             if (ChessGame.getInstance().getColour().equals(TeamColour.Black) && pos.getRow() == 0) { 
                 ChessBoard.getInstance().takeOutChessPiece(pos);
-                ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.Black, false, 4, Rating.wQueenBoard), pos);
+                ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.Black, false, 4, Rating.wQueenBoard, true), pos);
                 pawnToQueen = true;
             } else
                 if (ChessGame.getInstance().getColour().equals(TeamColour.White) && pos.getRow() == 7) {
                     ChessBoard.getInstance().takeOutChessPiece(pos);
-                    ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.White, false, 4, Rating.wQueenBoard), pos);
+                    ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.White, false, 4, Rating.wQueenBoard, true), pos);
                     pawnToQueen = true;
                 }
         }

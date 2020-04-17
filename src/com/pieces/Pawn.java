@@ -7,8 +7,8 @@ import com.game.ChessGame;
 import java.util.LinkedList;
 
 public class Pawn extends ChessPiece {
-    public Pawn(TeamColour colour, boolean eliminated, int worth, int rating[][]) {
-        super(colour, eliminated, worth, rating);
+    public Pawn(TeamColour colour, boolean eliminated, int worth, int rating[][], boolean initialPos) {
+        super(colour, eliminated, worth, rating, initialPos);
         idx = 0;
     }
 

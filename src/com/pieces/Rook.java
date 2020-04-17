@@ -8,8 +8,8 @@ import java.util.LinkedList;
 
 
 public class Rook extends ChessPiece {
-    public Rook(TeamColour colour, boolean eliminated, int worth, int rating[][]) {
-        super(colour, eliminated, worth, rating);
+    public Rook(TeamColour colour, boolean eliminated, int worth, int rating[][], boolean initialPos) {
+        super(colour, eliminated, worth, rating, initialPos);
         idx = 1;
     }
 

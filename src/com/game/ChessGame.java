@@ -74,7 +74,12 @@ public class ChessGame {
         if (source.isValidPosition() && dest.isValidPosition() &&
                 !board.verifyPosition(source)) {
             ChessPiece chessPiece = board.getChessPiece(source);
- if (chessPiece != null) {  /// ASTA NU TRB AICI CA ADVERSARUL NU DA NICIODATA MISCARI CU PIESE NULE DAR FARA EL MAI DA RATEURI DC PLMM NJ
+            checkCastle(source, dest);
+ //if (chessPiece != null) {  /// ASTA NU TRB AICI CA ADVERSARUL NU DA NICIODATA MISCARI CU PIESE NULE DAR FARA EL MAI DA RATEURI DC PLMM NJ
+            //if (board.getBoard()[source.getRow()][source.getColumn()] == null) {
+              //  System.out.println("Illegal move:" + " " + opponentMove);
+            //} else {
+            
             board.takeOutChessPiece(source);
             board.putChessPiece(chessPiece, dest);
             chessPiece.setPosition(dest);
@@ -87,13 +92,81 @@ public class ChessGame {
             if (chessPiece.getIdx() == 0) {
                 if (ChessGame.getInstance().getColour().equals(TeamColour.Black) && dest.getRow() == 7) {
                     board.takeOutChessPiece(dest);
-                    board.putChessPiece(new Queen(TeamColour.White, false, 4, Rating.wQueenBoard), dest);
+                    board.putChessPiece(new Queen(TeamColour.White, false, 4, Rating.wQueenBoard, true), dest);
                 } else if (ChessGame.getInstance().getColour().equals(TeamColour.White) && dest.getRow() == 0) {
                     board.takeOutChessPiece(dest);
-                    board.putChessPiece(new Queen(TeamColour.Black, false, 4, Rating.wQueenBoard), dest);
+                    board.putChessPiece(new Queen(TeamColour.Black, false, 4, Rating.wQueenBoard, true), dest);
                 }
             }
-} else System.out.println("nu i " + source.getRow() + " " + source.getColumn());
+        //}
+//} else System.out.println("nu i " + source.getRow() + " " + source.getColumn());
+        }
+    }
+
+   
+
+    public void checkCastle(Position source, Position dest) {
+        ChessBoard board = ChessBoard.getInstance();
+        ChessPiece chessPiece = board.getChessPiece(source);
+        boolean freeSquareToLeft = true;
+        boolean freeSquareToRight = true;
+        if (chessPiece.getIdx() == 5 && chessPiece.getInitialPos() == true) {
+            if (ChessGame.getInstance().getColour().equals(TeamColour.Black)) {
+                if (dest.getColumn() - source.getColumn() == 2) {
+       
+                for (int j = ChessBoard.getInstance().getWhiteKing().getColumn() + 1; j < 7; j++) {
+                    if (board.getBoard()[0][j] != null) {
+                        freeSquareToRight = false;
+                    }
+                }
+                if (freeSquareToRight == true && board.getBoard()[0][7].getInitialPos() == true) {
+                    board.putChessPiece(board.getChessPiece(new Position(0, 7)), new Position(0, 5));
+                    board.takeOutChessPiece(new Position(0, 7));
+                    
+                }
+            }
+            if (dest.getColumn() - source.getColumn() == -2) {
+                for (int j = ChessBoard.getInstance().getWhiteKing().getColumn() - 1; j > 0; j--) {
+                    if (board.getBoard()[0][j] != null) {
+                        freeSquareToLeft = false;
+                    }
+                }
+                if (freeSquareToLeft == true && board.getBoard()[0][0].getInitialPos() == true) {
+                    board.putChessPiece(board.getChessPiece(new Position(0, 0)), new Position(0, 3));
+                    board.takeOutChessPiece(new Position(0, 0));
+                    
+                }
+            }
+            }
+
+            if (ChessGame.getInstance().getColour().equals(TeamColour.White)) {
+                if (dest.getColumn() - source.getColumn() == 2) {
+                    for (int j = ChessBoard.getInstance().getWhiteKing().getColumn() + 1; j < 7; j++) {
+                        if (board.getBoard()[7][j] != null) {
+                            freeSquareToRight = false;
+                        }
+                    }
+                    if (freeSquareToRight == true && board.getBoard()[7][7].getInitialPos() == true) {
+                        board.putChessPiece(board.getChessPiece(new Position(7, 7)), new Position(7, 5));
+                        board.takeOutChessPiece(new Position(7, 7));
+                        
+                    }
+                }
+                if (dest.getColumn() - source.getColumn() == -2) {
+                    for (int j = ChessBoard.getInstance().getWhiteKing().getColumn() - 1; j > 0; j--) {
+                        if (board.getBoard()[7][j] != null) {
+                            freeSquareToLeft = false;
+                        }
+                    }
+                    if (freeSquareToLeft == true && board.getBoard()[7][0].getInitialPos() == true) {
+                        board.putChessPiece(board.getChessPiece(new Position(7, 0)), new Position(7, 3));
+                        board.takeOutChessPiece(new Position(7, 0));
+                        
+                    }
+                }
+            }
+
+
         }
     }
 

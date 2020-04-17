@@ -8,8 +8,8 @@ import com.board.Position;
 import java.util.LinkedList;
 
 public class Queen extends ChessPiece {
-    public Queen(TeamColour colour, boolean eliminated, int worth, int rating[][]) {
-        super(colour, eliminated, worth, rating);
+    public Queen(TeamColour colour, boolean eliminated, int worth, int rating[][], boolean initialPos) {
+        super(colour, eliminated, worth, rating, initialPos);
         idx = 1;
     }
 
