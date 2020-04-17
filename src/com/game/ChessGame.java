@@ -1,6 +1,7 @@
 package com.game;
 
 import com.board.ChessBoard;
+import com.board.Move;
 import com.board.Position;
 import com.commands.Resign;
 import com.pieces.ChessPiece;
@@ -9,7 +10,6 @@ import com.pieces.TeamColour;
 
 import javax.swing.*;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 
@@ -47,62 +47,9 @@ public class ChessGame {
 
     // execute a move on the table
     public void move() {
-        ChessBoard board = ChessBoard.getInstance();
-        boolean moved = false;
-
-        if (Check.attackedPos(board.getKing()) == true) {
-            if (!Check.canDefendPos(board.getKing())) {
-                new Resign().executeCommand();
-            }
-        } else {
-            for (int j = 0; j < 8; j++) {
-                for (int i = 0; i < 8; ++i) {
-                    if (board.getBoard()[i][j] != null &&
-                            board.getBoard()[i][j].getColour().equals(colour)) {
-                        LinkedList<Position> moves;
-                        ChessPiece chessPiece = board.getChessPiece(new Position(i, j));
-                        moves = chessPiece.getMoves(chessPiece.getPosition());
-                        if (moves != null) {
-                            ChessPiece piece = Check.probeMove(new Position(i,j), moves.get(0));
-                            if (!Check.attackedPos(ChessBoard.getInstance().getKing())) {
-                                Check.undoMove(new Position(i, j), moves.get(0), piece);
-                                chessPiece.move(moves.get(0));
-                                if (chessPiece.getIdx() == 5) {
-                                    board.setKing(moves.get(0));
-                                }
-                                boolean pawnQueen = false;
-                                if (chessPiece.getIdx() == 0) {
-                                    if (ChessGame.getInstance().getColour().equals(TeamColour.Black) && moves.get(0).getRow() == 0) { 
-                                    ChessBoard.getInstance().takeOutChessPiece(moves.get(0));
-                                    ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.Black, false, 4), moves.get(0));
-                                    pawnQueen = true;
-                                } else
-                                    if (ChessGame.getInstance().getColour().equals(TeamColour.White) && moves.get(0).getRow() == 7) {
-                                        ChessBoard.getInstance().takeOutChessPiece(moves.get(0));
-                                        ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.White, false, 4), moves.get(0));
-                                        pawnQueen = true;
-                                    }
-                                }
-                                int ln_dest = moves.get(0).getRow() + 1;
-                                int ln_src = i + 1;
-                                System.out.print("move " + pos.get(j) + ln_src
-                                        + pos.get(moves.get(0).getColumn())
-                                        + ln_dest);
-                                if (pawnQueen) {
-                                    System.out.print("q\n");
-                                } else {
-                                    System.out.print("\n");
-                                }
-                                moved = true;
-                                break;
-                            } else Check.undoMove(new Position(i, j), moves.get(0), piece);
-                        }
-                    }
-                }
-                if (moved) break;
-            }
-            if (!moved) new Resign().executeCommand();
-        }
+       Pair<Integer, Move> move = null;
+        move = new MoveAlgorithm().negaMax(colour, 2);
+        new MoveAlgorithm().apply_move(move.second);
     }
 
     // converts the move received from xboard in a Position type object
@@ -145,10 +92,10 @@ public class ChessGame {
             if (chessPiece.getIdx() == 0) {
                 if (ChessGame.getInstance().getColour().equals(TeamColour.Black) && dest.getRow() == 7) {
                     board.takeOutChessPiece(dest);
-                    board.putChessPiece(new Queen(TeamColour.White, false, 4), dest);
+                    board.putChessPiece(new Queen(TeamColour.White, false, 4, Rating.wQueenBoard), dest);
                 } else if (ChessGame.getInstance().getColour().equals(TeamColour.White) && dest.getRow() == 0) {
                     board.takeOutChessPiece(dest);
-                    board.putChessPiece(new Queen(TeamColour.Black, false, 4), dest);
+                    board.putChessPiece(new Queen(TeamColour.Black, false, 4, Rating.wQueenBoard), dest);
                 }
             }
         }

@@ -1,55 +1,49 @@
 package com.pieces;
 
 import com.board.ChessBoard;
+import com.board.Move;
 import com.board.Position;
 import com.game.ChessGame;
 import java.util.LinkedList;
 
 public class Pawn extends ChessPiece {
-    public Pawn(TeamColour colour, boolean eliminated, int idx) {
-        super(colour, eliminated, idx);
+    public Pawn(TeamColour colour, boolean eliminated, int worth, int rating[][]) {
+        super(colour, eliminated, worth, rating);
+        idx = 0;
     }
 
-    public LinkedList<Position> getMoves(Position pos) {
-        LinkedList<Position> moves = new LinkedList<>();
+    public void addMove(LinkedList<Move> moves, Position src, Position dest) {
+        if (ChessBoard.getInstance().getBoard()[dest.getRow()][dest.getColumn()] != null)
+            if (!ChessBoard.getInstance().getBoard()[dest.getRow()][dest.getColumn()].getColour()
+                                .equals(ChessGame.getInstance().getColour())) {
+                moves.add(new Move(src, dest));
+            }
+    }
+
+    public LinkedList<Move> getMoves(Position pos) {
+        LinkedList<Move> moves = new LinkedList<>();
         if (pos.getRow() - 1 >= 0) {
             if (ChessGame.getInstance().getColour().equals(TeamColour.Black)) {
                 if (ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn()] == null) {
-                    moves.add(new Position(pos.getRow() - 1, pos.getColumn()));
-
+                    moves.add(new Move (pos, new Position(pos.getRow() - 1, pos.getColumn())));
                 }
                 if (pos.getColumn() - 1 >= 0)
-                    if (ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn() - 1] != null)
-                            if (!ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn() - 1].getColour()
-                                .equals(ChessGame.getInstance().getColour())) {
-                                moves.add(new Position(pos.getRow() - 1, pos.getColumn() - 1));
-                }
+                    addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() - 1));
+                
                 if (pos.getColumn() + 1 < 8)
-                        if (ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn() + 1] != null)
-                              if (!ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn() + 1].getColour()
-                                    .equals(ChessGame.getInstance().getColour())) {
-                                moves.add(new Position(pos.getRow() - 1, pos.getColumn() + 1));
-                }
+                    addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() + 1));
             }
         }
         if (pos.getRow() + 1 < 8) {
             if (ChessGame.getInstance().getColour().equals(TeamColour.White)) {
                 if (ChessBoard.getInstance().getBoard()[pos.getRow() + 1][pos.getColumn()] == null) {
-                    moves.add(new Position(pos.getRow() + 1, pos.getColumn()));
+                        moves.add(new Move (pos, new Position(pos.getRow() + 1, pos.getColumn())));
                 }
                 if (pos.getColumn() - 1 >= 0) {
-                    if (ChessBoard.getInstance().getBoard()[pos.getRow() + 1][pos.getColumn() - 1] != null)
-                       if (!ChessBoard.getInstance().getBoard()[pos.getRow() + 1][pos.getColumn() - 1].getColour()
-                          .equals(ChessGame.getInstance().getColour())) {
-                            moves.add(new Position(pos.getRow() + 1, pos.getColumn() - 1));
-                    }
+                    addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn() - 1));
                 }
                 if (pos.getColumn() + 1 < 8) {
-                    if (ChessBoard.getInstance().getBoard()[pos.getRow() + 1][pos.getColumn() + 1] != null)
-                        if (!ChessBoard.getInstance().getBoard()[pos.getRow() + 1][pos.getColumn() + 1].getColour()
-                        .equals(ChessGame.getInstance().getColour())) {
-                        moves.add(new Position(pos.getRow() + 1, pos.getColumn() + 1));
-                    }
+                    addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn() + 1));
                 }
             }
         }

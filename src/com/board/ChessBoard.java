@@ -2,6 +2,7 @@ package com.board;
 
 import com.constants.Constants;
 import com.game.ChessGame;
+import com.game.Rating;
 import com.pieces.*;
 
 public class ChessBoard {
@@ -40,30 +41,30 @@ public class ChessBoard {
     }
 
     public void initiateBoard() {
-        putChessPiece(new Rook(TeamColour.White, false,1), new Position(0, 0));
-        putChessPiece(new Knight(TeamColour.White, false,2), new Position(0, 1));
-        putChessPiece(new Bishop(TeamColour.White, false, 3), new Position(0, 2));
-        putChessPiece(new Queen(TeamColour.White, false, 4), new Position(0, 3));
-        putChessPiece(new King(TeamColour.White, false, 5), new Position(0, 4));
-        putChessPiece(new Bishop(TeamColour.White, false, 3), new Position(0, 5));
-        putChessPiece(new Knight(TeamColour.White, false, 2), new Position(0, 6));
-        putChessPiece(new Rook(TeamColour.White, false, 1), new Position(0, 7));
+        putChessPiece(new Rook(TeamColour.White, false, 500, Rating.wRookBoard), new Position(0, 0));
+        putChessPiece(new Knight(TeamColour.White, false, 300, Rating.wKnightBoard), new Position(0, 1));
+        putChessPiece(new Bishop(TeamColour.White, false, 300, Rating.wBishopBoard), new Position(0, 2));
+        putChessPiece(new Queen(TeamColour.White, false, 900, Rating.wQueenBoard), new Position(0, 3));
+        putChessPiece(new King(TeamColour.White, false, 9000, Rating.wKingMidBoard), new Position(0, 4));
+        putChessPiece(new Bishop(TeamColour.White, false, 300, Rating.wBishopBoard), new Position(0, 5));
+        putChessPiece(new Knight(TeamColour.White, false, 300, Rating.wKnightBoard), new Position(0, 6));
+        putChessPiece(new Rook(TeamColour.White, false, 500, Rating.wRookBoard), new Position(0, 7));
 
         for (int i = 0; i < Constants.SUP_BOARD_LIMIT; i++) {
-            putChessPiece(new Pawn(TeamColour.White, false, 0), new Position(1, i));
+            putChessPiece(new Pawn(TeamColour.White, false, 100, Rating.wPawnBoard), new Position(1, i));
         }
 
-        putChessPiece(new Rook(TeamColour.Black, false,1), new Position(7, 0));
-        putChessPiece(new Knight(TeamColour.Black, false, 2), new Position(7, 1));
-        putChessPiece(new Bishop(TeamColour.Black, false, 3), new Position(7, 2));
-        putChessPiece(new Queen(TeamColour.Black, false, 4), new Position(7, 3));
-        putChessPiece(new King(TeamColour.Black, false, 5), new Position(7, 4));
-        putChessPiece(new Bishop(TeamColour.Black, false,3), new Position(7, 5));
-        putChessPiece(new Knight(TeamColour.Black, false, 2), new Position(7, 6));
-        putChessPiece(new Rook(TeamColour.Black, false, 1), new Position(7, 7));
+        putChessPiece(new Rook(TeamColour.Black, false, 500, Rating.bRookBoard), new Position(7, 0));
+        putChessPiece(new Knight(TeamColour.Black, false, 300, Rating.bKnightBoard), new Position(7, 1));
+        putChessPiece(new Bishop(TeamColour.Black, false, 300, Rating.bBishopBoard), new Position(7, 2));
+        putChessPiece(new Queen(TeamColour.Black, false, 900, Rating.bQueenBoard), new Position(7, 3));
+        putChessPiece(new King(TeamColour.Black, false, 9000, Rating.bKingMidBoard), new Position(7, 4));
+        putChessPiece(new Bishop(TeamColour.Black, false, 300, Rating.bBishopBoard), new Position(7, 5));
+        putChessPiece(new Knight(TeamColour.Black, false, 300, Rating.bKnightBoard), new Position(7, 6));
+        putChessPiece(new Rook(TeamColour.Black, false, 500, Rating.bRookBoard), new Position(7, 7));
 
         for (int i = 0; i < Constants.SUP_BOARD_LIMIT; i++) {
-            putChessPiece(new Pawn(TeamColour.Black, false, 0), new Position(6, i));
+            putChessPiece(new Pawn(TeamColour.Black, false, 100, Rating.bPawnBoard), new Position(6, i));
         }
         for (int i = 2; i < 6; i++) {
             for (int j = 0; j < 8; j++) {
@@ -112,9 +113,4 @@ public class ChessBoard {
         }
         return instance;
     }
-
-   
-
-
-
 }

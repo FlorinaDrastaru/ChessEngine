@@ -1,5 +1,7 @@
 package com.pieces;
+
 import com.board.ChessBoard;
+import com.board.Move;
 import com.board.Position;
 import java.util.LinkedList;
 
@@ -8,13 +10,17 @@ public abstract class ChessPiece {
     private Position position;
     private boolean eliminated = false;
     private TeamColour colour;
+    private int worth;
     public int idx;
+    private int ratingsBoard[][];
 
 
-    public ChessPiece(TeamColour colour, boolean eliminated, int idx) {
+    public ChessPiece(TeamColour colour, boolean eliminated, int worth,
+                      int rating[][]) {
         this.eliminated = eliminated;
         this.colour = colour;
-        this.idx = idx;
+        this.worth = worth;
+        ratingsBoard = rating;
     }
 
     public Position getPosition() {
@@ -23,6 +29,10 @@ public abstract class ChessPiece {
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    public int getWorth() {
+        return worth + ratingsBoard[position.getRow()][position.getColumn()];
     }
 
     public int getIdx() {
@@ -49,6 +59,14 @@ public abstract class ChessPiece {
         return colour;
     }
 
+    public void setRatingsBoard(int ratingsBoard[][]) {
+        this.ratingsBoard = ratingsBoard;
+    }
+
+    public int[][] getRatingsBoard() {
+        return ratingsBoard;
+    }
+
     public void setColour(TeamColour colour) {
         this.colour = colour;
     }
@@ -60,14 +78,6 @@ public abstract class ChessPiece {
         this.setPosition(new Position(position.getRow(), position.getColumn()));
     }
 
-    public void eatOpponent() {
-    }
-
-
-    public abstract LinkedList<Position> getMoves(Position pos);
-
-
-
-
+    public abstract LinkedList<Move> getMoves(Position pos);
 
 }

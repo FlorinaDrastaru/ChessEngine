@@ -1,17 +1,21 @@
 package com.pieces;
 
 import com.board.ChessBoard;
+import com.board.Move;
 import com.board.Position;
+
+
 import java.util.LinkedList;
 
 public class Queen extends ChessPiece {
-    public Queen(TeamColour colour, boolean eliminated, int idx) {
-        super(colour, eliminated, idx);
+    public Queen(TeamColour colour, boolean eliminated, int worth, int rating[][]) {
+        super(colour, eliminated, worth, rating);
+        idx = 1;
     }
 
 
-    public LinkedList<Position> getMoves(Position pos) {
-        LinkedList<Position> moves = new LinkedList<Position>();
+    public LinkedList<Move> getMoves(Position pos) {
+        LinkedList<Move> moves = new LinkedList<>();
 
         int i = 1;
         // se duce in fata
@@ -20,7 +24,7 @@ public class Queen extends ChessPiece {
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()+i][pos.getColumn()] != null)
                     break;
                 else
@@ -35,7 +39,7 @@ public class Queen extends ChessPiece {
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()-i][pos.getColumn()] != null)
                     break;
                 else
@@ -50,7 +54,7 @@ public class Queen extends ChessPiece {
             if(ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()][pos.getColumn()-i] != null)
                     break;
                 else
@@ -65,7 +69,7 @@ public class Queen extends ChessPiece {
             if(ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()][pos.getColumn()+i] != null)
                     break;
                 else
@@ -80,7 +84,7 @@ public class Queen extends ChessPiece {
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()+i][pos.getColumn()+i] != null)
                     break;
                 else
@@ -95,7 +99,7 @@ public class Queen extends ChessPiece {
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()+i][pos.getColumn()-i] != null)
                     break;
                 else
@@ -109,7 +113,7 @@ public class Queen extends ChessPiece {
             if(ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()-i][pos.getColumn()-i] != null)
                     break;
                 else
@@ -124,7 +128,7 @@ public class Queen extends ChessPiece {
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
                 break;
             } else {
-                moves.add(newPos);
+                moves.add(new Move(pos, newPos));
                 if (ChessBoard.getInstance().getBoard()[pos.getRow()-i][pos.getColumn()+i] != null)
                     break;
                 else

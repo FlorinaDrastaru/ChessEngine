@@ -3,6 +3,7 @@ package com.game;
 import java.util.LinkedList;
 
 import com.board.ChessBoard;
+import com.board.Move;
 import com.board.Position;
 import com.pieces.ChessPiece;
 import com.pieces.TeamColour;
@@ -26,11 +27,11 @@ public class Check {
                         && ChessBoard.getInstance().getBoard()[i][j].getColour().
                                 equals(ChessGame.getInstance().getColour()) &&
                                 ChessBoard.getInstance().getBoard()[i][j].idx != 5) {
-                    LinkedList<Position> moves = ChessBoard.getInstance().
+                    LinkedList<Move> moves = ChessBoard.getInstance().
                     getChessPiece(new Position(i, j)).getMoves(new Position(i, j));
                     if (moves != null) {
-                        for (Position move : moves) {
-                            if (move.getColumn() == pos.getColumn() && move.getRow() == pos.getRow()) {
+                        for (Move move : moves) {
+                            if (move.getDest().getColumn() == pos.getColumn() && move.getDest().getRow() == pos.getRow()) {
                                 ChessGame.getInstance().setColour(initialColour);
                                 return true;
                             }
@@ -43,7 +44,8 @@ public class Check {
         return false;
     }
 
-    public static boolean canDefendPos(Position pos) {
+    public static  LinkedList<Move> canDefendPos(Position pos) {
+        LinkedList<Move> defendingMoves =  new LinkedList<Move>();
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 // iau toate piesele de pe tabla cu aceeasi culoare ca a mea
@@ -51,35 +53,29 @@ public class Check {
                         && ChessBoard.getInstance().getBoard()[i][j].getColour()
                             .equals(ChessGame.getInstance().getColour())) {
                     // iau toate mutarile posibile de la piesa curenta
-                    LinkedList<Position> moves = ChessBoard.getInstance().
+                    LinkedList<Move> moves = ChessBoard.getInstance().
                             getChessPiece(new Position(i, j)).getMoves(new Position(i, j));
                     // salvez pozitia piessei curentee
                     Position pos1 = new Position(i, j);
                     // iau pe rand pozitiile in care pot sa ajung
                     if (moves != null) {
-                        for (Position pos2 : moves) {
+                        for (Move move : moves) {
                         // fac mutarea de proba
-                            ChessPiece piece = probeMove(pos1, pos2);
+                            ChessPiece piece = probeMove(pos1, move.getDest());
                         // daca mutarea aia face ca pozitia pe care vreau sa o apar sa nu mai fie atacata e true
                             if (!attackedPos(ChessBoard.getInstance().getKing())) {
-                                int ln_dest = pos2.getRow() + 1;
-                                int ln_src = pos1.getRow() + 1;
-                                System.out.print("move " 
-                                    + ChessGame.getInstance().getPos().get(pos1.getColumn())
-                                    + ln_src
-                                    + ChessGame.getInstance().getPos().get(pos2.getColumn())
-                                    + ln_dest + "\n");
-                                return true;
+                                defendingMoves.add(new Move(pos1, move.getDest()));
+                                undoMove(pos1, move.getDest(), piece);
                             } else
                             // daca piesa tot e atacata revin la cum era tabla inainte de mutare
-                            undoMove(pos1, pos2, piece);
+                            undoMove(pos1, move.getDest(), piece);
                             }
                         }
                     }
                 }
             }
 
-        return false;
+        return defendingMoves;
     }
 
     public static ChessPiece probeMove(Position pos1, Position pos2) {
