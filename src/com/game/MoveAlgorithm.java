@@ -20,10 +20,15 @@ public class MoveAlgorithm {
         Move bestMove = null;
         int bestScore = Integer.MIN_VALUE;
         ChessBoard board = ChessBoard.getInstance();
-
-        if (Check.attackedPos(board.getKing()) == true) {
-            moves = Check.canDefendPos(board.getKing());
+        // System.out.println("verificam in nega regele e pe " +
+        //  ChessBoard.getInstance().getBoard()[ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getRow()][ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getColumn()].getColour().name().substring(0,1) +
+        // " rege alb " + ChessBoard.getInstance().getWhiteKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() + " rege negru " + ChessBoard.getInstance().getBlackKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() +  " cul noi "
+        // + ChessGame.getInstance().getColour().name().substring(0,1));
+        if (Check.attackedPos(board.getKing(ChessGame.getInstance().getColour()))) {
+            System.out.println("rege atacat");
+            moves = Check.canDefendPos(board.getKing(ChessGame.getInstance().getColour()));
             if (moves == null) {
+                System.out.println("nu apar");
                 new Resign().executeCommand();
             }
         } else {
@@ -32,7 +37,7 @@ public class MoveAlgorithm {
 
         for (Move nextMove : moves) {
             ChessPiece piece = Check.probeMove(nextMove.getSrc(), nextMove.getDest());                     
-            if (!Check.attackedPos(ChessBoard.getInstance().getKing())) {
+            if (!Check.attackedPos(ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()))) {
                 int score;
                 if (player.equals(TeamColour.Black)) {
                     ChessGame.getInstance().setColour(TeamColour.White);
@@ -58,17 +63,18 @@ public class MoveAlgorithm {
 
     public void applyMove(Move move) {
         ChessBoard board = ChessBoard.getInstance();
+        System.out.println("REGE SI CULOARE JOC " + board.getKing(ChessGame.getInstance().getColour()).getRow() + " " + ChessGame.getInstance().getColour().name().substring(0,1));
         if (move != null) {
             ChessPiece chessPiece = board.getChessPiece(move.getSrc());
             chessPiece.move(move.getDest());
             chessPiece.changeInitialPos();
-            if (chessPiece.getIdx() == 5) {
-                board.setKing(move.getDest());
-            }
             boolean pawnToQueen = false;
             checkPawnPromotion(chessPiece, move.getDest(), pawnToQueen);
             sendMoveToXboard(move.getSrc(), move.getDest(), pawnToQueen);
-        } else new Resign().executeCommand();
+        } else {
+            System.out.println("RESIGN REGE SI CULOARE JOC " + board.getKing(ChessGame.getInstance().getColour()).getRow() + " " + ChessGame.getInstance().getColour().name().substring(0,1));
+            new Resign().executeCommand();
+        }
     }
 
     public void checkPawnPromotion(ChessPiece chessPiece, Position pos, boolean pawnToQueen) {
@@ -101,8 +107,8 @@ public class MoveAlgorithm {
 
     public boolean isGameOver() {
         ChessBoard board = ChessBoard.getInstance();
-        if (Check.attackedPos(board.getKing()) &&
-             Check.canDefendPos(board.getKing()) == null) {
+        if (Check.attackedPos(board.getKing(ChessGame.getInstance().getColour())) &&
+             Check.canDefendPos(board.getKing(ChessGame.getInstance().getColour())) == null) {
             return true;
         }
         return false;
@@ -111,7 +117,7 @@ public class MoveAlgorithm {
     public boolean checkChess() {
         boolean chess;
         ChessGame.getInstance().switchTeam();
-        chess = Check.attackedPos(ChessBoard.getInstance().getKing());
+        chess = Check.attackedPos(ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()));
         ChessGame.getInstance().switchTeam();
         return chess;
         

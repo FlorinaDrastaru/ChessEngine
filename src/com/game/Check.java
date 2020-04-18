@@ -13,14 +13,12 @@ public class Check {
     // si verific in vectorul ei de mutari daca vreo pozitie coincide
     // cu aia pe care e piesa mea
     public static boolean attackedPos(Position pos) {
-
+        // System.out.println("verificam in attack " + pos.getRow() + " " + pos.getColumn() + " regele e pe " +
+        //  ChessBoard.getInstance().getBoard()[ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getRow()][ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getColumn()].getColour().name().substring(0,1) +
+        // " rege alb " + ChessBoard.getInstance().getWhiteKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() + " rege negru " + ChessBoard.getInstance().getBlackKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() +  " cul noi "
+        // + ChessGame.getInstance().getColour().name().substring(0,1));
         TeamColour initialColour = ChessGame.getInstance().getColour();
-        if (initialColour.equals(TeamColour.Black)) {
-            ChessGame.getInstance().setColour(TeamColour.White);
-        } else {
-            ChessGame.getInstance().setColour(TeamColour.Black);
-        }
-
+        ChessGame.getInstance().switchTeam();
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (ChessBoard.getInstance().getBoard()[i][j] != null
@@ -45,6 +43,10 @@ public class Check {
     }
 
     public static  LinkedList<Move> canDefendPos(Position pos) {
+        // System.out.println("verificam in defend " + pos.getRow() + " " + pos.getColumn() + " regele e pe " +
+        //  ChessBoard.getInstance().getBoard()[ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getRow()][ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getColumn()].getColour().name().substring(0,1) +
+        // " rege alb " + ChessBoard.getInstance().getWhiteKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() + " rege negru " + ChessBoard.getInstance().getBlackKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() +  " cul noi "
+        // + ChessGame.getInstance().getColour().name().substring(0,1));
         LinkedList<Move> defendingMoves =  new LinkedList<Move>();
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -63,7 +65,7 @@ public class Check {
                         // fac mutarea de proba
                             ChessPiece piece = probeMove(pos1, move.getDest());
                         // daca mutarea aia face ca pozitia pe care vreau sa o apar sa nu mai fie atacata e true
-                            if (!attackedPos(ChessBoard.getInstance().getKing())) {
+                            if (!attackedPos(ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()))) {
                                 defendingMoves.add(new Move(pos1, move.getDest()));   
                             }
                             // daca piesa tot e atacata revin la cum era tabla inainte de mutare
@@ -79,23 +81,13 @@ public class Check {
 
     public static ChessPiece probeMove(Position pos1, Position pos2) {
         ChessPiece piece = ChessBoard.getInstance().getChessPiece(pos2);
-        ChessBoard.getInstance().putChessPiece
-                    (ChessBoard.getInstance().getChessPiece(pos1), pos2);
-        ChessBoard.getInstance().takeOutChessPiece(pos1);
-        if (ChessBoard.getInstance().getChessPiece(pos2).idx == 5) {
-            ChessBoard.getInstance().setKing(pos2);
-        }
+        ChessBoard.getInstance().getChessPiece(pos1).move(pos2);
         return piece;
     }
 
 
     public static void undoMove(Position pos1, Position pos2, ChessPiece piece) {
-        if (ChessBoard.getInstance().getChessPiece(pos2).idx == 5) {
-            ChessBoard.getInstance().setKing(pos1);
-        }
-        ChessBoard.getInstance().putChessPiece
-                (ChessBoard.getInstance().getChessPiece(pos2), pos1);
-        ChessBoard.getInstance().takeOutChessPiece(pos2);
+        ChessBoard.getInstance().getChessPiece(pos2).move(pos1);
         if (piece != null) 
             ChessBoard.getInstance().putChessPiece(piece, pos2);
     }

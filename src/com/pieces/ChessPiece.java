@@ -85,6 +85,9 @@ public abstract class ChessPiece {
         board.takeOutChessPiece(this.getPosition());
         board.putChessPiece(this, new Position(position.getRow(), position.getColumn()));
         this.setPosition(new Position(position.getRow(), position.getColumn()));
+        if (idx == 5) {
+            ChessBoard.getInstance().setKing(position, colour);
+        }
     }
 
     public abstract LinkedList<Move> getMoves(Position pos);

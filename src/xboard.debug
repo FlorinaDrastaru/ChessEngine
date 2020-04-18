@@ -1,4 +1,4 @@
-locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+locale = en_US.UTF-8
 recognized 'normal' (-1) as variant normal
 recognized 'normal' (-1) as variant normal
 recognized 'normal' (-1) as variant normal
@@ -10,271 +10,1040 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-372 >first : xboard
+123 >first : xboard
 protover 2
-383 <first : java -cp . com/main/Main
-807 <first : 
-807 <first : 
-807 <first : feature sigint=0
-808 >first : accepted sigint
-808 <first : feature sigterm=0
-808 >first : accepted sigterm
-808 <first : feature usermove=1
-808 >first : accepted usermove
-808 <first : feature san=0
-808 >first : accepted san
-10373 >first : new
+125 <first : java -cp . com/main/Main
+181 <first : 
+181 <first : 
+181 <first : feature sigint=0
+181 >first : accepted sigint
+181 <first : feature sigterm=0
+181 >first : accepted sigterm
+181 <first : feature usermove=1
+181 >first : accepted usermove
+181 <first : feature san=0
+181 >first : accepted san
+10134 >first : new
 random
-10381 >first : level 40 5 0
-10381 >first : post
-10381 >first : hard
+10134 >first : level 0 5 2
+10134 >first : post
+10134 >first : hard
+Reset(0, 1) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+10135 >first : quit
+shuffleOpenings = 0
+StartChildProcess (dir=".") make run
+10202 >first : xboard
+protover 2
+10202 >first : new
+random
+10202 >first : level 0 5 2
+10202 >first : post
+10202 >first : hard
+10203 >first : force
+StartChildProcess (dir=".") fairymax
+10203 >second: xboard
+protover 2
+10205 <first : java -cp . com/main/Main
+10270 <first : 
+10270 <first : 
+10270 <first : feature sigint=0
+10270 >first : accepted sigint
+10270 <first : feature sigterm=0
+10270 >first : accepted sigterm
+10270 <first : feature usermove=1
+10270 >first : accepted usermove
+10270 <first : feature san=0
+10270 >first : accepted san
+10274 <second: tellics say     Fairy-Max 5.0b
+10274 <second: tellics say     by H.G. Muller
+10275 <second: feature myname="Fairy-Max 5.0b"
+10275 >second: accepted myname
+10275 <second: feature memory=1 exclude=1
+10275 >second: accepted memory
+10275 >second: accepted exclude
+10275 <second: feature setboard=0 xedit=1 ping=1 done=0
+10275 >second: accepted setboard
+10275 >second: accepted xedit
+10275 >second: accepted ping
+10275 >second: accepted done
+10275 <second: feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+10275 >second: accepted variants
+10275 <second: feature option="Resign -check 0"
+10275 >second: accepted option
+10275 <second: feature option="Resign Threshold -spin 800 200 1200"
+10275 >second: accepted option
+10275 <second: feature option="Claim draw after -spin 50 0 200"
+10275 >second: accepted option
+10275 <second: feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+10275 >second: accepted option
+10275 <second: feature option="Multi-PV Margin -spin 0 0 1000"
+10275 >second: accepted option
+10275 <second: feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+10275 >second: accepted option
+10275 <second: feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+10275 >second: accepted option
+10275 <second: feature option="Dummy Slider Example -slider 20 0 100"
+10275 >second: accepted option
+10275 <second: feature option="Dummy String Example -string happy birthday!"
+10275 >second: accepted option
+10275 <second: feature option="Dummy Path Example -path ."
+10275 >second: accepted option
+10275 <second: feature option="Automatic persistent-hash dialog -check 0"
+10275 >second: accepted option
+10275 <second: feature option="Info -button"
+10275 >second: accepted option
+10275 <second: feature option="Save in hash file -button"
+10275 >second: accepted option
+10275 <second: feature option="Clear Hash -button"
+10275 >second: accepted option
+10275 <second: feature done=1
+10275 >second: accepted done
+10276 >second: memory 68
+10276 >second: new
+random
+sd 2
+10276 >second: level 0 5 2
+10276 >second: post
+10276 >second: hard
+10276 >second: ping 1
+10276 >second: force
+10302 <second: pong 1
+New game (1): make-Fairy-Max 5.0b (w)
+10308 >first : computer
+10308 >second: computer
+10308 >first : black
+10308 >first : time 30000
+10308 >first : otim 30000
+10308 >first : white
+book hit = (NULL)
+10308 >first : go
 nps: w=-1, b=-1
-nps: w=-1, b=-1
-13030 >first : time 30000
-13032 >first : otim 30000
+10309 <second: Error (unknown command): computer
+10343 <first : REGE SI CULOARE JOC 0 W
+10360 <first : move g1f3
+10360 >second: time 30000
+10360 >second: otim 30194
 book hit = (NULL)
-13035 >first : usermove 13036 >first : g2g4
-13137 <first : g2g4
-13137 <first : dupa adversar
-13260 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack KnightBlack RookBlack 
-13261 <first : PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack 
-13264 <first : null null null null null null null null 
-13265 <first : null null null null null null null null 
-13267 <first : null null null null null null PawnWhite null 
-13268 <first : null null null null null null null null 
-13271 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite 
-13273 <first : RookWhite KnightWhite BishopWhite QueenWhite KingWhite BishopWhite KnightWhite RookWhite 
-13699 <first : move g8f6
-13817 <first : 
-13818 <first : 
-13818 <first : dupa engine
-13818 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-13818 <first : PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack 
-13818 <first : null null null null null KnightBlack null null 
-13818 <first : null null null null null null null null 
-13818 <first : null null null null null null PawnWhite null 
-13818 <first : null null null null null null null null 
-13818 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite 
-13818 <first : RookWhite KnightWhite BishopWhite QueenWhite KingWhite BishopWhite KnightWhite RookWhite 
-14961 >first : time 29932
-14962 >first : otim 29873
+10360 >second: g1f3
+10360 >second: black
+10360 >second: go
+10465 <first : 
+10465 <first : 
+10466 <second: # times @ 2365307972
+10466 <second: # 16+16 pieces, centr = (1,1) R=40
+10466 <second:  1     15        0          3 c7c5
+10466 <second:  1     29        0          5 f7f5
+10466 <second:  2    -14        0         13 f7f5 c2c4
+10466 <second:  2      0        0         38 g7g6 c2c4
+10466 <second:  2      4        0         47 h7h5 c2c4
+10467 <second:  2      7        0         74 b8c6 c2c4
+10467 <second:  2     11        0        125 c7c5 c2c4
+10467 <second: # times @ 2365307972: real=0 cpu=0
+10467 <second: # promo = 0 (`) GT = 0
+10467 <second: move c7c5
+10467 >first : time 30194
+10467 >first : otim 30189
 book hit = (NULL)
-14963 >first : usermove 14965 >first : g1f3
-15072 <first : g1f3
-15073 <first : dupa adversar
-15073 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-15074 <first : PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack 
-15074 <first : null null null null null KnightBlack null null 
-15074 <first : null null null null null null null null 
-15074 <first : null null null null null null PawnWhite null 
-15074 <first : null null null null null KnightWhite null null 
-15074 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite 
-15074 <first : RookWhite KnightWhite BishopWhite QueenWhite KingWhite BishopWhite null RookWhite 
-15175 <first : move f6g4
-15279 <first : 
-15280 <first : 
-15283 <first : dupa engine
-15283 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-15283 <first : PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack 
-15283 <first : null null null null null null null null 
-15283 <first : null null null null null null null null 
-15283 <first : null null null null null null KnightBlack null 
-15283 <first : null null null null null KnightWhite null null 
-15283 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite 
-15283 <first : RookWhite KnightWhite BishopWhite QueenWhite KingWhite BishopWhite null RookWhite 
-16358 >first : time 29911
-16360 >first : otim 29755
+10467 >first : usermove 10467 >first : c7c5
+10543 <first : c7c5
+10543 <first : dupa adversar
+10543 <first : B B B B B B B B 
+10543 <first : B B n B B B B B 
+10543 <first : n n n n n n n n 
+10543 <first : n n B n n n n n 
+10543 <first : n n n n n n n n 
+10543 <first : n n n n n W n n 
+10543 <first : W W W W W W W W 
+10543 <first : W W W W W W n W 
+10543 <first : REGE SI CULOARE JOC 0 W
+10543 <first : move b1c3
+Interrupting second
+10543 >second: time 30189
+10543 >second: otim 30387
 book hit = (NULL)
-16367 >first : usermove 16373 >first : f1h3
-16488 <first : f1h3
-16489 <first : dupa adversar
-16489 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-16490 <first : PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack PawnBlack 
-16490 <first : null null null null null null null null 
-16490 <first : null null null null null null null null 
-16490 <first : null null null null null null KnightBlack null 
-16490 <first : null null null null null KnightWhite null BishopWhite 
-16490 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite 
-16490 <first : RookWhite KnightWhite BishopWhite QueenWhite KingWhite null null RookWhite 
-16638 <first : move d7d6
-16727 <first : 
-16727 <first : 
-16727 <first : dupa engine
-16727 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-16727 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack PawnBlack PawnBlack 
-16727 <first : null null null PawnBlack null null null null 
-16727 <first : null null null null null null null null 
-16727 <first : null null null null null null KnightBlack null 
-16727 <first : null null null null null KnightWhite null BishopWhite 
-16728 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite 
-16728 <first : RookWhite KnightWhite BishopWhite QueenWhite KingWhite null null RookWhite 
-19119 >first : time 29883
-19121 >first : otim 29507
+10543 >second: b1c3
+10646 <first : 
+10646 <first : 
+10646 <first : dupa engine
+10646 <first : B B B B B B B B 
+10646 <first : B B n B B B B B 
+10646 <first : n n n n n n n n 
+10646 <first : n n B n n n n n 
+10646 <first : n n n n n n n n 
+10646 <first : n n W n n W n n 
+10646 <first : W W W W W W W W 
+10646 <first : W n W W W W n W 
+10647 <second: # times @ 2365308155
+10647 <second: # 16+16 pieces, centr = (1,1) R=40
+10647 <second:  1     14        0          3 d7d5
+10647 <second:  1     15        0          5 d7d6
+10647 <second:  1     27        0          7 f7f5
+10647 <second:  2    -14        0         19 f7f5 d2d4
+10647 <second:  2    -11        0         32 f7f6 d2d4
+10647 <second:  2     -8        0         52 g7g6 d2d4
+10647 <second:  2      0        0         65 h7h5 d2d4
+10647 <second:  2      5        0        187 g8f6 d2d4
+10647 <second:  2      7        0        249 d7d5 d2d4
+10648 <second: # times @ 2365308156: real=1 cpu=0
+10648 <second: # promo = 0 (`) GT = 0
+10648 <second: move d7d5
+10648 >first : time 30387
+10648 >first : otim 30378
 book hit = (NULL)
-19125 >first : usermove 19126 >first : e1g1
-19209 <first : e1g1
-19210 <first : dupa adversar
-19211 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-19211 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack PawnBlack PawnBlack 
-19211 <first : null null null PawnBlack null null null null 
-19211 <first : null null null null null null null null 
-19211 <first : null null null null null null KnightBlack null 
-19211 <first : null null null null null KnightWhite null BishopWhite 
-19211 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite 
-19211 <first : RookWhite KnightWhite BishopWhite QueenWhite null RookWhite KingWhite null 
-19426 <first : move g4h2
-19528 <first : 
-19529 <first : 
-19529 <first : dupa engine
-19530 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-19530 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack PawnBlack PawnBlack 
-19530 <first : null null null PawnBlack null null null null 
-19530 <first : null null null null null null null null 
-19530 <first : null null null null null null null null 
-19530 <first : null null null null null KnightWhite null BishopWhite 
-19530 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null KnightBlack 
-19530 <first : RookWhite KnightWhite BishopWhite QueenWhite null RookWhite KingWhite null 
-21618 >first : time 29852
-21625 >first : otim 29288
+10648 >first : usermove 10648 >first : d7d5
+10724 <first : d7d5
+10724 <first : dupa adversar
+10724 <first : B B B B B B B B 
+10724 <first : B B n n B B B B 
+10724 <first : n n n n n n n n 
+10724 <first : n n B B n n n n 
+10724 <first : n n n n n n n n 
+10724 <first : n n W n n W n n 
+10724 <first : W W W W W W W W 
+10724 <first : W n W W W W n W 
+10724 <first : REGE SI CULOARE JOC 0 W
+10724 <first : move f3e5
+Interrupting second
+10724 >second: time 30378
+10724 >second: otim 30579
 book hit = (NULL)
-21628 >first : usermove 21628 >first : f1e1
-21708 <first : f1e1
-21709 <first : dupa adversar
-21709 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-21710 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack PawnBlack PawnBlack 
-21710 <first : null null null PawnBlack null null null null 
-21710 <first : null null null null null null null null 
-21710 <first : null null null null null null null null 
-21710 <first : null null null null null KnightWhite null BishopWhite 
-21710 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null KnightBlack 
-21710 <first : RookWhite KnightWhite BishopWhite QueenWhite RookWhite null KingWhite null 
-21799 <first : move h2f3
-21911 <first : 
-21913 <first : 
-21914 <first : dupa engine
-21914 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-21914 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack PawnBlack PawnBlack 
-21914 <first : null null null PawnBlack null null null null 
-21914 <first : null null null null null null null null 
-21914 <first : null null null null null null null null 
-21914 <first : null null null null null KnightBlack null BishopWhite 
-21914 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite null null 
-21914 <first : RookWhite KnightWhite BishopWhite QueenWhite RookWhite null KingWhite null 
-30542 >first : black
-30544 >first : time 28499
-30546 >first : otim 29834
-30546 >first : white
+10724 >second: f3e5
+10823 <first : 
+10823 <first : 
+10823 <first : dupa engine
+10823 <first : B B B B B B B B 
+10823 <first : B B n n B B B B 
+10823 <first : n n n n n n n n 
+10823 <first : n n B B W n n n 
+10823 <first : n n n n n n n n 
+10823 <first : n n W n n n n n 
+10823 <first : W W W W W W W W 
+10823 <first : W n W W W W n W 
+10823 <second: # times @ 2365308337
+10823 <second: # 16+16 pieces, centr = (1,1) R=40
+10823 <second:  1     -3        0          3 a7a5
+10824 <second:  1     -2        0         13 a7a6
+10824 <second:  1      4        0         35 b7b6
+10824 <second:  1     18        0         41 f7f6
+10824 <second:  1     27        0         65 b8d7
+10824 <second:  2     26        0        181 b8d7 d2d4 d7e5 d4e5
+10824 <second: # times @ 2365308337: real=0 cpu=0
+10824 <second: # promo = 0 (`) GT = 0
+10824 <second: move b8d7
+10824 >first : time 30579
+10824 >first : otim 30568
 book hit = (NULL)
-30547 >first : go
-nps: w=-1, b=-1
-30716 <first : move g1g2
-30803 <first : 
-30803 <first : 
-35591 >first : time 28483
-35594 >first : otim 29346
+10824 >first : usermove 10824 >first : b8d7
+10935 <first : b8d7
+10935 <first : dupa adversar
+10935 <first : B n B B B B B B 
+10935 <first : B B n B B B B B 
+10935 <first : n n n n n n n n 
+10935 <first : n n B B W n n n 
+10935 <first : n n n n n n n n 
+10935 <first : n n W n n n n n 
+10935 <first : W W W W W W W W 
+10935 <first : W n W W W W n W 
+10935 <first : REGE SI CULOARE JOC 0 W
+10935 <first : move e5d7
+Interrupting second
+10935 >second: time 30568
+10935 >second: otim 30768
 book hit = (NULL)
-35598 >first : usermove 35599 >first : g7g5
-35691 <first : g7g5
-35692 <first : dupa adversar
-35692 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-35693 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-35693 <first : null null null PawnBlack null null null null 
-35693 <first : null null null null null null PawnBlack null 
-35693 <first : null null null null null null null null 
-35693 <first : null null null null null KnightBlack null BishopWhite 
-35693 <first : PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite PawnWhite KingWhite null 
-35693 <first : RookWhite KnightWhite BishopWhite QueenWhite RookWhite null null null 
-35834 <first : move e2f3
-35920 <first : 
-35922 <first : 
-35922 <first : dupa engine
-35922 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack BishopBlack null RookBlack 
-35922 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-35922 <first : null null null PawnBlack null null null null 
-35922 <first : null null null null null null PawnBlack null 
-35922 <first : null null null null null null null null 
-35922 <first : null null null null null PawnWhite null BishopWhite 
-35922 <first : PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite KingWhite null 
-35922 <first : RookWhite KnightWhite BishopWhite QueenWhite RookWhite null null null 
-38445 >first : time 28458
-38446 >first : otim 29085
+10936 >second: e5d7
+11040 <first : 
+11040 <first : 
+11040 <first : dupa engine
+11040 <first : B n B B B B B B 
+11040 <first : B B n W B B B B 
+11040 <first : n n n n n n n n 
+11040 <first : n n B B n n n n 
+11040 <first : n n n n n n n n 
+11040 <first : n n W n n n n n 
+11040 <first : W W W W W W W W 
+11040 <first : W n W W W W n W 
+11041 <second: # times @ 2365308548
+11041 <second: # 16+15 pieces, centr = (1,1) R=37
+11041 <second:  1     32        0          3 d8d7
+11041 <second:  2    -16        0         37 d8d7 d2d4
+11041 <second: # times @ 2365308550: real=2 cpu=0
+11041 <second: # promo = 0 (`) GT = 0
+11041 <second: move d8d7
+11042 >first : time 30768
+11042 >first : otim 30758
 book hit = (NULL)
-38453 >first : usermove 38453 >first : f8h6
-38587 <first : f8h6
-38588 <first : dupa adversar
-38588 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack null null RookBlack 
-38588 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-38588 <first : null null null PawnBlack null null null BishopBlack 
-38588 <first : null null null null null null PawnBlack null 
-38588 <first : null null null null null null null null 
-38588 <first : null null null null null PawnWhite null BishopWhite 
-38588 <first : PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite KingWhite null 
-38588 <first : RookWhite KnightWhite BishopWhite QueenWhite RookWhite null null null 
-38729 <first : move b1c3
-38851 <first : 
-38851 <first : 
-38851 <first : dupa engine
-38851 <first : RookBlack KnightBlack BishopBlack QueenBlack KingBlack null null RookBlack 
-38851 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-38851 <first : null null null PawnBlack null null null BishopBlack 
-38851 <first : null null null null null null PawnBlack null 
-38851 <first : null null null null null null null null 
-38851 <first : null null KnightWhite null null PawnWhite null BishopWhite 
-38851 <first : PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite KingWhite null 
-38851 <first : RookWhite null BishopWhite QueenWhite RookWhite null null null 
-41032 >first : time 28430
-41033 >first : otim 28855
+11042 >first : usermove 11042 >first : d8d7
+11117 <first : d8d7
+11117 <first : dupa adversar
+11117 <first : B n B n B B B B 
+11117 <first : B B n B B B B B 
+11117 <first : n n n n n n n n 
+11117 <first : n n B B n n n n 
+11117 <first : n n n n n n n n 
+11117 <first : n n W n n n n n 
+11117 <first : W W W W W W W W 
+11117 <first : W n W W W W n W 
+11117 <first : REGE SI CULOARE JOC 0 W
+11117 <first : move h1g1
+Interrupting second
+11117 >second: time 30758
+11117 >second: otim 30961
 book hit = (NULL)
-41041 >first : usermove 41042 >first : e8g8
-41125 <first : e8g8
-41126 <first : dupa adversar
-41127 <first : RookBlack KnightBlack BishopBlack QueenBlack null RookBlack KingBlack null 
-41128 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-41128 <first : null null null PawnBlack null null null BishopBlack 
-41128 <first : null null null null null null PawnBlack null 
-41128 <first : null null null null null null null null 
-41128 <first : null null KnightWhite null null PawnWhite null BishopWhite 
-41128 <first : PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite KingWhite null 
-41128 <first : RookWhite null BishopWhite QueenWhite RookWhite null null null 
-41280 <first : move c3e4
-41397 <first : 
-41397 <first : 
-41397 <first : dupa engine
-41397 <first : RookBlack KnightBlack BishopBlack QueenBlack null RookBlack KingBlack null 
-41398 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-41398 <first : null null null PawnBlack null null null BishopBlack 
-41398 <first : null null null null null null PawnBlack null 
-41398 <first : null null null null KnightWhite null null null 
-41398 <first : null null null null null PawnWhite null BishopWhite 
-41398 <first : PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite KingWhite null 
-41398 <first : RookWhite null BishopWhite QueenWhite RookWhite null null null 
-42613 >first : time 28405
-42615 >first : otim 28722
+11117 >second: h1g1
+11191 <first : 
+11191 <first : 
+11191 <first : dupa engine
+11191 <first : B n B n B B B B 
+11191 <first : B B n B B B B B 
+11191 <first : n n n n n n n n 
+11191 <first : n n B B n n n n 
+11191 <first : n n n n n n n n 
+11191 <first : n n W n n n n n 
+11191 <first : W W W W W W W W 
+11191 <first : W n W W W W W n 
+11192 <second: # times @ 2365308730
+11192 <second: # 15+15 pieces, centr = (1,1) R=36
+11192 <second:  1     -2        0          3 a7a5
+11192 <second:  1      0        0          3 d7d6
+11192 <second:  1      7        0          3 f7f5
+11192 <second:  1     13        0          3 g8f6
+11192 <second:  2     -3        0         41 g8f6 d2d4
+11192 <second: # times @ 2365308731: real=1 cpu=10
+11192 <second: # promo = 0 (`) GT = 0
+11192 <second: move g8f6
+11192 >first : time 30961
+11192 >first : otim 30950
 book hit = (NULL)
-42621 >first : usermove 42622 >first : f8e8
-42705 <first : f8e8
-42706 <first : dupa adversar
-42706 <first : RookBlack KnightBlack BishopBlack QueenBlack RookBlack null KingBlack null 
-42706 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-42706 <first : null null null PawnBlack null null null BishopBlack 
-42706 <first : null null null null null null PawnBlack null 
-42706 <first : null null null null KnightWhite null null null 
-42706 <first : null null null null null PawnWhite null BishopWhite 
-42706 <first : PawnWhite PawnWhite PawnWhite PawnWhite null PawnWhite KingWhite null 
-42707 <first : RookWhite null BishopWhite QueenWhite RookWhite null null null 
-42844 <first : move e1e2
-42925 <first : 
-42925 <first : 
-42925 <first : dupa engine
-42925 <first : RookBlack KnightBlack BishopBlack QueenBlack RookBlack null KingBlack null 
-42925 <first : PawnBlack PawnBlack PawnBlack null PawnBlack PawnBlack null PawnBlack 
-42925 <first : null null null PawnBlack null null null BishopBlack 
-42925 <first : null null null null null null PawnBlack null 
-42925 <first : null null null null KnightWhite null null null 
-42925 <first : null null null null null PawnWhite null BishopWhite 
-42925 <first : PawnWhite PawnWhite PawnWhite PawnWhite RookWhite PawnWhite KingWhite null 
-42925 <first : RookWhite null BishopWhite QueenWhite null null null null 
-GameEnds(29, xboard exit, 2)
-49106 >first : result * {xboard exit}
-49107 >first : force
-49108 >first : quit
+11192 >first : usermove 11192 >first : g8f6
+11294 <first : g8f6
+11294 <first : dupa adversar
+11294 <first : B n B n B B n B 
+11294 <first : B B n B B B B B 
+11294 <first : n n n n n B n n 
+11294 <first : n n B B n n n n 
+11294 <first : n n n n n n n n 
+11294 <first : n n W n n n n n 
+11294 <first : W W W W W W W W 
+11294 <first : W n W W W W W n 
+11294 <first : REGE SI CULOARE JOC 0 W
+11294 <first : move g1h1
+Interrupting second
+11295 >second: time 30950
+11295 >second: otim 31150
+book hit = (NULL)
+11295 >second: g1h1
+11376 <first : 
+11376 <first : 
+11376 <first : dupa engine
+11376 <first : B n B n B B n B 
+11376 <first : B B n B B B B B 
+11376 <first : n n n n n B n n 
+11376 <first : n n B B n n n n 
+11377 <first : n n n n n n n n 
+11377 <first : n n W n n n n n 
+11377 <first : W W W W W W W W 
+11377 <first : W n W W W W n W 
+11377 <second: # times @ 2365308908
+11377 <second: # 15+15 pieces, centr = (1,1) R=36
+11377 <second:  1      7        0          3 g7g5
+11377 <second:  2     -9        0         45 g7g5 d2d4
+11378 <second:  2      0        0        293 f6g8 c3b1
+11378 <second:  2      6        0        407 d5d4 c3b1
+11378 <second: # times @ 2365308911: real=3 cpu=0
+11378 <second: # promo = 0 (`) GT = 0
+11378 <second: move d5d4
+11378 >first : time 31150
+11378 >first : otim 31142
+book hit = (NULL)
+11378 >first : usermove 11378 >first : d5d4
+11465 <first : d5d4
+11465 <first : dupa adversar
+11465 <first : B n B n B B n B 
+11465 <first : B B n B B B B B 
+11465 <first : n n n n n B n n 
+11465 <first : n n B n n n n n 
+11465 <first : n n n B n n n n 
+11465 <first : n n W n n n n n 
+11465 <first : W W W W W W W W 
+11465 <first : W n W W W W n W 
+11465 <first : REGE SI CULOARE JOC 0 W
+11465 <first : move c3b1
+Interrupting second
+11466 >second: time 31142
+11466 >second: otim 31342
+book hit = (NULL)
+11466 >second: c3b1
+11568 <first : 
+11568 <first : 
+11568 <first : dupa engine
+11568 <first : B n B n B B n B 
+11569 <first : B B n B B B B B 
+11569 <first : n n n n n B n n 
+11569 <first : n n B n n n n n 
+11569 <first : n n n B n n n n 
+11569 <first : n n n n n n n n 
+11569 <first : W W W W W W W W 
+11569 <first : W W W W W W n W 
+11569 <second: # times @ 2365309080
+11569 <second: # 15+15 pieces, centr = (1,1) R=36
+11569 <second:  1      7        0          3 g7g5
+11569 <second:  2     -9        0         23 g7g5 c2c4
+11569 <second: # times @ 2365309082: real=2 cpu=0
+11569 <second: # promo = 0 (`) GT = 0
+11569 <second: move g7g5
+11570 >first : time 31342
+11570 >first : otim 31331
+book hit = (NULL)
+11570 >first : usermove 11570 >first : g7g5
+11653 <first : g7g5
+11653 <first : dupa adversar
+11653 <first : B n B n B B n B 
+11653 <first : B B n B B B n B 
+11653 <first : n n n n n B n n 
+11653 <first : n n B n n n B n 
+11653 <first : n n n B n n n n 
+11653 <first : n n n n n n n n 
+11653 <first : W W W W W W W W 
+11653 <first : W W W W W W n W 
+11653 <first : REGE SI CULOARE JOC 0 W
+11653 <first : move b1a3
+Interrupting second
+11653 >second: time 31331
+11654 >second: otim 31533
+book hit = (NULL)
+11654 >second: b1a3
+11757 <first : 
+11757 <first : 
+11757 <first : dupa engine
+11757 <first : B n B n B B n B 
+11757 <first : B B n B B B n B 
+11757 <first : n n n n n B n n 
+11757 <first : n n B n n n B n 
+11757 <first : n n n B n n n n 
+11757 <first : W n n n n n n n 
+11757 <first : W W W W W W W W 
+11757 <first : W n W W W W n W 
+11758 <second: # times @ 2365309266
+11758 <second: # 15+15 pieces, centr = (1,1) R=36
+11758 <second:  1      7        0          3 h7h5
+11758 <second:  2     -9        0         23 h7h5 c2c4
+11758 <second: # times @ 2365309269: real=3 cpu=10
+11758 <second: # promo = 0 (`) GT = 0
+11758 <second: move h7h5
+11758 >first : time 31533
+11759 >first : otim 31521
+book hit = (NULL)
+11759 >first : usermove 11759 >first : h7h5
+11841 <first : h7h5
+11841 <first : dupa adversar
+11841 <first : B n B n B B n B 
+11841 <first : B B n B B B n n 
+11841 <first : n n n n n B n n 
+11841 <first : n n B n n n B B 
+11841 <first : n n n B n n n n 
+11841 <first : W n n n n n n n 
+11841 <first : W W W W W W W W 
+11841 <first : W n W W W W n W 
+11841 <first : REGE SI CULOARE JOC 0 W
+11841 <first : move a3c4
+Interrupting second
+11842 >second: time 31521
+11842 >second: otim 31725
+book hit = (NULL)
+11842 >second: a3c4
+11948 <first : 
+11948 <first : 
+11948 <first : dupa engine
+11948 <first : B n B n B B n B 
+11948 <first : B B n B B B n n 
+11948 <first : n n n n n B n n 
+11948 <first : n n B n n n B B 
+11948 <first : n n W B n n n n 
+11948 <first : n n n n n n n n 
+11948 <first : W W W W W W W W 
+11948 <first : W n W W W W n W 
+11949 <second: # times @ 2365309455
+11949 <second: # 15+15 pieces, centr = (1,1) R=36
+11949 <second:  1     -8        0          5 g5g4
+11949 <second:  1      0        0          7 a8b8
+11949 <second:  1      3        0          9 f8g7
+11949 <second:  2    -11        0         33 f8g7 c2c3
+11949 <second:  2     -6        0        254 b7b5 c4e5
+11949 <second: # times @ 2365309457: real=2 cpu=0
+11949 <second: # promo = 0 (`) GT = 0
+11949 <second: move b7b5
+11950 >first : time 31725
+11950 >first : otim 31710
+book hit = (NULL)
+11950 >first : usermove 11950 >first : b7b5
+12026 <first : b7b5
+12026 <first : dupa adversar
+12026 <first : B n B n B B n B 
+12026 <first : B n n B B B n n 
+12026 <first : n n n n n B n n 
+12026 <first : n B B n n n B B 
+12026 <first : n n W B n n n n 
+12026 <first : n n n n n n n n 
+12026 <first : W W W W W W W W 
+12026 <first : W n W W W W n W 
+12026 <first : REGE SI CULOARE JOC 0 W
+12026 <first : move c4e5
+Interrupting second
+12026 >second: time 31710
+12026 >second: otim 31917
+book hit = (NULL)
+12026 >second: c4e5
+12126 <first : 
+12126 <first : 
+12126 <first : dupa engine
+12126 <first : B n B n B B n B 
+12126 <first : B n n B B B n n 
+12126 <first : n n n n n B n n 
+12126 <first : n B B n W n B B 
+12126 <first : n n n B n n n n 
+12126 <first : n n n n n n n n 
+12126 <first : W W W W W W W W 
+12126 <first : W n W W W W n W 
+12126 <second: # times @ 2365309638
+12126 <second: # 15+15 pieces, centr = (1,1) R=36
+12126 <second:  1   -589        0         13 e7e6 e5d7 c8d7
+12127 <second:  1   -574        0         19 f6d5 e5d7 c8d7
+12127 <second:  1   -573        0         25 f6e4 e5d7 c8d7
+12127 <second:  1      0        0         93 d7d6
+12127 <second:  2      2        0        187 d7d6 e5d3
+12127 <second: # times @ 2365309639: real=1 cpu=0
+12127 <second: # promo = 0 (`) GT = 0
+12127 <second: move d7d6
+12128 >first : time 31917
+12128 >first : otim 31900
+book hit = (NULL)
+12128 >first : usermove 12128 >first : d7d6
+12204 <first : d7d6
+12204 <first : dupa adversar
+12204 <first : B n B n B B n B 
+12204 <first : B n n n B B n n 
+12204 <first : n n n B n B n n 
+12204 <first : n B B n W n B B 
+12204 <first : n n n B n n n n 
+12204 <first : n n n n n n n n 
+12204 <first : W W W W W W W W 
+12204 <first : W n W W W W n W 
+12204 <first : REGE SI CULOARE JOC 0 W
+12204 <first : move e5d3
+Interrupting second
+12204 >second: time 31900
+12204 >second: otim 32110
+book hit = (NULL)
+12204 >second: e5d3
+12309 <first : 
+12309 <first : 
+12309 <first : dupa engine
+12309 <first : B n B n B B n B 
+12309 <first : B n n n B B n n 
+12309 <first : n n n B n B n n 
+12309 <first : n B B n n n B B 
+12309 <first : n n n B n n n n 
+12309 <first : n n n W n n n n 
+12309 <first : W W W W W W W W 
+12309 <first : W n W W W W n W 
+12309 <second: # times @ 2365309816
+12310 <second: # 15+15 pieces, centr = (1,1) R=36
+12310 <second:  1   -777        0          3 d6h2
+12310 <second:  1    -73        0          3 d6e6
+12310 <second:  1      0        0          3 d6d5
+12310 <second:  1      2        0          3 f6d5
+12310 <second:  1      3        0          3 f6e4
+12310 <second:  1      9        0          3 c8d7
+12310 <second:  1     14        0          3 c8e6
+12310 <second:  1     15        0          3 c8f5
+12310 <second:  2      1        0        143 c8f5 c2c3
+12311 <second:  2    138        0       1425 c5c4 f2f3 c4d3 c2d3
+12311 <second: # times @ 2365309818: real=2 cpu=0
+12311 <second: # promo = 0 (`) GT = 0
+12311 <second: move c5c4
+12311 >first : time 32110
+12311 >first : otim 32089
+book hit = (NULL)
+12311 >first : usermove 12311 >first : c5c4
+12387 <first : c5c4
+12387 <first : dupa adversar
+12387 <first : B n B n B B n B 
+12387 <first : B n n n B B n n 
+12387 <first : n n n B n B n n 
+12387 <first : n B n n n n B B 
+12387 <first : n n B B n n n n 
+12387 <first : n n n W n n n n 
+12387 <first : W W W W W W W W 
+12387 <first : W n W W W W n W 
+12387 <first : REGE SI CULOARE JOC 0 W
+12387 <first : move d3b4
+Interrupting second
+12387 >second: time 32089
+12387 >second: otim 32302
+book hit = (NULL)
+12387 >second: d3b4
+12482 <first : 
+12482 <first : 
+12482 <first : dupa engine
+12482 <first : B n B n B B n B 
+12482 <first : B n n n B B n n 
+12482 <first : n n n B n B n n 
+12482 <first : n B n n n n B B 
+12482 <first : n W B B n n n n 
+12482 <first : n n n n n n n n 
+12482 <first : W W W W W W W W 
+12482 <first : W n W W W W n W 
+12482 <second: # times @ 2365310000
+12482 <second: # 15+15 pieces, centr = (1,1) R=36
+12482 <second:  1    264        0          3 d6b4
+12482 <second:  2    245        0         63 d6b4 c2c3
+12482 <second: # times @ 2365310000: real=0 cpu=10
+12482 <second: # promo = 0 (`) GT = 0
+12482 <second: move d6b4
+12483 >first : time 32302
+12483 >first : otim 32280
+book hit = (NULL)
+12483 >first : usermove 12483 >first : d6b4
+12589 <first : d6b4
+12589 <first : dupa adversar
+12589 <first : B n B n B B n B 
+12589 <first : B n n n B B n n 
+12589 <first : n n n n n B n n 
+12589 <first : n B n n n n B B 
+12589 <first : n B B B n n n n 
+12589 <first : n n n n n n n n 
+12589 <first : W W W W W W W W 
+12589 <first : W n W W W W n W 
+12590 <first : REGE SI CULOARE JOC 0 W
+12590 <first : move h1g1
+Interrupting second
+12590 >second: time 32280
+12590 >second: otim 32491
+book hit = (NULL)
+12590 >second: h1g1
+12671 <first : 
+12671 <first : 
+12671 <first : dupa engine
+12671 <first : B n B n B B n B 
+12671 <first : B n n n B B n n 
+12671 <first : n n n n n B n n 
+12671 <first : n B n n n n B B 
+12671 <first : n B B B n n n n 
+12672 <first : n n n n n n n n 
+12672 <first : W W W W W W W W 
+12672 <first : W n W W W W W n 
+12672 <second: # times @ 2365310204
+12672 <second: # 14+15 pieces, centr = (1,1) R=33
+12672 <second:  1   -519        0          3 b4b2
+12672 <second:  1    259        0          3 b4a4
+12672 <second:  1    260        0          3 c8b7
+12672 <second:  1    268        0          3 c8d7
+12672 <second:  1    273        0          3 c8e6
+12672 <second:  1    274        0          3 c8f5
+12672 <second:  2    259        0         75 c8f5 c2c3
+12672 <second: # times @ 2365310208: real=4 cpu=0
+12673 <second: # promo = 0 (`) GT = 0
+12673 <second: move c8f5
+12673 >first : time 32491
+12673 >first : otim 32472
+book hit = (NULL)
+12673 >first : usermove 12673 >first : c8f5
+12775 <first : c8f5
+12775 <first : dupa adversar
+12775 <first : B n n n B B n B 
+12775 <first : B n n n B B n n 
+12776 <first : n n n n n B n n 
+12776 <first : n B n n n B B B 
+12776 <first : n B B B n n n n 
+12776 <first : n n n n n n n n 
+12776 <first : W W W W W W W W 
+12776 <first : W n W W W W W n 
+12776 <first : REGE SI CULOARE JOC 0 W
+12776 <first : move g1h1
+Interrupting second
+12776 >second: time 32472
+12776 >second: otim 32681
+book hit = (NULL)
+12776 >second: g1h1
+12858 <first : 
+12858 <first : 
+12858 <first : dupa engine
+12858 <first : B n n n B B n B 
+12858 <first : B n n n B B n n 
+12858 <first : n n n n n B n n 
+12858 <first : n B n n n B B B 
+12858 <first : n B B B n n n n 
+12858 <first : n n n n n n n n 
+12858 <first : W W W W W W W W 
+12858 <first : W n W W W W n W 
+12859 <second: # times @ 2365310390
+12859 <second: # 14+15 pieces, centr = (1,1) R=33
+12859 <second:  1     28        0          3 f5c2
+12859 <second:  1    260        0          3 f5e4
+12859 <second:  1    285        0          3 e8c8
+12859 <second:  2    270        0         87 e8c8 c2c3
+12859 <second: # times @ 2365310395: real=5 cpu=10
+12859 <second: # promo = 0 (`) GT = 0
+12859 <second: move e8c8
+12860 >first : time 32681
+12860 >first : otim 32663
+book hit = (NULL)
+12860 >first : usermove 12860 >first : e8c8
+12935 <first : e8c8
+12935 <first : dupa adversar
+12935 <first : n n B B n B n B 
+12935 <first : B n n n B B n n 
+12935 <first : n n n n n B n n 
+12935 <first : n B n n n B B B 
+12935 <first : n B B B n n n n 
+12935 <first : n n n n n n n n 
+12935 <first : W W W W W W W W 
+12935 <first : W n W W W W n W 
+12935 <first : REGE SI CULOARE JOC 0 W
+12935 <first : move h1g1
+Interrupting second
+12935 >second: time 32663
+12935 >second: otim 32873
+book hit = (NULL)
+12935 >second: h1g1
+13012 <first : 
+13012 <first : 
+13012 <first : dupa engine
+13012 <first : n n B B n B n B 
+13012 <first : B n n n B B n n 
+13012 <first : n n n n n B n n 
+13012 <first : n B n n n B B B 
+13012 <first : n B B B n n n n 
+13012 <first : n n n n n n n n 
+13012 <first : W W W W W W W W 
+13012 <first : W n W W W W W n 
+13012 <second: # times @ 2365310548
+13012 <second: # 14+15 pieces, centr = (1,1) R=33
+13012 <second:  1     28        0          3 f5c2
+13013 <second:  1    260        0          3 f5e4
+13013 <second:  1    290        0          3 c4c3
+13013 <second:  2    290        0          7 c4c3 d2c3
+13013 <second: # times @ 2365310549: real=1 cpu=0
+13013 <second: # promo = 0 (`) GT = 0
+13013 <second: move c4c3
+13013 >first : time 32873
+13013 >first : otim 32855
+book hit = (NULL)
+13013 >first : usermove 13013 >first : c4c3
+13089 <first : c4c3
+13089 <first : dupa adversar
+13089 <first : n n B B n B n B 
+13089 <first : B n n n B B n n 
+13089 <first : n n n n n B n n 
+13089 <first : n B n n n B B B 
+13089 <first : n B n B n n n n 
+13089 <first : n n B n n n n n 
+13089 <first : W W W W W W W W 
+13089 <first : W n W W W W W n 
+13089 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13089 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13089 <first : REGE SI CULOARE JOC 0 W
+13089 <first : move b2c3
+Interrupting second
+13090 >second: time 32855
+13090 >second: otim 33066
+book hit = (NULL)
+13090 >second: b2c3
+13164 <first : 
+13164 <first : 
+13164 <first : dupa engine
+13164 <first : n n B B n B n B 
+13164 <first : B n n n B B n n 
+13164 <first : n n n n n B n n 
+13164 <first : n B n n n B B B 
+13164 <first : n B n B n n n n 
+13164 <first : n n W n n n n n 
+13164 <first : W n W W W W W W 
+13164 <first : W n W W W W W n 
+13164 <second: # times @ 2365310702
+13164 <second: # 14+14 pieces, centr = (1,1) R=33
+13164 <second:  1    291        0          3 d4c3
+13164 <second:  2    296        0        208 d4c3 f2f3
+13164 <second: # times @ 2365310703: real=1 cpu=0
+13164 <second: # promo = 0 (`) GT = 0
+13164 <second: move d4c3
+13164 >first : time 33066
+13164 >first : otim 33048
+book hit = (NULL)
+13164 >first : usermove 13164 >first : d4c3
+13242 <first : d4c3
+13242 <first : dupa adversar
+13242 <first : n n B B n B n B 
+13242 <first : B n n n B B n n 
+13242 <first : n n n n n B n n 
+13242 <first : n B n n n B B B 
+13242 <first : n B n n n n n n 
+13242 <first : n n B n n n n n 
+13242 <first : W n W W W W W W 
+13242 <first : W n W W W W W n 
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13242 <first : REGE SI CULOARE JOC 0 W
+13242 <first : move d2c3
+Interrupting second
+13243 >second: time 33048
+13243 >second: otim 33258
+book hit = (NULL)
+13243 >second: d2c3
+13325 <first : 
+13325 <first : 
+13325 <first : dupa engine
+13325 <first : n n B B n B n B 
+13325 <first : B n n n B B n n 
+13325 <first : n n n n n B n n 
+13325 <first : n B n n n B B B 
+13325 <first : n B n n n n n n 
+13325 <first : n n W n n n n n 
+13325 <first : W n W n W W W W 
+13325 <first : W n W W W W W n 
+13325 <second: # times @ 2365310856
+13325 <second: # 13+13 pieces, centr = (1,1) R=31
+13325 <second:  1    672        0          3 d8d1
+13326 <second:  2    672        0         28 d8d1 e1d1 b4c3
+13326 <second: # times @ 2365310858: real=2 cpu=0
+13326 <second: # promo = 0 (`) GT = 0
+13326 <second: move d8d1
+13326 >first : time 33258
+13326 >first : otim 33240
+book hit = (NULL)
+13326 >first : usermove 13326 >first : d8d1
+13431 <first : d8d1
+13431 <first : dupa adversar
+13431 <first : n n B n n B n B 
+13431 <first : B n n n B B n n 
+13431 <first : n n n n n B n n 
+13431 <first : n B n n n B B B 
+13431 <first : n B n n n n n n 
+13432 <first : n n W n n n n n 
+13432 <first : W n W n W W W W 
+13432 <first : W n W B W W W n 
+13432 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13432 <first : rege atacat
+13432 <first : verificam in defend 0 4 regele e pe W rege alb 02 rege negru 72 cul noi W
+13432 <first : REGE SI CULOARE JOC 0 W
+13432 <first : move e1d1
+Interrupting second
+13433 >second: time 33240
+13433 >second: otim 33447
+book hit = (NULL)
+13433 >second: e1d1
+13515 <first : 
+13515 <first : 
+13515 <first : dupa engine
+13515 <first : n n B n n B n B 
+13515 <first : B n n n B B n n 
+13515 <first : n n n n n B n n 
+13515 <first : n B n n n B B B 
+13515 <first : n B n n n n n n 
+13515 <first : n n W n n n n n 
+13515 <first : W n W n W W W W 
+13515 <first : W n W W n W W n 
+13515 <second: # times @ 2365311045
+13515 <second: # 12+12 pieces, centr = (1,1) R=19
+13515 <second:  1    671        0          3 b4c3
+13515 <second:  2    739        0        103 b4c3 a1b1 c3c2
+13516 <second: # times @ 2365311047: real=2 cpu=0
+13516 <second: # promo = 0 (`) GT = 0
+13516 <second: move b4c3
+13516 >first : time 33447
+13516 >first : otim 33431
+book hit = (NULL)
+13516 >first : usermove 13516 >first : b4c3
+13602 <first : b4c3
+13603 <first : dupa adversar
+13603 <first : n n B n n B n B 
+13603 <first : B n n n B B n n 
+13603 <first : n n n n n B n n 
+13603 <first : n B n n n B B B 
+13603 <first : n n n n n n n n 
+13603 <first : n n B n n n n n 
+13603 <first : W n W n W W W W 
+13603 <first : W n W W n W W n 
+13603 <first : REGE SI CULOARE JOC 0 W
+13603 <first : move c1g5
+Interrupting second
+13603 >second: time 33431
+13603 >second: otim 33638
+book hit = (NULL)
+13603 >second: c1g5
+13707 <first : 
+13707 <first : 
+13707 <first : dupa engine
+13707 <first : n n B n n B n B 
+13707 <first : B n n n B B n n 
+13707 <first : n n n n n B n n 
+13707 <first : n B n n n B W B 
+13707 <first : n n n n n n n n 
+13707 <first : n n B n n n n n 
+13707 <first : W n W n W W W W 
+13707 <first : W n n W n W W n 
+13708 <second: # times @ 2365311216
+13708 <second: # 11+11 pieces, centr = (1,1) R=19
+13708 <second:  1   1024        0          3 c3a1
+13708 <second:  2   1121        0         51 c3a1 g5c1 a1a2
+13708 <second: # times @ 2365311217: real=1 cpu=0
+13708 <second: # promo = 0 (`) GT = 0
+13708 <second: move c3a1
+13709 >first : time 33638
+13709 >first : otim 33621
+book hit = (NULL)
+13709 >first : usermove 13709 >first : c3a1
+13813 <first : c3a1
+13813 <first : dupa adversar
+13813 <first : n n B n n B n B 
+13813 <first : B n n n B B n n 
+13814 <first : n n n n n B n n 
+13814 <first : n B n n n B W B 
+13814 <first : n n n n n n n n 
+13814 <first : n n n n n n n n 
+13814 <first : W n W n W W W W 
+13814 <first : B n n W n W W n 
+13814 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+13814 <first : rege atacat
+13814 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+13814 <first : REGE SI CULOARE JOC 0 W
+13814 <first : move g5c1
+Interrupting second
+13814 >second: time 33621
+13814 >second: otim 33828
+book hit = (NULL)
+13815 >second: g5c1
+13922 <first : 
+13922 <first : 
+13922 <first : dupa engine
+13922 <first : n n B n n B n B 
+13922 <first : B n n n B B n n 
+13922 <first : n n n n n B n n 
+13922 <first : n B n n n B n B 
+13922 <first : n n n n n n n n 
+13922 <first : n n n n n n n n 
+13922 <first : W n W n W W W W 
+13922 <first : B n W W n W W n 
+13923 <second: # times @ 2365311427
+13923 <second: # 10+11 pieces, centr = (1,1) R=14
+13923 <second:  1   1121        0          3 a1a2
+13923 <second:  2   1099        0         61 a1a2 c2c3
+13924 <second:  2   1100        0        139 a1d4 c1d2 d4f2
+13924 <second: # times @ 2365311431: real=4 cpu=0
+13924 <second: # promo = 0 (`) GT = 0
+13924 <second: move a1d4
+13924 >first : time 33828
+13924 >first : otim 33810
+book hit = (NULL)
+13924 >first : usermove 13924 >first : a1d4
+14030 <first : a1d4
+14030 <first : dupa adversar
+14030 <first : n n B n n B n B 
+14030 <first : B n n n B B n n 
+14030 <first : n n n n n B n n 
+14030 <first : n B n n n B n B 
+14030 <first : n n n B n n n n 
+14030 <first : n n n n n n n n 
+14030 <first : W n W n W W W W 
+14030 <first : n n W W n W W n 
+14030 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14030 <first : rege atacat
+14030 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14030 <first : REGE SI CULOARE JOC 0 W
+14030 <first : move c1d2
+Interrupting second
+14031 >second: time 33810
+14031 >second: otim 34017
+book hit = (NULL)
+14031 >second: c1d2
+14114 <first : 
+14114 <first : 
+14114 <first : dupa engine
+14114 <first : n n B n n B n B 
+14114 <first : B n n n B B n n 
+14114 <first : n n n n n B n n 
+14114 <first : n B n n n B n B 
+14114 <first : n n n B n n n n 
+14114 <first : n n n n n n n n 
+14114 <first : W n W W W W W W 
+14114 <first : n n n W n W W n 
+14115 <second: # times @ 2365311644
+14115 <second: # 10+11 pieces, centr = (1,1) R=14
+14115 <second:  1   1101        0          3 d4f2
+14115 <second:  2   1110        0        150 d4f2 g1h1
+14115 <second:  2   1312        0        606 f6e4 c2c4 d4d2
+14116 <second: # times @ 2365311649: real=5 cpu=10
+14116 <second: # promo = 0 (`) GT = 0
+14116 <second: move f6e4
+14116 >first : time 34017
+14116 >first : otim 34001
+book hit = (NULL)
+14116 >first : usermove 14116 >first : f6e4
+14226 <first : f6e4
+14226 <first : dupa adversar
+14227 <first : n n B n n B n B 
+14227 <first : B n n n B B n n 
+14227 <first : n n n n n n n n 
+14227 <first : n B n n n B n B 
+14227 <first : n n n B B n n n 
+14227 <first : n n n n n n n n 
+14227 <first : W n W W W W W W 
+14227 <first : n n n W n W W n 
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : verificam in defend 0 3 regele e pe W rege alb 02 rege negru 72 cul noi W
+14227 <first : REGE SI CULOARE JOC 0 W
+14227 <first : move d1c1
+Interrupting second
+14228 >second: time 34001
+14228 >second: otim 34206
+book hit = (NULL)
+14228 >second: d1c1
+14309 <first : 
+14310 <first : 
+14310 <first : dupa engine
+14310 <first : n n B n n B n B 
+14310 <first : B n n n B B n n 
+14310 <first : n n n n n n n n 
+14310 <first : n B n n n B n B 
+14310 <first : n n n B B n n n 
+14310 <first : n n n n n n n n 
+14310 <first : W n W W W W W W 
+14310 <first : n n W n n W W n 
+14311 <second: # times @ 2365311841
+14311 <second: # 10+11 pieces, centr = (1,1) R=14
+14311 <second:  1   1347        0          3 e4d2
+14311 <second:  2   1305        0        119 e4d2 e2e3
+14311 <second:  2   1417        0       1227 d4d2 c1b2 e4f2
+14311 <second:  2 100001        0       1268 d4a1
+14311 <second: # times @ 2365311845: real=4 cpu=0
+14311 <second: # promo = 0 (`) GT = 0
+14311 <second: move d4a1
+14312 >first : usermove 14312 >first : d4a1
+GameEnds(27, Xboard adjudication: Checkmate, 4)
+GE(27, Xboard adjudication: Checkmate, 4) bare king k=11 color=66
+14313 >first : result 0-1 {Xboard adjudication: Checkmate}
+Interrupting second
+14313 >second: result 0-1 {Xboard adjudication: Checkmate}
+14314 >first : quit
+14338 >second: force
+14338 >second: ping 2
+14439 <second: 0-1 {Black mates}
+14439 <second: Error (unknown command): result
+14439 <second: pong 2
+GameEnds(27, Xboard adjudication: Checkmate, 2)
+26956 >second: quit

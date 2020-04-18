@@ -44,10 +44,9 @@ public class ChessBoard {
         for (int i = 7; i >= 0; i--) {
             for (int j = 0; j < 8; j++) {
                 if (board[i][j] != null)
-                System.out.print(board[i][j].getClass().getSimpleName() 
-                + "" + board[i][j].getColour()+ " ");
+                System.out.print(board[i][j].getColour().name().substring(0,1) + " ");
                 else 
-                System.out.print("null ");
+                System.out.print("n ");
             }
             System.out.println();
         }
@@ -107,15 +106,15 @@ public class ChessBoard {
         blackKing = pos;
     }
 
-    public void setKing(Position pos) {
-        if (ChessGame.getInstance().getColour().equals(TeamColour.Black)) 
+    public void setKing(Position pos, TeamColour team) {
+        if (team.equals(TeamColour.Black)) 
             setBlackKing(pos);
         else 
             setWhiteKing(pos);
     }
 
-    public Position getKing() {
-        if (ChessGame.getInstance().getColour().equals(TeamColour.Black)) 
+    public Position getKing(TeamColour team) {
+        if (team.equals(TeamColour.Black)) 
             return getBlackKing();
         else 
             return getWhiteKing();
