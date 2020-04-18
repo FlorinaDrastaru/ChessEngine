@@ -20,10 +20,6 @@ public class MoveAlgorithm {
         Move bestMove = null;
         int bestScore = Integer.MIN_VALUE;
         ChessBoard board = ChessBoard.getInstance();
-        // System.out.println("verificam in nega regele e pe " +
-        //  ChessBoard.getInstance().getBoard()[ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getRow()][ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getColumn()].getColour().name().substring(0,1) +
-        // " rege alb " + ChessBoard.getInstance().getWhiteKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() + " rege negru " + ChessBoard.getInstance().getBlackKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() +  " cul noi "
-        // + ChessGame.getInstance().getColour().name().substring(0,1));
         if (Check.attackedPos(board.getKing(ChessGame.getInstance().getColour()))) {
             System.out.println("rege atacat");
             moves = Check.canDefendPos(board.getKing(ChessGame.getInstance().getColour()));
@@ -63,16 +59,15 @@ public class MoveAlgorithm {
 
     public void applyMove(Move move) {
         ChessBoard board = ChessBoard.getInstance();
-        System.out.println("REGE SI CULOARE JOC " + board.getKing(ChessGame.getInstance().getColour()).getRow() + " " + ChessGame.getInstance().getColour().name().substring(0,1));
         if (move != null) {
             ChessPiece chessPiece = board.getChessPiece(move.getSrc());
             chessPiece.move(move.getDest());
+            chessPiece.incCountMoves();
             chessPiece.changeInitialPos();
             boolean pawnToQueen = false;
             checkPawnPromotion(chessPiece, move.getDest(), pawnToQueen);
             sendMoveToXboard(move.getSrc(), move.getDest(), pawnToQueen);
         } else {
-            System.out.println("RESIGN REGE SI CULOARE JOC " + board.getKing(ChessGame.getInstance().getColour()).getRow() + " " + ChessGame.getInstance().getColour().name().substring(0,1));
             new Resign().executeCommand();
         }
     }
@@ -81,12 +76,12 @@ public class MoveAlgorithm {
         if (chessPiece.getIdx() == 0) {
             if (ChessGame.getInstance().getColour().equals(TeamColour.Black) && pos.getRow() == 0) { 
                 ChessBoard.getInstance().takeOutChessPiece(pos);
-                ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.Black, false, 4, Rating.wQueenBoard, true), pos);
+                ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.Black, 4, Rating.wQueenBoard, true), pos);
                 pawnToQueen = true;
             } else
                 if (ChessGame.getInstance().getColour().equals(TeamColour.White) && pos.getRow() == 7) {
                     ChessBoard.getInstance().takeOutChessPiece(pos);
-                    ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.White, false, 4, Rating.wQueenBoard, true), pos);
+                    ChessBoard.getInstance().putChessPiece(new Queen(TeamColour.White, 4, Rating.wQueenBoard, true), pos);
                     pawnToQueen = true;
                 }
         }
@@ -122,6 +117,36 @@ public class MoveAlgorithm {
         return chess;
         
     }
+
+    public int checkKingSafety() {
+        int friends = 0;
+        int enemies = 0;
+        Position pos = ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour());
+        int ln = pos.getRow();
+        int col = pos.getColumn();
+        for (int i = ln - 1; i <= ln + 1; ++i) {
+            for (int j = col - 1; j <= col + 1; ++j) {
+                if (i >= 0 && i < 8 && j >= 0 && j < 8) {
+                    if (ChessBoard.getInstance().getChessPiece(new Position(i,j)) != null){
+                        ChessPiece piece = ChessBoard.getInstance().getChessPiece(new Position(i,j));
+                        if (piece.getColour().equals(ChessGame.getInstance().getColour())) {
+                            if (piece.getIdx() == 4)
+                                friends += 30;
+                            else 
+                                friends += 10;
+                        } else {
+                            if (piece.getIdx() == 4)
+                                enemies += 30;
+                            else 
+                                enemies += 10;
+                        }
+                    }
+                }
+            }
+        }
+        return friends - enemies;
+    }
+
     public int eval(TeamColour team) {
         if (getWinner() != null) {
             if (getWinner().equals(team)) {
@@ -129,21 +154,35 @@ public class MoveAlgorithm {
             } else 
                 return Integer.MIN_VALUE;
         } else {
-            if (checkChess())
-                return Integer.MAX_VALUE;
             int strength = 0;
             int oppStrength = 0;
+            if (checkChess())
+                strength = 1000;
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 8; j++) {
-                    if (ChessBoard.getInstance().getBoard()[i][j] != null)
-                        if (ChessBoard.getInstance().getBoard()[i][j].getColour().equals(team)) {
-                        strength += ChessBoard.getInstance().getBoard()[i][j].getWorth();
-                    } else {
-                        oppStrength += ChessBoard.getInstance().getBoard()[i][j].getWorth();
+                    if (ChessBoard.getInstance().getBoard()[i][j] != null) {
+                    ChessPiece piece = ChessBoard.getInstance().getBoard()[i][j];
+                        if (piece.getColour().equals(team)) {
+                            if (piece.getIdx() == 4 && (i == ChessBoard.getInstance().getKing(team).getRow() 
+                               || j == ChessBoard.getInstance().getKing(team).getColumn()))
+                               strength += 50;
+                            strength += piece.getWorth();
+                        } else {
+                            if (piece.getIdx() == 4 && (i == ChessBoard.getInstance().getKing(team).getRow() 
+                               || j == ChessBoard.getInstance().getKing(team).getColumn()))
+                               oppStrength += 100;
+                            oppStrength += piece.getWorth();
+                        }
                     }
                 }
             }
-            return strength - oppStrength;
+
+            int mobility = getAllMoves(team).size();
+            ChessGame.getInstance().switchTeam();
+            mobility -= getAllMoves(ChessGame.getInstance().getColour()).size();
+            ChessGame.getInstance().switchTeam();
+            int safety = checkKingSafety();
+            return strength - oppStrength + mobility + safety;
         }
     }
 

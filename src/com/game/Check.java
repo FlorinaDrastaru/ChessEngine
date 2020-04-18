@@ -13,10 +13,6 @@ public class Check {
     // si verific in vectorul ei de mutari daca vreo pozitie coincide
     // cu aia pe care e piesa mea
     public static boolean attackedPos(Position pos) {
-        // System.out.println("verificam in attack " + pos.getRow() + " " + pos.getColumn() + " regele e pe " +
-        //  ChessBoard.getInstance().getBoard()[ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getRow()][ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getColumn()].getColour().name().substring(0,1) +
-        // " rege alb " + ChessBoard.getInstance().getWhiteKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() + " rege negru " + ChessBoard.getInstance().getBlackKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() +  " cul noi "
-        // + ChessGame.getInstance().getColour().name().substring(0,1));
         TeamColour initialColour = ChessGame.getInstance().getColour();
         ChessGame.getInstance().switchTeam();
         for (int i = 0; i < 8; i++) {
@@ -43,10 +39,6 @@ public class Check {
     }
 
     public static  LinkedList<Move> canDefendPos(Position pos) {
-        // System.out.println("verificam in defend " + pos.getRow() + " " + pos.getColumn() + " regele e pe " +
-        //  ChessBoard.getInstance().getBoard()[ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getRow()][ChessBoard.getInstance().getKing(ChessGame.getInstance().getColour()).getColumn()].getColour().name().substring(0,1) +
-        // " rege alb " + ChessBoard.getInstance().getWhiteKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() + " rege negru " + ChessBoard.getInstance().getBlackKing().getRow() + ChessBoard.getInstance().getBlackKing().getColumn() +  " cul noi "
-        // + ChessGame.getInstance().getColour().name().substring(0,1));
         LinkedList<Move> defendingMoves =  new LinkedList<Move>();
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {

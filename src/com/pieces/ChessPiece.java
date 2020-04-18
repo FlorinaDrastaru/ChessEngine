@@ -8,21 +8,21 @@ import java.util.LinkedList;
 
 public abstract class ChessPiece {
     private Position position;
-    private boolean eliminated = false;
     private TeamColour colour;
     private int worth;
     public int idx;
     private int ratingsBoard[][];
     private boolean initialPos;
+    private int countMoves;
 
 
-    public ChessPiece(TeamColour colour, boolean eliminated, int worth,
+    public ChessPiece(TeamColour colour, int worth,
                       int rating[][], boolean initialPos) {
-        this.eliminated = eliminated;
         this.colour = colour;
         this.worth = worth;
         ratingsBoard = rating;
-        this.initialPos = initialPos;              
+        this.initialPos = initialPos;
+        countMoves = 0;           
     }
 
     public boolean getInitialPos() {
@@ -48,16 +48,12 @@ public abstract class ChessPiece {
         return idx;
     }
 
-    public boolean isEliminated() {
-        if (eliminated == true) {
-            return true;
-        } else {
-            return false;
-        }
+    public int getCountMoves() {
+        return countMoves;
     }
 
-    public void eliminatePiece(boolean eliminated) {
-        this.eliminated = eliminated;
+    public void incCountMoves() {
+        countMoves++;
     }
 
     public final void setTeamColor(final TeamColour color) {

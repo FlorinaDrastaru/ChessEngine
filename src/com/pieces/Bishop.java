@@ -8,8 +8,8 @@ import java.util.LinkedList;
 
 
 public class Bishop extends ChessPiece {
-    public Bishop(TeamColour colour, boolean eliminated, int worth, int rating[][], boolean initialPos) {
-        super(colour, eliminated, worth, rating, initialPos);
+    public Bishop(TeamColour colour, int worth, int rating[][], boolean initialPos) {
+        super(colour, worth, rating, initialPos);
         idx = 1;
     }
 

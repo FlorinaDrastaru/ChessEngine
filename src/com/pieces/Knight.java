@@ -7,8 +7,8 @@ import java.util.LinkedList;
 
 
 public class Knight extends ChessPiece {
-    public Knight(TeamColour colour, boolean eliminated, int worth, int rating[][], boolean initialPos) {
-        super(colour, eliminated, worth, rating, initialPos);
+    public Knight(TeamColour colour, int worth, int rating[][], boolean initialPos) {
+        super(colour, worth, rating, initialPos);
         idx = 1;
     }
 

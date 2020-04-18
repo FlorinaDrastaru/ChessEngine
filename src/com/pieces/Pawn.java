@@ -7,8 +7,8 @@ import com.game.ChessGame;
 import java.util.LinkedList;
 
 public class Pawn extends ChessPiece {
-    public Pawn(TeamColour colour, boolean eliminated, int worth, int rating[][], boolean initialPos) {
-        super(colour, eliminated, worth, rating, initialPos);
+    public Pawn(TeamColour colour, int worth, int rating[][], boolean initialPos) {
+        super(colour, worth, rating, initialPos);
         idx = 0;
     }
 
@@ -22,6 +22,19 @@ public class Pawn extends ChessPiece {
 
     public LinkedList<Move> getMoves(Position pos) {
         LinkedList<Move> moves = new LinkedList<>();
+        if (ChessGame.getInstance().getColour().equals(TeamColour.Black)) {
+            if (this.getInitialPos() && pos.getRow() == 6 && ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn()] == null
+                && ChessBoard.getInstance().getBoard()[pos.getRow() - 2][pos.getColumn()] == null) {
+                moves.add(new Move(pos, new Position(pos.getRow() - 2, pos.getColumn())));
+            }
+        }
+
+        if (ChessGame.getInstance().getColour().equals(TeamColour.White)) {
+            if (this.getInitialPos() && pos.getRow() == 1 && ChessBoard.getInstance().getBoard()[pos.getRow() + 1][pos.getColumn()] == null
+                && ChessBoard.getInstance().getBoard()[pos.getRow() + 2][pos.getColumn()] == null) {
+                moves.add(new Move(pos, new Position(pos.getRow() + 2, pos.getColumn())));
+            }
+        }
         if (pos.getRow() - 1 >= 0) {
             if (ChessGame.getInstance().getColour().equals(TeamColour.Black)) {
                 if (ChessBoard.getInstance().getBoard()[pos.getRow() - 1][pos.getColumn()] == null) {
