@@ -13,13 +13,11 @@ public class Rook extends ChessPiece {
         idx = 1;
     }
 
-    // am facut la toate aceeasi chestie, ma duc pana la capetele tablei,
-    // adaug pozitia in lista, si cand dau de o pozitie ocupata,
-    // aia o sa fie ultima pozitie adaugata in lista pt ca nu poate sa mearga mai departa
+    // checks every possible move on a the same row or column
+    // until it reaches another piece
     public LinkedList<Move> getMoves(Position pos) {
         LinkedList<Move> moves = new LinkedList<>();
         int i = 1;
-        // se duce in fata
         while(pos.getRow() + i < 8) {
             Position newPos = new Position(pos.getRow() + i, pos.getColumn());
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
@@ -32,8 +30,6 @@ public class Rook extends ChessPiece {
                     i++;
             }
         }
-
-        // se duce in spate
         i = 1;
         while(pos.getRow() - i >= 0) {
             Position newPos = new Position(pos.getRow() - i, pos.getColumn());
@@ -47,8 +43,6 @@ public class Rook extends ChessPiece {
                     i++;
             }
         }
-
-        // se duce in stanga
         i = 1;
         while(pos.getColumn() - i >= 0) {
             Position newPos = new Position(pos.getRow(), pos.getColumn() - i);
@@ -62,8 +56,6 @@ public class Rook extends ChessPiece {
                     i++;
             }
         }
-
-        // se duce in dreapta
         i = 1;
         while(pos.getColumn() + i < 8) {
             Position newPos = new Position(pos.getRow(), pos.getColumn() + i);
@@ -77,14 +69,10 @@ public class Rook extends ChessPiece {
                     i++;
             }
         }
-
-        // verific daca am vreo mutare valida
         if (moves.size() == 0) {
             return null;
         } else {
             return moves;
         }
-
     }
-
 }

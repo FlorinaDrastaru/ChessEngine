@@ -12,13 +12,10 @@ public class Bishop extends ChessPiece {
         super(colour, worth, rating, initialPos);
         idx = 1;
     }
-
-
-    // acelasi principiu ca la Rook
+    // checks all possible moves until it reaches another piece
     public LinkedList<Move> getMoves(Position pos) {
         LinkedList<Move> moves = new LinkedList<Move>();
         int i = 1;
-        // ma duc in dreapta sus
         while(pos.getRow() + i < 8 && pos.getColumn() + i < 8) {
             Position newPos = new Position(pos.getRow() + i, pos.getColumn() + i);
             if(ChessBoard.getInstance().verifyPosition(newPos)) {
@@ -31,8 +28,6 @@ public class Bishop extends ChessPiece {
                     i++;
             }
         }
-
-        // ma duc stanga sus
         i = 1;
         while (pos.getRow() + i < 8 && pos.getColumn() - i >= 0) {
             Position newPos = new Position(pos.getRow() + i, pos.getColumn() - i);
@@ -46,7 +41,6 @@ public class Bishop extends ChessPiece {
                     i++;
             }
         }
-        // ma duc in jos, spre stanga
         i = 1;
         while(pos.getRow() - i >= 0 && pos.getColumn() - i >= 0) {
             Position newPos = new Position(pos.getRow() - i, pos.getColumn() - i);
@@ -60,8 +54,6 @@ public class Bishop extends ChessPiece {
                     i++;
             }
         }
-
-        // ma duc dreapta jos
         i = 1;
         while (pos.getRow() - i >= 0 && pos.getColumn() + i < 8) {
             Position newPos = new Position(pos.getRow() - i, pos.getColumn() + i);

@@ -8,12 +8,13 @@ import com.pieces.*;
 public class ChessBoard {
     private ChessPiece[][] board;
     private static ChessBoard instance = null;
-       // imi salvez pozitiile regilor pe tabla
     private Position whiteKing;
     private Position blackKing;
     private ChessBoard() {
         board = new ChessPiece[8][8];
     }
+    // checks if a position is on the board and if its free or
+    // has an opponent's piece on it
     public boolean verifyPosition(Position pos) {
         if (pos.isValidPosition()) {
             if (board[pos.getRow()][pos.getColumn()] == null
@@ -40,18 +41,6 @@ public class ChessBoard {
         if (pos.isValidPosition()) {
             board[pos.getRow()][pos.getColumn()] = piece;
             piece.setPosition(pos);
-        }
-    }
-
-    public void printBoard() {
-        for (int i = 7; i >= 0; i--) {
-            for (int j = 0; j < 8; j++) {
-                if (board[i][j] != null)
-                System.out.print(board[i][j].getColour().name().substring(0,1) + " ");
-                else 
-                System.out.print("n ");
-            }
-            System.out.println();
         }
     }
 
@@ -86,7 +75,7 @@ public class ChessBoard {
                 board[i][j] = null;
             }
         }
-        // setez pozitiile initiale ale regilor
+        // initial kings' positions are set
         setBlackKing(new Position(7, 4));
         setWhiteKing(new Position(0, 4));
 

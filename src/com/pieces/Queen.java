@@ -13,12 +13,10 @@ public class Queen extends ChessPiece {
         idx = 4;
     }
 
-
+    // checks all possible moves until it reaches another chesspiece
     public LinkedList<Move> getMoves(Position pos) {
         LinkedList<Move> moves = new LinkedList<>();
-
         int i = 1;
-        // se duce in fata
         while(pos.getRow() + i < 8) {
             Position newPos = new Position(pos.getRow() + i, pos.getColumn());
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
@@ -31,8 +29,6 @@ public class Queen extends ChessPiece {
                     i++;
             }
         }
-
-        // se duce in spate
         i = 1;
         while(pos.getRow() - i >= 0) {
             Position newPos = new Position(pos.getRow() - i, pos.getColumn());
@@ -46,8 +42,6 @@ public class Queen extends ChessPiece {
                     i++;
             }
         }
-
-        // se duce in stanga
         i = 1;
         while(pos.getColumn() - i >= 0) {
             Position newPos = new Position(pos.getRow(), pos.getColumn() - i);
@@ -61,8 +55,6 @@ public class Queen extends ChessPiece {
                     i++;
             }
         }
-
-        // se duce in dreapta
         i = 1;
         while(pos.getColumn() + i < 8) {
             Position newPos = new Position(pos.getRow(), pos.getColumn() + i);
@@ -76,9 +68,7 @@ public class Queen extends ChessPiece {
                     i++;
             }
         }
-
         i = 1;
-        // ma duc in dreapta sus
         while(pos.getRow() + i < 8 && pos.getColumn() + i < 8) {
             Position newPos = new Position(pos.getRow() + i, pos.getColumn() + i);
             if (ChessBoard.getInstance().verifyPosition(newPos)) {
@@ -91,8 +81,6 @@ public class Queen extends ChessPiece {
                     i++;
             }
         }
-
-        // ma duc stanga sus
         i = 1;
         while (pos.getRow() + i < 8 && pos.getColumn() - i >= 0) {
             Position newPos = new Position(pos.getRow() + i, pos.getColumn() - i);
@@ -106,7 +94,6 @@ public class Queen extends ChessPiece {
                     i++;
             }
         }
-        // ma duc in jos, spre stanga
         i = 1;
         while(pos.getRow() - i >= 0 && pos.getColumn() - i >= 0) {
             Position newPos = new Position(pos.getRow() - i, pos.getColumn() - i);
@@ -120,8 +107,6 @@ public class Queen extends ChessPiece {
                     i++;
             }
         }
-
-        // ma duc dreapta jos
         i = 1;
         while (pos.getRow() - i >= 0 && pos.getColumn() + i < 8) {
             Position newPos = new Position(pos.getRow() - i, pos.getColumn() + i);

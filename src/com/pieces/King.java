@@ -4,7 +4,6 @@ import com.board.ChessBoard;
 import com.board.Move;
 import com.board.Position;
 import com.game.Check;
-import com.game.ChessGame;
 
 import java.util.LinkedList;
 
@@ -14,7 +13,8 @@ public class King extends ChessPiece {
         super(colour, worth, rating, initialPos);
         idx = 5;
     }
-
+    // checks if the move is posible and if it would not get the king in chess
+    // and it is added to the list
     public void addMove(LinkedList<Move> moves, Position src, Position dest) {
         if (!ChessBoard.getInstance().verifyPosition(dest)) {
             if (!checkKingChess(dest)){      
@@ -25,7 +25,8 @@ public class King extends ChessPiece {
             }
         }
     }
-
+    // checks if the opponent's king doesn't get the player's king
+    // in chess if the move is made
     public boolean checkKingChess(Position dest) {
         int ln = dest.getRow();
         int col = dest.getColumn();
@@ -46,24 +47,14 @@ public class King extends ChessPiece {
 
     public LinkedList<Move> getMoves(Position pos) {
         LinkedList<Move> moves = new LinkedList<>();
-
-        // in fata
-            // drept
+        //  checks if every possible move is correct
         addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn()));
-            //la dreapta
         addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn() + 1));
-            // in stanga
         addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn() - 1));
-        // in spate
-            // drept
         addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn()));
-            // stanga
         addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() - 1));
-            // dreapta
         addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() + 1));
-        // in dreapta
         addMove(moves, pos, new Position(pos.getRow(), pos.getColumn() + 1));
-        // in stanga
         addMove(moves, pos, new Position(pos.getRow(), pos.getColumn() - 1));
         if (moves.size() == 0) {
             return null;

@@ -20,7 +20,6 @@ public class Knight extends ChessPiece {
 
     public LinkedList<Move> getMoves(Position pos) {
         LinkedList<Move> moves = new LinkedList<>();
-
         addMove(moves, pos, new Position(pos.getRow() + 2, pos.getColumn() - 1));
         addMove(moves, pos, new Position(pos.getRow() - 2, pos.getColumn() - 1));
         addMove(moves, pos, new Position(pos.getRow() + 2, pos.getColumn() + 1));
@@ -29,7 +28,6 @@ public class Knight extends ChessPiece {
         addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() - 2));
         addMove(moves, pos, new Position(pos.getRow() + 1, pos.getColumn() + 2));
         addMove(moves, pos, new Position(pos.getRow() - 1, pos.getColumn() + 2));
-
         if (moves.size() == 0) {
             return null;
         } else {

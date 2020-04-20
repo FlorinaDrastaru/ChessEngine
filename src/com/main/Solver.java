@@ -1,6 +1,5 @@
 package com.main;
 
-import com.board.ChessBoard;
 import com.commands.*;
 import com.constants.Constants;
 import com.game.ChessGame;
@@ -46,12 +45,7 @@ public class Solver {
             changeTeamToMove();
         } else {
             ChessGame.getInstance().oppMove(opponentMove);
-           System.out.println("dupa adversar");
-           ChessBoard.getInstance().printBoard();
             ChessGame.getInstance().move();
-           System.out.println("dupa engine");
-           ChessBoard.getInstance().printBoard();
-            
         }
     }
 

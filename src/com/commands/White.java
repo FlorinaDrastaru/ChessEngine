@@ -1,7 +1,6 @@
 package com.commands;
 
 import com.game.ChessGame;
-import com.main.Solver;
 import com.pieces.TeamColour;
 
 // force the engine to play with White colour
