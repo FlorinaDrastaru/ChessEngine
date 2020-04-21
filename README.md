@@ -33,7 +33,7 @@ Every piece implements the method *getMoves(Position pos)*, with the purpose to 
 
 We took into account the Chess rules, including Pawn Promotion, En Passant, Castling.
 
-In parent class *ChessPiece* , the method *move(Position pos)*  a piece on board: takes it out from its current position and puts it on the new position *pos*.
+In parent class *ChessPiece* , the method *move(Position pos)* moves a piece on board: takes it out from its current position and puts it on the new position *pos*.
 
 ***<u>Obs</u>***
  - *Position* is represented by 2 coordinates: row and column;
@@ -59,7 +59,7 @@ The flow of the game is described by the implementation of the classes from *gam
 
 <u> **Check** </u>
 
-The methods in this class have the purpose to check the state of a piece from a position. So, we can find out if a piece is attacked and if yes, we can find out which are the moves that can be made in order to save the piece and get off from the attack.
+The methods in this class have the purpose to check the state of a piece from a position. So, we can find out if a piece is attacked and if yes, we can find out which are the moves that can be made in order to save the piece.
  
  The are also methods that move a piece from a position to other one and eventually, undo it, restoring the board to the previous state.
 
