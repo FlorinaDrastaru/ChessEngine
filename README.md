@@ -37,7 +37,7 @@ In parent class *ChessPiece* , the method *move(Position pos)*  a piece on board
 
 ***<u>Obs</u>***
  - *Position* is represented by 2 coordinates: row and column;\
-	       - *Move* is represented by 2 *Position* objects, that represent the source and the destination.
+ - *Move* is represented by 2 *Position* objects, that represent the source and the destination.
 
 ***The Chess Board***
 
