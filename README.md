@@ -72,6 +72,7 @@ We have 2 important methods in this class, that help us realize the connection b
  - In *oppMove* function we analyze if the move from the xboard is correct and make changes on the board. The take into consideration special cases, such as castling, pawn promotion or en passant In case of moving the king, we update its position.
 
 *<u>Other details about game (first stage of project)</u>*
+
 In order to give a move to xboard or interpret one from it, 
 we store the values of the columns in a HashMap. 
 
@@ -82,6 +83,7 @@ The commands *force* and *go* are complementary,
 so we marked them through the same boolean variable.
 
 <u> **MoveAlgorithm**</u>
+
 We followed the steps of a classic **NegaMax** algorithm and we implemented all the necessary methods. We search for the best move from every possible move(we make every move, check the score and then undo it), we take into consideration to keep the king safe, we evaluate the game state, we check if the game is over, we find the winner.
 
 In order to evaluate how good a move is, we set a rating for every chess piece on every spot on the board. We also consider important in this evaluation the safety of the king, the number of pieces left, the number of the moves that the team can make(the more, the better), the points of the opponent.
