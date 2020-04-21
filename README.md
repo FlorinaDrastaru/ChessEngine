@@ -36,7 +36,7 @@ We took into account the Chess rules, including Pawn Promotion, En Passant, Cast
 In parent class *ChessPiece* , the method *move(Position pos)*  a piece on board: takes it out from its current position and put it on the new position *pos*.
 
 ***<u>Obs</u>***
- - *Position* is represented by 2 coordinates: row and column;
+ - *Position* is represented by 2 coordinates: row and column;\
 	       - *Move* is represented by 2 *Position* objects, that represent the source and the destination.
 
 ***The Chess Board***
