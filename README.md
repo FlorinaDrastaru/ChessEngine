@@ -1,6 +1,6 @@
 
 
-DRASTARU FLORINA CRISTINA 325CA
+DRASTARU FLORINA CRISTINA 325CA\
 VRABIE ANDREEA IRINA 325CA
 
 
@@ -64,6 +64,7 @@ The methods in this class have the purpose to check the state of a piece from a 
  The are also methods that move a piece from a position to other one and eventually, undo it, restoring the board to the previous state.
 
 <u> **ChessGame**</u>
+
 We have 2 important methods in this class, that help us realize the connection between receiving a move and making a move on the chess board.
 
  - In *move* method we apply the negaMax(set for the engine's teams, with depth = 3(verifies 3 steps ahead)) method from MoveAlgorithm class, that returns the best move and after that, we make that move.
